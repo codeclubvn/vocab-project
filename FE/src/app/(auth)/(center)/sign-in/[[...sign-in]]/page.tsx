@@ -1,4 +1,5 @@
-import { SignIn } from '@clerk/nextjs'
+// import { SignIn } from '@clerk/nextjs'
+import { SignIn } from '@/components/sign-in'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {

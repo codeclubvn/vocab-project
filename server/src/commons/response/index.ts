@@ -27,7 +27,7 @@ export class ResponseCustomData<D> {
  */
 export function ResponseCustomError(
   error: { message: string },
-  statusCode: HttpStatus = 404,
+  statusCode: HttpStatus = 400,
 ) {
   throw new HttpException(error.message, statusCode);
 }

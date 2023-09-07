@@ -1,6 +1,7 @@
 // import { SignIn } from '@clerk/nextjs'
-import { SignIn } from '@/components/sign-in'
 import type { Metadata } from 'next'
+
+import { SignIn } from '@/components/auth'
 
 export const metadata: Metadata = {
   title: 'Sign in',

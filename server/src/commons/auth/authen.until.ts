@@ -1,16 +1,15 @@
-import { createCipheriv, randomBytes, scrypt } from 'crypto';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
-import { Injectable } from '@nestjs/common';
+
 //Read docs: ->⚡https://docs.nestjs.com/security/encryption-and-hashing#hashing
 
-// Tạo và kiểm tra password người dùng
-class Generate {
+// Tạo và kiểm tra password và hash  người dùng
+class PassWordGenerator {
   static saltOrRounds = 10;
-  static hashPassword(password: string): Promise<string> {
+  static hash(password: string): Promise<string> {
     return bcrypt.hash(password, this.saltOrRounds);
   }
-  static verifyPassword(password: string, hash: string): Promise<Boolean> {
+  static verify(password: string, hash: string): Promise<Boolean> {
     return bcrypt.compare(password, hash);
   }
 }
@@ -39,4 +38,4 @@ export class AuthService {
   }
 }
 
-export default Generate;
+export default PassWordGenerator;

@@ -2,7 +2,7 @@ import { Inject, Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { IUsers, UserProvide } from './schema/users.schema';
 import { CreateUserDto } from './dto/users.dto';
-import Generate, { AuthService } from 'src/utils/generate.until';
+import PassWordGenerator, { AuthService } from 'src/commons/auth/authen.until';
 import { JwtService } from '@nestjs/jwt';
 import { ResponseCustomData, ResponseCustomError } from 'src/commons/response';
 @Injectable()
@@ -19,7 +19,7 @@ export class UsersService {
 
       const AuthServiceUser = new AuthService(this.jwtService);
       const [password_hash, access_token] = await Promise.all([
-        Generate.hashPassword(userCreate.password),
+        PassWordGenerator.hash(userCreate.password),
         AuthServiceUser.createToken({
           username: userCreate.email,
         }),

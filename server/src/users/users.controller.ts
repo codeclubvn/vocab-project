@@ -20,16 +20,19 @@ import { ROLE_PERMISSION } from './schema/users.schema';
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
-
-  @Post('create')
+  @Get()
+  getAllUser() {
+    return [];
+  }
+  @Get(':id')
+  getInfoUser(@Param('id') id: string) {
+    return this.usersService.getUser(id);
+  }
+  // tạo user
+  @Post()
   createUser(@Body() userCreate: CreateUserDto) {
     console.log('create -- user');
     return this.usersService.createUser(userCreate);
-  }
-
-  @Get(':userId')
-  getInfo(@Param('userId') userId: string) {
-    return this.usersService.getUser(userId);
   }
 
   /// admin mới được xóa chẳng hạn
@@ -49,9 +52,9 @@ export class UsersController {
     // this.usersService.createUser();
   }
 
-  // Sử dụng query để lấy thông tin từ url /users?limit=10&skip=20
-  @Post('getaccount')
-  getAccount(
+  // Sử dụng query để lấy thông tin từ url /users/page?limit=10&skip=20
+  @Post('page')
+  getFollowPageUser(
     @Query('limit', ParseIntPipe) limit: number,
     @Query('skip', ParseIntPipe) skip: number,
   ) {

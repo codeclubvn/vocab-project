@@ -6,6 +6,7 @@
 - Link Figma : https://www.figma.com/file/UeAZxcmEJZN2eUlt3IAbae/Vocabulary-Project
 - Link meeting : voice chat server này
 - Chat thảo luận : #📚・vocab-team 
+
 ## Thành viên
 Leader : @nhat1234559 (Back-end)
 Member : 

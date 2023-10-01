@@ -13,5 +13,5 @@ export default function CenteredLayout({
     redirect('/dashboard')
   }
 
-  return <div className='flex min-h-screen items-center justify-center'>{children}</div>
+  return <div className='flex min-h-screen'>{children}</div>
 }

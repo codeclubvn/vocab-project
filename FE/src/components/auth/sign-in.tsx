@@ -1,37 +1,52 @@
+'use client'
+import { FacebookIcon, GoogleIcon } from '../Icons/Icons'
+import SelectComponent from '../Select/Select'
+// import ButtonComponent from '../Button/Button'
+
+import '@radix-ui/themes/styles.css'
+import { Theme } from '@radix-ui/themes'
+import Input from '../Input/Input'
+import Button from '../Button/Button'
 const SignIn = () => {
   return (
-    <>
-      <div className='w-1/2'>
+    <Theme className='flex'>
+      <div className='w-1/2 relative'>
+        <h1 className='absolute w-2/3 text-5xl font-bold top-10 left-10'>
+          Tham gia một cộng đồng sôi nổi với hơn 300 triệu người học trên toàn thế giới.
+        </h1>
         <img
           className='object-cover w-full h-full'
           src='https://assets.quizlet.com/_next/static/media/QZ_Auth_LightV2.d6b0ba3d.png'
           alt='avt'
         />
+        <h1 className='absolute w-2/3 text-5xl text-white font-bold bottom-10 left-10'>
+          Vocab team
+        </h1>
       </div>
       <div className='information p-4 mx-10 my-10 grow'>
-        <div className='mb-8'>
-          <span className='mr-10'>Đăng kí</span>
-          <span>Đăng nhập</span>
+        <div className='mb-8 text-2xl font-bold'>
+          <a
+            href='/sign-in'
+            className='mr-10 underline decoration-wavy decoration-violet-700 hover:border-b-0 underline-offset-8'
+          >
+            Đăng kí
+          </a>
+          <a
+            href='/sign-up'
+            className='hover:border-b-0'
+          >
+            Đăng nhập
+          </a>
         </div>
         <div className='flex flex-col w-full mb-8'>
-          <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mb-4'>
-            {/* <svg
-                  aria-label='biểu tượng google nhiều màu'
-                  className='AssemblyIcon AssemblyIcon--medium'
-                  role='img'
-                >
-                  <noscript></noscript>
-                  <use
-                    href='#google-color'
-                    xlinkHref='#google-color'
-                  ></use>
-                  <noscript></noscript>
-                </svg> */}
-            <span>Tiếp tục với Google</span>
-          </button>
-          <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'>
-            Tiếp tục với Facebook
-          </button>
+          <Button className='bg-transparent hover:bg-gray-400 text-blue-700 font-semibold hover:text-white py-5 px-4 border border-gray-500 hover:border-transparent rounded mb-4'>
+            <GoogleIcon className='inline-block w-6 h-6 mr-2' />
+            <span className='font-medium text-black'>Tiếp tục với Google</span>
+          </Button>
+          <Button className='bg-transparent hover:bg-gray-400 text-blue-700 font-semibold hover:text-white py-5 px-4 border border-gray-500 hover:border-transparent rounded'>
+            <FacebookIcon className='inline-block w-6 h-6 mr-2' />
+            <span className='font-medium text-black'>Tiếp tục với Facebook</span>
+          </Button>
         </div>
         <div className='inline-flex items-center justify-center w-full'>
           <hr className='w-full h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
@@ -41,83 +56,100 @@ const SignIn = () => {
         </div>
         <form className=''>
           <div className='block'>
-            <label htmlFor='date-of-birth'>Ngày sinh</label>
-            <br />
-            <select
-              className='w-1/3 p-2 text-medium text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-              name='day'
-              id='day'
-            >
-              <option value=''>Ngày</option>
-            </select>
-            <select
-              className='w-1/3 p-2 text-medium text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-              name='month'
-              id='day'
-            >
-              <option value=''>Tháng</option>
-            </select>
-            <select
-              className='w-1/3 p-2 text-medium text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-              name='year'
-              id='day'
-            >
-              <option value=''>Năm</option>
-            </select>
-          </div>
-          <div className=''>
             <label
-              htmlFor='default-input'
-              className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+              className='block text-sm font-medium text-gray-900 dark:text-white mb-2'
+              htmlFor='date-of-birth'
             >
-              Email
+              Ngày sinh
             </label>
-            <input
-              type='text'
-              id='default-input'
-              className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-            />
+            <div className='flex gap-10'>
+              <SelectComponent
+                size={'3'}
+                className='text-sm'
+                color={'gray'}
+                variant={'soft'}
+                title={'Ngày'}
+                side={'top'}
+                value={[
+                  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+                ]}
+              />
+              <SelectComponent
+                size={'3'}
+                className='w-[120px]'
+                color={'gray'}
+                variant={'soft'}
+                title={'Tháng'}
+                side={'bottom'}
+                value={[
+                  'Tháng 1',
+                  'Tháng 2',
+                  'Tháng 3',
+                  'Tháng 4',
+                  'Tháng 5',
+                  'Tháng 6',
+                  'Tháng 7',
+                  'Tháng 8',
+                  'Tháng 9',
+                  'Tháng 10',
+                  'Tháng 11',
+                  'Tháng 12',
+                ]}
+              />
+              <SelectComponent
+                size={'3'}
+                className='w-[95px]'
+                color={'gray'}
+                variant={'soft'}
+                title={'Năm'}
+                side={'top'}
+                value={[
+                  2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011,
+                  2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003, 2002, 2001, 2000, 1999, 1998,
+                ]}
+              />
+            </div>
           </div>
-          <div className=''>
-            <label
-              htmlFor='default-input'
-              className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
-            >
-              Tên người dùng
-            </label>
+          <Input
+            title='Email'
+            className=''
+            placeholder='user@gmail.com'
+            type='text'
+          />
+          <Input
+            title='Tên người dùng'
+            className=''
+            placeholder='adrew123'
+            type='text'
+          />
+          <Input
+            title='Mật khẩu'
+            className=''
+            placeholder='......'
+            type='password'
+          />
+          <div className='my-10 flex items-center'>
             <input
-              type='text'
-              id='default-input'
-              className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+              className='mr-4 w-5 h-5 text-center text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 dark:bg-gray-600 dark:border-gray-500'
+              type='checkbox'
             />
+            <span>Tôi chấp nhận điều khoản dịch vụ và Chính sách quyền riêng tư của vQuizlet</span>
           </div>
-          <div className=''>
-            <label
-              htmlFor='default-input'
-              className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
-            >
-              Mật khẩu
-            </label>
-            <input
-              type='password'
-              id='default-input'
-              className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-            />
-          </div>
-          <input type='checkbox' />
-          <span>Tôi chấp nhận điều khoản dịch vụ và Chính sách quyền riêng tư của vQuizlet</span>
 
           <div className='flex flex-col w-full mb-8'>
-            <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mb-4'>
+            <Button
+              className='bg-transparent hover:bg-blue-600 font-medium text-black-700  hover:text-white py-2 px-4 border border-#d9dde8-500  hover:border-transparent rounded mb-4'
+              disabled
+            >
               Đăng ký
-            </button>
-            <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mb-4'>
+            </Button>
+            <Button className='bg-transparent hover:bg-gray-400 font-medium text-black-700  hover:text-white py-2 px-4 border border-#d9dde8-500  hover:border-transparent rounded mb-4'>
               Bạn đã có tài khoản rồi? Đăng nhập
-            </button>
+            </Button>
           </div>
         </form>
       </div>
-    </>
+    </Theme>
   )
 }
 

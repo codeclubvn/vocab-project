@@ -4,8 +4,10 @@ import { ROLE_PERMISSION } from 'src/users/schema/users.schema';
 import { ROLES_KEY } from './roles.decorator';
 import { CreateLogger } from 'src/commons/logger/index.logger';
 import { Request } from 'express';
+
 @Injectable()
 export class RolesGuard implements CanActivate {
+
   constructor(private reflector: Reflector) {}
 
   canActivate(context: ExecutionContext): boolean {
@@ -23,4 +25,5 @@ export class RolesGuard implements CanActivate {
     return true;
     // return requiredRoles.some((role) => user.roles?.includes(role));
   }
+  
 }

@@ -1,6 +1,7 @@
 # compiled output
 /dist
 /node_modules
+.env #dont push this on git
 
 # Logs
 logs

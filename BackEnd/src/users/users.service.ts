@@ -5,8 +5,11 @@ import { CreateUserDto } from './dto/users.dto';
 import PassWordGenerator, { AuthService } from 'src/commons/auth/authen.until';
 import { JwtService } from '@nestjs/jwt';
 import { ResponseCustomData, ResponseCustomError } from 'src/commons/response';
+
+
 @Injectable()
 export class UsersService {
+
   constructor(
     @Inject(UserProvide)
     private UsersModel: Model<IUsers>,
@@ -16,7 +19,6 @@ export class UsersService {
   async createUser(userCreate: CreateUserDto) {
     try {
       // Create a new user
-
       const AuthServiceUser = new AuthService(this.jwtService);
       const [password_hash, access_token] = await Promise.all([
         PassWordGenerator.hash(userCreate.password),
@@ -48,6 +50,7 @@ export class UsersService {
       return ResponseCustomError(err);
     }
   }
+
   async getUser(userId: string) {
     try {
       // field 0 là bỏ qua giá trị đó
@@ -64,6 +67,7 @@ export class UsersService {
       return ResponseCustomError(err);
     }
   }
+
   async deleteUser(id: string) {
     return await this.UsersModel.findByIdAndDelete(id);
   }

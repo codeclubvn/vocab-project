@@ -5,6 +5,7 @@ import { databaseProviders } from './database/database.provider';
 import { ConfigModule } from '@nestjs/config';
 import { RolesGuard } from './commons/guard/roles/roles.guard';
 import { CollectionsModule } from './collections/collections.module';
+
 @Module({
   imports: [
     UsersModule,
@@ -19,4 +20,5 @@ import { CollectionsModule } from './collections/collections.module';
   controllers: [],
   providers: [...databaseProviders],
 })
+
 export class AppModule {}

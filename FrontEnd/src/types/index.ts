@@ -1,1 +1,2 @@
-export * from './Todo'
+export * from './Todo';
+export * from './User';

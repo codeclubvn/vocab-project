@@ -19,7 +19,9 @@ import { ROLE_PERMISSION } from './schema/users.schema';
 
 @Controller('users')
 export class UsersController {
+
   constructor(private readonly usersService: UsersService) {}
+  
   @Get()
   getAllUser() {
     return [];
@@ -60,4 +62,5 @@ export class UsersController {
   ) {
     console.log(limit, skip);
   }
+  
 }

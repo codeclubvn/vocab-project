@@ -3,6 +3,7 @@ import { ApiProperty, PartialType } from '@nestjs/swagger';
 
 // Khai báo cho swagger biết để test api cho dễ
 class CreateDTOSwagger {
+  
   @ApiProperty()
   receivers: string;
 
@@ -17,6 +18,7 @@ class CreateDTOSwagger {
 }
 
 export class CollectionCreateDto extends PartialType(CreateDTOSwagger) {
+
   @IsNotEmpty()
   receivers: string;
 

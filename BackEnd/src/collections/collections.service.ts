@@ -4,8 +4,10 @@ import { Model } from 'mongoose';
 
 @Injectable()
 export class CollectionsService {
+
   constructor(
     @Inject(CollectionName)
     private CollectionModel: Model<ICollection>,
   ) {}
+  
 }

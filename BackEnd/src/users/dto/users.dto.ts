@@ -1,10 +1,11 @@
 // Read docs: https://docs.nestjs.com/techniques/validation
 import { IsEmail, IsNotEmpty } from 'class-validator';
-
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 
 // Khai báo cho swagger biết để test api cho dễ view trên host http://localhost:3000/api/users
+
 class createUserDtoSwagger {
+
   @ApiProperty()
   email: string;
 
@@ -13,6 +14,7 @@ class createUserDtoSwagger {
 }
 
 class UpdateUserDtoSwagger {
+
   @ApiProperty()
   email: string;
 
@@ -24,6 +26,7 @@ class UpdateUserDtoSwagger {
 }
 
 export class CreateUserDto extends PartialType(createUserDtoSwagger) {
+
   @IsEmail()
   email: string;
 
@@ -32,6 +35,7 @@ export class CreateUserDto extends PartialType(createUserDtoSwagger) {
 }
 
 export class UpdateUserDto extends PartialType(UpdateUserDtoSwagger) {
+
   @IsEmail()
   @IsNotEmpty()
   email: string;

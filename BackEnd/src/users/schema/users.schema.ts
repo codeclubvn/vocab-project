@@ -7,6 +7,7 @@ export enum ROLE_PERMISSION {
   'ADMIN' = 'admin',
   'CARD' = 'card',
 }
+
 export interface IUsers extends Document {
   _id: ObjectId;
   full_name: String | null;
@@ -58,9 +59,7 @@ const UsersSchema: Schema = new Schema(
 // read documents :: https://docs.nestjs.com/recipes/mongodb;
 
 //có 2 cách sài model nhé
-
 export const UsersModel = model<IUsers>('Users', UsersSchema);
-
 export const UserProvide: string = 'User';
 export const usersProvider = [
   {

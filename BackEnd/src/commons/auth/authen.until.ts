@@ -5,7 +5,9 @@ import { JwtService } from '@nestjs/jwt';
 
 // Tạo và kiểm tra password và hash  người dùng
 class PassWordGenerator {
+
   static saltOrRounds = 10;
+
   static hash(password: string): Promise<string> {
     return bcrypt.hash(password, this.saltOrRounds);
   }
@@ -16,6 +18,7 @@ class PassWordGenerator {
 
 // tạo và check token người dùng
 export class AuthService {
+
   constructor(private jwtService: JwtService) {
     this.jwtService = jwtService;
   }
@@ -24,6 +27,7 @@ export class AuthService {
     console.log(process.env.ACCESS_TOKEN);
     return this.jwtService.signAsync(payload);
   }
+  
   async checkToken(payload: Object, token: string): Promise<boolean> {
     return new Promise((resolve) => {
       const data = this.jwtService.verifyAsync(token, {

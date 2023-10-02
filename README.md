@@ -14,6 +14,7 @@ Member :
 - @hoainam0591  (Back-end)
 - @asher845 ( Backend)
 - @khangnguyen0458  (Front-end)
+- @vovankha  (Front-end)
 - @hungts  (Front-end)
 - @hiuaiti (Front-end)
 - @joitaro  (Front-end)

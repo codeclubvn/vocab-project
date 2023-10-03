@@ -1,11 +1,15 @@
 import { ButtonHTMLAttributes } from 'react'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  isLoading?: boolean
+  isLoading?: boolean,
+  leftIcon? : React.ReactElement,
+  rightIcon? : React.ReactElement
 }
 
 export default function Button({
   className = 'hover:bg-red-600  flex w-full items-center justify-center bg-red-500 px-2 py-4 text-sm uppercase text-white',
+  leftIcon,
+  rightIcon,
   isLoading,
   disabled,
   children,
@@ -33,7 +37,9 @@ export default function Button({
           />
         </svg>
       )}
+      <span>{leftIcon}</span>
       <span>{children}</span>
+      <span>{rightIcon}</span>
     </button>
   )
 }

@@ -1,13 +1,20 @@
 'use client'
-import { AppleIcon, FacebookIcon, GoogleIcon } from '../Icons/Icons'
-import SelectComponent from '../Select/Select'
+import { AppleIcon, FacebookIcon, GoogleIcon } from '../common/Icons/Icons'
+import SelectComponent from '../common/Select/Select'
 // import ButtonComponent from '../Button/Button'
-
 import '@radix-ui/themes/styles.css'
 import { Theme } from '@radix-ui/themes'
-import Input from '../Input/Input'
-import Button from '../Button/Button'
+import Input from '../common/Input/Input'
+import Button from '../common/Button/Button'
+import { useCookie } from '@/utils/hooks'
+
 const SignUp = () => {
+
+  useCookie
+
+
+
+
   return (
     <Theme className='flex'>
       <div className='w-1/2 relative'>

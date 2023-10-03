@@ -10,6 +10,6 @@ async function bootstrap() {
 
   CustomSwagger(app);
 
-  await app.listen(3001);
+  await app.listen(3000);
 }
 bootstrap();

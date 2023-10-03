@@ -1,12 +1,12 @@
 'use client'
-import { FacebookIcon, GoogleIcon } from '../Icons/Icons'
-import SelectComponent from '../Select/Select'
+import { FacebookIcon, GoogleIcon } from '../common/Icons/Icons'
+import SelectComponent from '../common/Select/Select'
 // import ButtonComponent from '../Button/Button'
 
 import '@radix-ui/themes/styles.css'
 import { Theme } from '@radix-ui/themes'
-import Input from '../Input/Input'
-import Button from '../Button/Button'
+import Input from '../common/Input/Input'
+import Button from '../common/Button/Button'
 const SignIn = () => {
   return (
     <Theme className='flex'>

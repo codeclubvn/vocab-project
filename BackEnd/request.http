@@ -1,4 +1,4 @@
-@DOMAIN = http://localhost:3001
+@DOMAIN = http://localhost:3000
 
 ###
 POST {{DOMAIN}}/users
@@ -6,7 +6,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hbWFuaHRoYW81OEBnbWFpbC5jb20iLCJpYXQiOjE2OTM4ODE5MzYsImV4cCI6MTY5NDQ4NjczNn0.gzA5uljlDVEguYZGYSxYW5u5X8iC9lkraFb3W2ZVNPg
 
 {
-    "email":"nhat2@gmail.com",
+    "email":"nhat4@gmail.com",
     "password":"1234587"
 }
 ###

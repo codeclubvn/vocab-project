@@ -8,6 +8,22 @@ import { Theme } from '@radix-ui/themes'
 import Input from '../common/Input/Input'
 import Button from '../common/Button/Button'
 const SignIn = () => {
+
+  const range = (from : number, to : number, isAsc : boolean) => {
+    let res: Array<number> = []
+    if (isAsc){
+      for (let i = from; i <= to; i++){
+        res.push(i)
+      }
+    }
+    else {
+      for (let i = to; i >= from; i--){
+        res.push(i)
+      }
+    }
+    return res
+  }
+
   return (
     <Theme className='flex'>
       <div className='w-1/2 relative'>
@@ -19,9 +35,9 @@ const SignIn = () => {
           src='https://assets.quizlet.com/_next/static/media/QZ_Auth_LightV2.d6b0ba3d.png'
           alt='avt'
         />
-        <h1 className='absolute w-2/3 text-5xl text-white font-bold bottom-10 left-10'>
+        <h2 className='absolute w-2/3 text-5xl text-white font-bold bottom-10 left-10'>
           Vocab team
-        </h1>
+        </h2>
       </div>
       <div className='information p-4 mx-10 my-10 grow'>
         <div className='mb-8 text-2xl font-bold'>
@@ -39,12 +55,16 @@ const SignIn = () => {
           </a>
         </div>
         <div className='flex flex-col w-full mb-8'>
-          <Button className='bg-transparent hover:bg-gray-400 text-blue-700 font-semibold hover:text-white py-5 px-4 border border-gray-500 hover:border-transparent rounded mb-4'>
-            <GoogleIcon className='inline-block w-6 h-6 mr-2' />
+          <Button
+            className='bg-transparent hover:bg-gray-400 text-blue-700 font-semibold hover:text-white py-5 px-4 border border-gray-500 hover:border-transparent rounded mb-4'
+            leftIcon={<GoogleIcon className='inline-block w-6 h-6 mr-2 mb-1' />}
+          >
             <span className='font-medium text-black'>Tiếp tục với Google</span>
           </Button>
-          <Button className='bg-transparent hover:bg-gray-400 text-blue-700 font-semibold hover:text-white py-5 px-4 border border-gray-500 hover:border-transparent rounded'>
-            <FacebookIcon className='inline-block w-6 h-6 mr-2' />
+          <Button
+            className='bg-transparent hover:bg-gray-400 text-blue-700 font-semibold hover:text-white py-5 px-4 border border-gray-500 hover:border-transparent rounded'
+            leftIcon={<FacebookIcon className='inline-block w-6 h-6 mr-2 mb-1' />}
+          >
             <span className='font-medium text-black'>Tiếp tục với Facebook</span>
           </Button>
         </div>
@@ -70,9 +90,7 @@ const SignIn = () => {
                 variant={'soft'}
                 title={'Ngày'}
                 side={'top'}
-                value={[
-                  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
-                ]}
+                value={range(1, 20, true)}
               />
               <SelectComponent
                 size={'3'}
@@ -81,20 +99,7 @@ const SignIn = () => {
                 variant={'soft'}
                 title={'Tháng'}
                 side={'bottom'}
-                value={[
-                  'Tháng 1',
-                  'Tháng 2',
-                  'Tháng 3',
-                  'Tháng 4',
-                  'Tháng 5',
-                  'Tháng 6',
-                  'Tháng 7',
-                  'Tháng 8',
-                  'Tháng 9',
-                  'Tháng 10',
-                  'Tháng 11',
-                  'Tháng 12',
-                ]}
+                value={range(1, 12, true).map(ele => 'Tháng ' + ele.toString())}
               />
               <SelectComponent
                 size={'3'}
@@ -103,28 +108,28 @@ const SignIn = () => {
                 variant={'soft'}
                 title={'Năm'}
                 side={'top'}
-                value={[
-                  2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011,
-                  2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003, 2002, 2001, 2000, 1999, 1998,
-                ]}
+                value={range(1998, 2023, false)}
               />
             </div>
           </div>
           <Input
+            classNameLabel='text-sm'
             title='Email'
-            className=''
+            className='p-3 pl-4 text-base placeholder:text-base border-gray-300 dark:focus:border-blue-500 dark:border-gray-600 focus:border-blue-500 dark:focus:ring-blue-500 focus:ring-blue-500 '
             placeholder='user@gmail.com'
             type='text'
           />
           <Input
+            classNameLabel='text-sm'
             title='Tên người dùng'
-            className=''
+            className='p-3 pl-4 text-base placeholder:text-base border-gray-300 dark:focus:border-blue-500 dark:border-gray-600 focus:border-blue-500 dark:focus:ring-blue-500 focus:ring-blue-500'
             placeholder='adrew123'
             type='text'
           />
           <Input
+            classNameLabel='text-sm'
             title='Mật khẩu'
-            className=''
+            className='p-3 pl-4 text-base placeholder:text-base border-gray-300 dark:focus:border-blue-500 dark:border-gray-600 focus:border-blue-500 dark:focus:ring-blue-500 focus:ring-blue-500'
             placeholder='......'
             type='password'
           />
@@ -138,7 +143,7 @@ const SignIn = () => {
 
           <div className='flex flex-col w-full mb-8'>
             <Button
-              className='bg-transparent hover:bg-blue-600 font-medium text-black-700  hover:text-white py-2 px-4 border border-#d9dde8-500  hover:border-transparent rounded mb-4'
+              className='font-medium text-black-700 hover:text-white py-2 px-4 border border-#d9dde8-500 hover:bg-blue-600  hover:border-transparent rounded mb-4'
               disabled
             >
               Đăng ký

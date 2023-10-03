@@ -1,6 +1,5 @@
 'use client'
-import { AppleIcon, FacebookIcon, GoogleIcon } from '../common/Icons/Icons'
-import SelectComponent from '../common/Select/Select'
+import { FacebookIcon, GoogleIcon } from '../Icons/Icons'
 // import ButtonComponent from '../Button/Button'
 import '@radix-ui/themes/styles.css'
 import { Theme } from '@radix-ui/themes'
@@ -26,9 +25,9 @@ const SignUp = () => {
           src='https://assets.quizlet.com/_next/static/media/QZ_Auth_LightV2.d6b0ba3d.png'
           alt='avt'
         />
-        <h1 className='absolute w-2/3 text-5xl text-white font-bold bottom-10 left-10'>
+        <h2 className='absolute w-2/3 text-5xl text-white font-bold bottom-10 left-10'>
           Vocab team
-        </h1>
+        </h2>
       </div>
       <div className='information p-4 mx-10 my-10 grow'>
         <div className='mb-8 text-2xl font-bold'>
@@ -45,118 +44,62 @@ const SignUp = () => {
             Đăng nhập
           </a>
         </div>
-        <div className='flex flex-col w-full mb-8'>
-          <Button className='bg-transparent hover:bg-gray-400 text-blue-700 font-semibold hover:text-white py-5 px-4 border border-gray-500 hover:border-transparent rounded mb-4'>
-            <GoogleIcon className='inline-block w-6 h-6 mr-2' />
+        <div className='flex flex-col w-full mb-2'>
+          <Button
+            className='bg-transparent hover:bg-gray-400 text-blue-700 font-semibold hover:text-white py-5 px-4 border border-gray-500 hover:border-transparent rounded mb-4'
+            leftIcon={<GoogleIcon className='inline-block w-6 h-6 mr-2 mb-1' />}
+          >
             <span className='font-medium text-black'>Tiếp tục với Google</span>
           </Button>
-          <Button className='bg-transparent hover:bg-gray-400 text-blue-700 font-semibold hover:text-white py-5 px-4 border border-gray-500 hover:border-transparent rounded mb-4'>
-            <FacebookIcon className='inline-block w-6 h-6 mr-2' />
+          <Button
+            className='bg-transparent hover:bg-gray-400 text-blue-700 font-semibold hover:text-white py-5 px-4 border border-gray-500 hover:border-transparent rounded mb-4'
+            leftIcon={<FacebookIcon className='inline-block w-6 h-6 mr-2 mb-1' />}
+          >
             <span className='font-medium text-black'>Tiếp tục với Facebook</span>
-          </Button>
-          <Button className='bg-transparent hover:bg-gray-400 text-blue-700 font-semibold hover:text-white py-5 px-4 border border-gray-500 hover:border-transparent rounded'>
-            <AppleIcon className='inline-block w-6 h-6 mr-2' />
-            <span className='font-medium text-black'>Tiếp tục với Apple</span>
           </Button>
         </div>
         <div className='inline-flex items-center justify-center w-full'>
           <hr className='w-full h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
           <span className='absolute px-3 font-medium text-gray-700 -translate-x-1/5 bg-white dark:text-white dark:bg-gray-900'>
-            hoặc email
+            HOẶC EMAIL
           </span>
         </div>
-        <form className=''>
-          <div className='block'>
-            <label
-              className='block text-sm font-medium text-gray-900 dark:text-white mb-2'
-              htmlFor='date-of-birth'
-            >
-              Ngày sinh
-            </label>
-            <div className='flex gap-10'>
-              <SelectComponent
-                size={'3'}
-                className='text-sm'
-                color={'gray'}
-                variant={'soft'}
-                title={'Ngày'}
-                side={'top'}
-                value={[
-                  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
-                ]}
-              />
-              <SelectComponent
-                size={'3'}
-                className='w-[120px]'
-                color={'gray'}
-                variant={'soft'}
-                title={'Tháng'}
-                side={'bottom'}
-                value={[
-                  'Tháng 1',
-                  'Tháng 2',
-                  'Tháng 3',
-                  'Tháng 4',
-                  'Tháng 5',
-                  'Tháng 6',
-                  'Tháng 7',
-                  'Tháng 8',
-                  'Tháng 9',
-                  'Tháng 10',
-                  'Tháng 11',
-                  'Tháng 12',
-                ]}
-              />
-              <SelectComponent
-                size={'3'}
-                className='w-[95px]'
-                color={'gray'}
-                variant={'soft'}
-                title={'Năm'}
-                side={'top'}
-                value={[
-                  2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011,
-                  2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003, 2002, 2001, 2000, 1999, 1998,
-                ]}
-              />
-            </div>
-          </div>
+        <form className='relative'>
           <Input
-            title='Email'
-            className=''
-            placeholder='user@gmail.com'
+            isDown={true}
+            classNameLabel='text-sm'
+            title='EMAIL'
+            className='bg-transparent p-4 pl-0 pb-2 text-lg placeholder:text-lg rounded-none border-0 border-b-3 border-b-black transition-colors focus:outline-none focus:border-b-yellow-500 '
+            placeholder='Nhập tên hoặc tên người dùng của bạn'
             type='text'
           />
           <Input
-            title='Tên người dùng'
-            className=''
-            placeholder='adrew123'
-            type='text'
-          />
-          <Input
-            title='Mật khẩu'
-            className=''
-            placeholder='......'
+            isDown={true}
+            classNameLabel='text-sm'
+            title='MẬT KHẨU' 
+            className='bg-transparent p-4 pl-0 pb-2 text-lg placeholder:text-lg rounded-none border-0 border-b-3 border-b-black transition-colors focus:outline-none focus:border-b-yellow-500 '
+            placeholder='Nhập mật khẩu'
             type='password'
           />
-          <div className='my-10 flex items-center'>
-            <input
-              className='mr-4 w-5 h-5 text-center text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 dark:bg-gray-600 dark:border-gray-500'
-              type='checkbox'
-            />
-            <span>Tôi chấp nhận điều khoản dịch vụ và Chính sách quyền riêng tư của vQuizlet</span>
+
+          <a className='float-right -mt-8 hover:border-b-0 text-teal-400 font-bold' href="">Bạn quên rồi à ?</a>
+
+          <div className='my-10 text-center'>
+            <span>
+              Bằng cách nhấp Đăng nhập, bạn chấp nhận <span className='font-bold'>Điều khoản dịch vụ</span> Và <span className='font-bold'>Chính sách quyền riêng </span> 
+              tư của Quizlet
+            </span>
           </div>
 
           <div className='flex flex-col w-full mb-8'>
-            <Button
-              className='bg-transparent hover:bg-blue-600 font-medium text-black-700  hover:text-white py-2 px-4 border border-#d9dde8-500  hover:border-transparent rounded mb-4'
-              disabled
-            >
-              Đăng ký
+            <Button className='bg-teal-400 text-lg font-bold text-white p-5 border border-#d9dde8-500 rounded'>
+              Đăng nhập
             </Button>
-            <Button className='bg-transparent hover:bg-gray-400 font-medium text-black-700  hover:text-white py-2 px-4 border border-#d9dde8-500  hover:border-transparent rounded mb-4'>
-              Bạn đã có tài khoản rồi? Đăng nhập
-            </Button>
+            <span className='mb-2'>Hãy nhớ đăng xuất trên thiết bị dùng chung</span>
+          </div>
+          
+          <div className='text-center border-3 py-2.5 font-bold'>
+            Mới sử dụng Vocab?<span><a className='hover:border-b-0 text-teal-400 ' href="/sign-in"> Tạo tài khoản</a></span>
           </div>
         </form>
       </div>

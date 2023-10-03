@@ -1,25 +1,34 @@
-type InputProps = {
-  title: string
-  className: string,
-  placeholder: string,
-  type: string
+import { InputHTMLAttributes } from 'react'
+
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  classNameLabel?: string,
+  isDown? : boolean
 }
 
-const Input = ({type = 'text', ...props}: InputProps) => {
+const Input = ({ type = 'text', isDown=false, className, classNameLabel = '', placeholder, title, ...props }: InputProps) => {
   return (
     <div>
-      <label
+      {isDown ? '' : <label
         htmlFor='default-input'
-        className={'block my-2 text-sm font-medium text-gray-900 dark:text-white' + props.className}
+        className={`block my-2 font-medium text-gray-900 dark:text-white ${classNameLabel}`}
       >
-        {props.title}
-      </label>
+        {title}
+      </label>}
       <input
         type={type}
         id='default-input'
-        className={'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 placeholder-black-500 placeholder-opacity-100' + props.className}
-        placeholder={props.placeholder}
+        className={
+          `bg-gray-50 text-gray-900 rounded-lg  w-full dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white  placeholder-black-500 placeholder-opacity-100 ${className}`
+        }
+        placeholder={placeholder}
+        {...props}
       />
+      {isDown ? <label
+        htmlFor='default-input'
+        className={`block my-2 font-medium text-gray-900 dark:text-white ${classNameLabel}`}
+      >
+        {title}
+      </label> : ''}
     </div>
   )
 }

@@ -17,8 +17,16 @@
   "overrides": [
     // Configuration for TypeScript files
     {
-      "files": ["**/*.ts", "**/*.tsx"],
-      "plugins": ["@typescript-eslint", "unused-imports", "tailwindcss", "simple-import-sort"],
+      "files": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "plugins": [
+        "@typescript-eslint",
+        "unused-imports",
+        "tailwindcss",
+        "simple-import-sort"
+      ],
       "extends": [
         "plugin:tailwindcss/recommended",
         "airbnb",
@@ -27,7 +35,7 @@
         "plugin:prettier/recommended"
       ],
       "parserOptions": {
-        "project": "./FE/tsconfig.json"
+        "project": "./FrontEnd/tsconfig.json"
       },
       "rules": {
         "prettier/prettier": [
@@ -60,13 +68,23 @@
         "@next/next/no-img-element": "off", // We currently not using next/image because it isn't supported with SSG mode
         "@typescript-eslint/comma-dangle": "off", // Avoid conflict rule between Eslint and Prettier
         "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
-        "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"], // Overrides Airbnb configuration and enable no-restricted-syntax
+        "no-restricted-syntax": [
+          "error",
+          "ForInStatement",
+          "LabeledStatement",
+          "WithStatement"
+        ], // Overrides Airbnb configuration and enable no-restricted-syntax
         "import/prefer-default-export": "off", // Named export is easier to refactor automatically
         "simple-import-sort/imports": "error", // Import configuration for `eslint-plugin-simple-import-sort`
         "simple-import-sort/exports": "error", // Export configuration for `eslint-plugin-simple-import-sort`
         "@typescript-eslint/no-unused-vars": "off",
         "unused-imports/no-unused-imports": "error",
-        "unused-imports/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+        "unused-imports/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_"
+          }
+        ],
         "import/extensions": [
           "error",
           "ignorePackages",
@@ -82,8 +100,12 @@
     },
     // Configuration for Storybook
     {
-      "files": ["*.stories.*"],
-      "extends": ["plugin:storybook/recommended"],
+      "files": [
+        "*.stories.*"
+      ],
+      "extends": [
+        "plugin:storybook/recommended"
+      ],
       "rules": {
         "import/no-extraneous-dependencies": [
           "error",

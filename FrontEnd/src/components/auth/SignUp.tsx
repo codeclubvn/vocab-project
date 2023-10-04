@@ -1,19 +1,16 @@
 'use client'
-import { FacebookIcon, GoogleIcon } from '../Icons/Icons'
+import { FacebookIcon, GoogleIcon } from '../common/Icons/index'
 // import ButtonComponent from '../Button/Button'
 import '@radix-ui/themes/styles.css'
 import { Theme } from '@radix-ui/themes'
 import Input from '../common/Input/Input'
 import Button from '../common/Button/Button'
-import { useCookie } from '@/utils/hooks'
+
+
 
 const SignUp = () => {
 
-  useCookie
-
-
-
-
+ 
   return (
     <Theme className='flex'>
       <div className='w-1/2 relative'>
@@ -32,13 +29,13 @@ const SignUp = () => {
       <div className='information p-4 mx-10 my-10 grow'>
         <div className='mb-8 text-2xl font-bold'>
           <a
-            href='/sign-in'
+            href='/signup'
             className='hover:border-b-0'
           >
             Đăng kí
           </a>
           <a
-            href='/sign-up'
+            href='/signin'
             className='ml-10 underline decoration-wavy decoration-violet-700 hover:border-b-0 underline-offset-8'
           >
             Đăng nhập
@@ -64,7 +61,7 @@ const SignUp = () => {
             HOẶC EMAIL
           </span>
         </div>
-        <form className='relative'>
+        <form className='relative' >
           <Input
             isDown={true}
             classNameLabel='text-sm'
@@ -76,7 +73,7 @@ const SignUp = () => {
           <Input
             isDown={true}
             classNameLabel='text-sm'
-            title='MẬT KHẨU' 
+            title='MẬT KHẨU'
             className='bg-transparent p-4 pl-0 pb-2 text-lg placeholder:text-lg rounded-none border-0 border-b-3 border-b-black transition-colors focus:outline-none focus:border-b-yellow-500 '
             placeholder='Nhập mật khẩu'
             type='password'
@@ -86,7 +83,7 @@ const SignUp = () => {
 
           <div className='my-10 text-center'>
             <span>
-              Bằng cách nhấp Đăng nhập, bạn chấp nhận <span className='font-bold'>Điều khoản dịch vụ</span> Và <span className='font-bold'>Chính sách quyền riêng </span> 
+              Bằng cách nhấp Đăng nhập, bạn chấp nhận <span className='font-bold'>Điều khoản dịch vụ</span> Và <span className='font-bold'>Chính sách quyền riêng </span>
               tư của Quizlet
             </span>
           </div>
@@ -97,7 +94,7 @@ const SignUp = () => {
             </Button>
             <span className='mb-2'>Hãy nhớ đăng xuất trên thiết bị dùng chung</span>
           </div>
-          
+
           <div className='text-center border-3 py-2.5 font-bold'>
             Mới sử dụng Vocab?<span><a className='hover:border-b-0 text-teal-400 ' href="/sign-in"> Tạo tài khoản</a></span>
           </div>

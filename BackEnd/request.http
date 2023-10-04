@@ -1,4 +1,4 @@
-@DOMAIN = http://localhost:3000
+@DOMAIN = http://localhost:3001
 
 ###
 POST {{DOMAIN}}/users

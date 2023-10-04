@@ -1,5 +1,5 @@
-import type { User } from '@/types'
-import axiosClient from './axios-client'
+import type { User} from '@/types'
+import axiosClient from '../fetcher/client'
 
 export const userApi = {
 

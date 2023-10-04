@@ -1,3 +1,4 @@
+'use client'
 import '@radix-ui/themes/styles.css'
 import { Select } from '@radix-ui/themes'
 

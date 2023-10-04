@@ -24,6 +24,8 @@ const SignIn = () => {
     return res
   }
 
+  
+
   return (
     <Theme className='flex'>
       <div className='w-1/2 relative'>
@@ -42,13 +44,13 @@ const SignIn = () => {
       <div className='information p-4 mx-10 my-10 grow'>
         <div className='mb-8 text-2xl font-bold'>
           <a
-            href='/sign-in'
+            href='/signup'
             className='mr-10 underline decoration-wavy decoration-violet-700 hover:border-b-0 underline-offset-8'
           >
             Đăng kí
           </a>
           <a
-            href='/sign-up'
+            href='/signin'
             className='hover:border-b-0'
           >
             Đăng nhập

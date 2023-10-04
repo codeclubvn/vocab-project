@@ -1,6 +1,5 @@
 import type { Todo } from '@/types'
-
-import axiosClient from './axios-client'
+import axiosClient from '../fetcher/client'
 
 export const todoApi = {
   getAll(): Promise<Todo> {

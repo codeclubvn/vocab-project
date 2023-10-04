@@ -1,5 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { todoApi } from '@/api-client'
+import { todoApi } from '.'
+
 
 export const keys = {
   all: ['todos'],
@@ -11,7 +12,7 @@ export const useTodoQuery = () => {
   
   const queryKey = keys.all
   const queryClient = useQueryClient()
-  const { data, isLoading, error } = useQuery(queryKey, todoApi.getAll)
+  const { data, isLoading, error } = useQuery(queryKey, todoApiApi.getAll)
 
   const addMutation = useMutation(todoApi.add, {
     onSuccess: () => queryClient.invalidateQueries(queryKey),

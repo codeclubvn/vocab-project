@@ -1,3 +1,5 @@
+'use client'
+
 type IconProp = {
   className: string
 }

@@ -39,7 +39,6 @@ export class UsersService {
         throw new Error('Tạo thất bại');
       } else {
         delete data.password;
-        delete data.password;
       }
       return new ResponseCustomData(
         data,

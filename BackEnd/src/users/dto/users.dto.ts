@@ -11,6 +11,9 @@ class createUserDtoSwagger {
 
   @ApiProperty()
   password: string;
+
+  @ApiProperty()
+  nick_name: string;
 }
 
 class UpdateUserDtoSwagger {
@@ -24,7 +27,17 @@ class UpdateUserDtoSwagger {
   @ApiProperty()
   nick_name: string;
 }
+class LoginUserDtoSwagger {
 
+  @ApiProperty()
+  email: string;
+
+  @ApiProperty()
+  password: string;
+
+  @ApiProperty()
+  nick_name: string;
+}
 export class CreateUserDto extends PartialType(createUserDtoSwagger) {
 
   @IsEmail()
@@ -32,6 +45,9 @@ export class CreateUserDto extends PartialType(createUserDtoSwagger) {
 
   @IsNotEmpty()
   password: string;
+
+  @IsNotEmpty()
+  nick_name: string;
 }
 
 export class UpdateUserDto extends PartialType(UpdateUserDtoSwagger) {
@@ -45,4 +61,15 @@ export class UpdateUserDto extends PartialType(UpdateUserDtoSwagger) {
 
   @IsNotEmpty()
   nick_name: string;
+}
+export class LoginUserDto extends PartialType(LoginUserDtoSwagger){
+
+  @IsNotEmpty()
+  readonly email: string;
+
+  @IsNotEmpty()
+  readonly password: string;
+
+  @IsNotEmpty()
+  readonly nick_name: string;
 }

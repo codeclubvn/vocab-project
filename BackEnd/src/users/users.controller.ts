@@ -12,10 +12,11 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { CreateUserDto, UpdateUserDto } from './dto/users.dto';
+import {CreateUserDto, LoginUserDto, UpdateUserDto} from './dto/users.dto';
 import { AuthGuard } from 'src/commons/guard/auth/auth.guard';
 import { Roles } from 'src/commons/guard/roles/roles.decorator';
 import { ROLE_PERMISSION } from './schema/users.schema';
+import {ResponseCustomData} from "../commons/response";
 
 @Controller('users')
 export class UsersController {
@@ -62,5 +63,10 @@ export class UsersController {
   ) {
     console.log(limit, skip);
   }
-  
+  @Post('/login')
+  async loginUser(@Body() loginDto: LoginUserDto) {
+    const token = await this.usersService.validateUserAndGenerateToken(loginDto);
+    const createToken = {token: token};
+    return new ResponseCustomData(createToken ,'Đăng nhập thành công' ,HttpStatus.OK);
+  }
 }

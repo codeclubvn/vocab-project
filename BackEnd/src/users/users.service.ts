@@ -1,7 +1,7 @@
-import { Inject, Injectable, HttpException, HttpStatus } from '@nestjs/common';
+import {Inject, Injectable, HttpException, HttpStatus, UnauthorizedException} from '@nestjs/common';
 import { Model } from 'mongoose';
 import { IUsers, UserProvide } from './schema/users.schema';
-import { CreateUserDto } from './dto/users.dto';
+import {CreateUserDto, LoginUserDto} from './dto/users.dto';
 import PassWordGenerator, { AuthService } from 'src/commons/auth/authen.until';
 import { JwtService } from '@nestjs/jwt';
 import { ResponseCustomData, ResponseCustomError } from 'src/commons/response';
@@ -20,17 +20,23 @@ export class UsersService {
     try {
       // Create a new user
       const AuthServiceUser = new AuthService(this.jwtService);
-      const [password_hash, access_token] = await Promise.all([
+        const [password_hash, access_token, existingUser ] = await Promise.all([
         PassWordGenerator.hash(userCreate.password),
         AuthServiceUser.createToken({
           username: userCreate.email,
         }),
+        this.UsersModel.findOne({ email: userCreate.email }),
       ]);
+
+      if (existingUser) {
+        throw new Error('Email đã tồn tại!');
+      }
 
       const dataCreateUser = {
         email: userCreate.email,
         password: password_hash,
         access_token,
+        nick_name: userCreate.nick_name
       };
 
       const data = await this.UsersModel.create(dataCreateUser);
@@ -42,7 +48,8 @@ export class UsersService {
       }
       return new ResponseCustomData(
         data,
-        'Tạo tài khoản thành công!',
+        'Tạo tài khoản thành c.' +
+          'ông!',
         HttpStatus.CREATED,
       );
     } catch (err) {
@@ -70,4 +77,20 @@ export class UsersService {
   async deleteUser(id: string) {
     return await this.UsersModel.findByIdAndDelete(id);
   }
+  async validateUserAndGenerateToken (loginDto: LoginUserDto): Promise<string> {
+    try {
+      const user = await this.UsersModel.findOne({
+        nick_name: loginDto.nick_name,
+        email: loginDto.email,
+      }).exec();
+      if (user && await PassWordGenerator.verify(loginDto.password, user.password.toString())) {
+        const payload = { id: user.id, email: user.email };
+        return this.jwtService.signAsync(payload);
+      }
+      throw new Error('Thông tin đăng nhập không hợp lệ !');
+    } catch (e) {
+      throw new ResponseCustomError(e, 401);
+    }
+  }
+
 }

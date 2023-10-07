@@ -7,24 +7,26 @@ import '@radix-ui/themes/styles.css'
 import { Theme } from '@radix-ui/themes'
 import Input from '../common/Input/Input'
 import Button from '../common/Button/Button'
-const SignIn = () => {
 
-  const range = (from : number, to : number, isAsc : boolean) => {
+import Authentication from '../../services/authen'
+const SignIn = () => {
+  const dataRespone = (response: any) => {
+    // info user login
+    console.log(response.user)
+  }
+  const range = (from: number, to: number, isAsc: boolean) => {
     let res: Array<number> = []
-    if (isAsc){
-      for (let i = from; i <= to; i++){
+    if (isAsc) {
+      for (let i = from; i <= to; i++) {
         res.push(i)
       }
-    }
-    else {
-      for (let i = to; i >= from; i--){
+    } else {
+      for (let i = to; i >= from; i--) {
         res.push(i)
       }
     }
     return res
   }
-
-  
 
   return (
     <Theme className='flex'>
@@ -58,12 +60,14 @@ const SignIn = () => {
         </div>
         <div className='flex flex-col w-full mb-8'>
           <Button
+            onClick={() => Authentication.signGoogle(dataRespone)}
             className='bg-transparent hover:bg-gray-400 text-blue-700 font-semibold hover:text-white py-5 px-4 border border-gray-500 hover:border-transparent rounded mb-4'
             leftIcon={<GoogleIcon className='inline-block w-6 h-6 mr-2 mb-1' />}
           >
             <span className='font-medium text-black'>Tiếp tục với Google</span>
           </Button>
           <Button
+            onClick={() => Authentication.signFacebook(dataRespone)}
             className='bg-transparent hover:bg-gray-400 text-blue-700 font-semibold hover:text-white py-5 px-4 border border-gray-500 hover:border-transparent rounded'
             leftIcon={<FacebookIcon className='inline-block w-6 h-6 mr-2 mb-1' />}
           >
@@ -101,7 +105,7 @@ const SignIn = () => {
                 variant={'soft'}
                 title={'Tháng'}
                 side={'bottom'}
-                value={range(1, 12, true).map(ele => 'Tháng ' + ele.toString())}
+                value={range(1, 12, true).map((ele) => 'Tháng ' + ele.toString())}
               />
               <SelectComponent
                 size={'3'}

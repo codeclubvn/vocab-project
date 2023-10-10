@@ -23,17 +23,18 @@ import { Request ,Response } from 'express';
 
 @Controller('users')
 export class UsersController {
-
   constructor(private readonly usersService: UsersService) { }
 
   @Get()
   getAllUser() {
     return [];
   }
+
   @Get(':id')
   getInfoUser(@Param('id') id: string) {
     return this.usersService.getUser(id);
   }
+
   // tạo user
   @Post()
   createUser(@Body() userCreate: CreateUserDto) {
@@ -66,6 +67,7 @@ export class UsersController {
   ) {
     console.log(limit, skip);
   }
+
   @Post('login')
   async loginUser(@Body() loginDto: LoginUserDto) {
     const token = await this.usersService.validateUserAndGenerateToken(loginDto);

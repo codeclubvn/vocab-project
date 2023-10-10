@@ -36,6 +36,10 @@
     @apply scroll-smooth font-opensans bg-[--bg-color];
   }
 
+  a {
+    color: inherit;
+  }
+
   p,
   li {
     font-size: 1rem;
@@ -96,6 +100,14 @@
 
   .text-secondary {
     @apply text-[var(--fg-color-secondary)];
+  }
+
+  .text-accent-0 {
+    @apply text-[var(--select-color-0)];
+  }
+
+  .text-accent-1 {
+    @apply text-[var(--select-color-1)];
   }
 
   .bg-accent-0 {

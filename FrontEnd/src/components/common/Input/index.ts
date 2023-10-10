@@ -1,8 +1,10 @@
-import Input from "./Input";
-import SearchInput from "./SearchInput";
+import InputSignIn from "./InputSignIn";
+import InputSignUp from "./InputSignUp";
+import SearchInput from "./InputSearch";
 
 
 export {
-    Input,
-    SearchInput
+    InputSignIn,
+    SearchInput,
+    InputSignUp
 }

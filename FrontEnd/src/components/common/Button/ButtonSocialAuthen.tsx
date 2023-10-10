@@ -1,24 +1,20 @@
-import Authentication from "@/services/authen"
-import { userApi } from "@/services/user";
-import { GoogleIcon } from "../Icons/GoogleIcon";
 import Button from "./Button";
 
-type Props = {}
-
-function ButtonSocialAuthen({ }: Props) {
-
-  const dataRespone = (response: any) => {
-    console.log(response)
-    userApi.addFireBase(response.user);
+type Props = {
+  icon: any , 
+  description?: string,
+  onClick?: () => void,
 }
+
+function ButtonSocialAuthen(props: Props) {
 
   return (
     <Button
-      onClick={() => Authentication.signGoogle(dataRespone)}
-      className='bg-transparent hover:bg-gray-400 text-blue-700 font-semibold hover:text-white py-5 px-4 border border-gray-500 hover:border-transparent rounded mb-4'
-      leftIcon={<GoogleIcon className='inline-block w-6 h-6 mr-2 mb-1' />}
+      onClick={props.onClick}
+      className='font-semibold border-gray-500 hover:bg-[#edeff4] hover:text-white py-[1rem] px-4 border rounded mb-4'
+      leftIcon={props.icon}
     >
-      <span className='font-medium text-black'>Tiếp tục với Google</span>
+      <span className='font-medium text-[#5c6683]'>{props.description}</span>
     </Button>
   )
 }

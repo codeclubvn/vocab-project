@@ -1,107 +1,93 @@
 import { Button } from '@radix-ui/themes'
 import React from 'react'
-import { Input } from '../common/Input'
+import { InputSignUp } from '../common/Input'
 import SelectComponent from '../common/Select/Select'
+import { generateNumberRange } from '@/helpers/generateNumberRange'
+import Link from 'next/link'
 
 type Props = {
-  
+  className?: string,
 }
 
-function FormSignUp({ }: Props) {
-
-  const range = (from: number, to: number, isAsc: boolean) => {
-    let res: Array<number> = []
-    if (isAsc) {
-      for (let i = from; i <= to; i++) {
-        res.push(i)
-      }
-    } else {
-      for (let i = to; i >= from; i--) {
-        res.push(i)
-      }
-    }
-    return res
-  }
+function FormSignUp(props: Props) {
 
 
   return (
-    <form className=''>
+    <form >
       <div className='block'>
-        <label
-          className='block text-sm font-medium text-gray-900 dark:text-white mb-2'
+        <label className='block text-sm font-medium text-gray-900 dark:text-white mb-2 text-[#586380]'
           htmlFor='date-of-birth'
         >
           Ngày sinh
         </label>
-        <div className='flex gap-10'>
+        <div className='flex gap-5 flex-wrap md:flex-nowrap'>
           <SelectComponent
+            defaultValue={'1'}
             size={'3'}
-            className='text-sm'
             color={'gray'}
-            variant={'soft'}
+            className='text-sm border-solid border-[#586380] border-8 w-[100px]'
             title={'Ngày'}
             side={'top'}
-            value={range(1, 20, true)}
+            listValue={generateNumberRange(1, 31, true).map((ele) => ele.toString())}
           />
           <SelectComponent
             size={'3'}
-            className='w-[120px]'
-            color={'gray'}
-            variant={'soft'}
+            className='text-sm border-solid border-[#586380] border-8 w-[120px]'
             title={'Tháng'}
             side={'bottom'}
-            value={range(1, 12, true).map((ele) => 'Tháng ' + ele.toString())}
+            listValue={generateNumberRange(1, 12, true).map((ele) => 'Tháng ' + ele.toString())}
           />
           <SelectComponent
+            defaultValue={'2023'}
             size={'3'}
-            className='w-[95px]'
-            color={'gray'}
-            variant={'soft'}
+            className='text-sm border-solid border-[#586380] border-8 w-[120px]'
             title={'Năm'}
             side={'top'}
-            value={range(1998, 2023, false)}
+            listValue={generateNumberRange(2023, 1970, false).map((ele) => ele.toString())}
           />
         </div>
       </div>
-      <Input
+      <InputSignUp
         classNameLabel='text-sm'
         title='Email'
-        className='p-3 pl-4 text-base placeholder:text-base border-gray-300 dark:focus:border-blue-500 dark:border-gray-600 focus:border-blue-500 dark:focus:ring-blue-500 focus:ring-blue-500 '
+        className='p-3 pl-4 text-base placeholder:text-base border-gray-30 border-solid border-[#586380] border-2 '
         placeholder='user@gmail.com'
         type='text'
       />
-      <Input
+      <InputSignUp
         classNameLabel='text-sm'
         title='Tên người dùng'
-        className='p-3 pl-4 text-base placeholder:text-base border-gray-300 dark:focus:border-blue-500 dark:border-gray-600 focus:border-blue-500 dark:focus:ring-blue-500 focus:ring-blue-500'
+        className='p-3 pl-4 text-base placeholder:text-base border-solid border-[#586380] border-2'
         placeholder='adrew123'
         type='text'
       />
-      <Input
+      <InputSignUp
         classNameLabel='text-sm'
         title='Mật khẩu'
-        className='p-3 pl-4 text-base placeholder:text-base border-gray-300 dark:focus:border-blue-500 dark:border-gray-600 focus:border-blue-500 dark:focus:ring-blue-500 focus:ring-blue-500'
+        className='p-3 pl-4 text-base placeholder:text-baseborder-solid border-[#586380] border-2'
         placeholder='......'
         type='password'
       />
       <div className='my-10 flex items-center'>
-        <input
+        <InputSignUp
           className='mr-4 w-5 h-5 text-center text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 dark:bg-gray-600 dark:border-gray-500'
           type='checkbox'
         />
-        <span>Tôi chấp nhận điều khoản dịch vụ và Chính sách quyền riêng tư của vQuizlet</span>
+        <span className='ml-4'>Tôi chấp nhận điều khoản dịch vụ và Chính sách quyền riêng tư của Quizlet</span>
       </div>
-
-      <div className='flex flex-col w-full mb-8'>
-        <Button
-          className='font-medium text-black-700 hover:text-white py-2 px-4 border border-#d9dde8-500 hover:bg-blue-600  hover:border-transparent rounded mb-4'
-          disabled
-        >
-          Đăng ký
+      <div className='flex flex-col w-full my-8'>
+        <Button variant="solid" size={"2"} radius={`full`} style={{
+          padding: "2rem",
+          backgroundColor: "var(--select-color-0)",
+        }}>
+          <h2 className='text-lg lg:text-xl font-normal'>Đăng kí</h2>
         </Button>
-        <Button className='bg-transparent hover:bg-gray-400 font-medium text-black-700  hover:text-white py-2 px-4 border border-#d9dde8-500  hover:border-transparent rounded mb-4'>
-          Bạn đã có tài khoản rồi? Đăng nhập
-        </Button>
+      </div>
+      <div className='text-center text-base lg:text-[1.2rem] py-2.5 font-bold text-[#929292]'>
+        Đã có tài khoản ? 
+        <span>
+          <Link className='pl-2 text-accent-0' href="/signin">Đăng nhập</Link>
+        </span>
       </div>
     </form>
   )

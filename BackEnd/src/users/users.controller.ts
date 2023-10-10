@@ -10,19 +10,22 @@ import {
   ParseIntPipe,
   UseGuards,
   HttpStatus,
+  Req,
+  Res,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
-import {CreateUserDto, LoginUserDto, UpdateUserDto} from './dto/users.dto';
+import { CreateUserDto, LoginUserDto, UpdateUserDto } from './dto/users.dto';
 import { AuthGuard } from 'src/commons/guard/auth/auth.guard';
 import { Roles } from 'src/commons/guard/roles/roles.decorator';
 import { ROLE_PERMISSION } from './schema/users.schema';
-import {ResponseCustomData} from "../commons/response";
+import { ResponseCustomData } from "../commons/response";
+import { Request ,Response } from 'express';
 
 @Controller('users')
 export class UsersController {
 
-  constructor(private readonly usersService: UsersService) {}
-  
+  constructor(private readonly usersService: UsersService) { }
+
   @Get()
   getAllUser() {
     return [];
@@ -63,10 +66,25 @@ export class UsersController {
   ) {
     console.log(limit, skip);
   }
-  @Post('/login')
+  @Post('login')
   async loginUser(@Body() loginDto: LoginUserDto) {
     const token = await this.usersService.validateUserAndGenerateToken(loginDto);
-    const createToken = {token: token};
-    return new ResponseCustomData(createToken ,'Đăng nhập thành công' ,HttpStatus.OK);
+    const createToken = { token: token };
+    return new ResponseCustomData(createToken, 'Đăng nhập thành công', HttpStatus.OK);
   }
+
+  @Post('test')
+  async test(@Req() req: Request, @Res() res: Response): Promise<string> {
+    console.log("begin----");
+    try {
+      console.log('Request Body:', req.body);
+      console.log('Request Headers:', req.headers);
+      return "done"
+    } catch (error) {
+      console.log(error);
+    }
+    return `this is a header data ${req}`;
+  }
+
+
 }

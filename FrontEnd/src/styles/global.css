@@ -1,8 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-a {
+/* top type of concept to setup css 
+1. color - include color, background-color, border-color, fill, stroke
+2. typography - include font-size, font-family, font-weight, line-height, letter-spacing
+3. spacing - include margin, padding, width, height, min-width, min-height, max-width, max-height
+4. layout - include display, position, top, right, bottom, left, float, clear
+5. border - include border-radius, border-width, border-style
+6. effects - include box-shadow, text-shadow, opacity, transform
+7. interactivity - include cursor, pointer-events, resize, user-select
+8. accessibility - include sr-only, not-sr-only
+9. motion - include animation, transition
+*/
+
+:root {
+  --font-opensans: 'Open Sans', sans-serif;
+  --navbar-height: 4.5rem;
+
+
+  --fg-color: theme(colors.foreground.primary);
+  --fg-color-secondary: theme(colors.foreground.secondary);
+  --bg-color: theme(colors.background.primary);
+  --bg-color-secondary: theme(colors.background.secondary);
+  --select-color-0: theme(colors.accent.primary);
+  --select-color-1: theme(colors.accent.secondary);
+}
+
+@layer base {
+
+  html,
+  body {
+    box-sizing: border-box;
+    @apply scroll-smooth font-opensans bg-[--bg-color];
+  }
+
+  a {
+    color: inherit;
+  }
+
+  p,
+  li {
+    font-size: 1rem;
+    ;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold;
+  }
+
+  button,
+  aside {
+    @apply font-sans;
+  }
+
+  /* 
+  input{
+    border: none;
+    outline: none;
+  } */
+
+}
+
+@layer components {
+
+  .navbar {
+    @apply fixed top-0 z-50 py-3 h-[var(--navbar-height)];
+    @apply w-full bg-[var(--bg-color-secondary)];
+  }
+
+
+}
+
+
+@layer utilities {
+
+  .container {
+    @apply mx-auto px-4;
+    @apply max-w-[1280px];
+  }
+
+  .bg-primary {
+    @apply bg-[var(--bg-color)];
+  }
+
+  .bg-secondary {
+    @apply bg-[var(--bg-color-secondary)];
+  }
+
+  .text-primary {
+    @apply text-[var(--fg-color)];
+  }
+
+  .text-secondary {
+    @apply text-[var(--fg-color-secondary)];
+  }
+
+  .text-accent-0 {
+    @apply text-[var(--select-color-0)];
+  }
+
+  .text-accent-1 {
+    @apply text-[var(--select-color-1)];
+  }
+
+  .bg-accent-0 {
+    @apply bg-[var(--select-color-0)];
+  }
+
+  .bg-accent-1 {
+    @apply bg-[var(--select-color-1)];
+  }
+
+  .center-image {
+    @apply object-cover;
+    @apply object-center;
+
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #ccc;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+}
+
+
+/* a {
   @apply text-blue-700;
 }
 
@@ -20,4 +168,4 @@ a:hover {
 
 input::placeholder {
   font-size: 14px;
-}
+} */

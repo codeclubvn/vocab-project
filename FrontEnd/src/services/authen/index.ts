@@ -22,11 +22,14 @@ const firebaseConfig = {
   measurementId: 'G-G05WT46T62',
 }
 
+
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp()
 export const dbFirebase = getFirestore()
 export const storageFirebase = getStorage(app)
+
 class Authentication {
   authenticationFirebase = getAuth(app)
+
   signFacebook(dataCallback: (re: any) => void) {
     const provider = new FacebookAuthProvider()
 
@@ -34,7 +37,7 @@ class Authentication {
       .then((account) => {
         dataCallback(account)
       })
-      .catch(() => {})
+      .catch(() => { })
   }
   signGoogle(dataCallback: (re: any) => void) {
     const provider = new GoogleAuthProvider()
@@ -42,7 +45,7 @@ class Authentication {
       .then((account) => {
         dataCallback(account)
       })
-      .catch(() => {})
+      .catch(() => { })
   }
   signGithub(dataCallback: (re: any) => void) {
     const provider = new GithubAuthProvider()

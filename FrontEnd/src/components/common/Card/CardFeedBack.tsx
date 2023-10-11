@@ -1,19 +1,29 @@
+import { FC } from 'react'
 
-type Props = {
-  className?: string,
-  title?: string,
-  description?: string,
-  image?: string
+interface CardFeedBackProps {
+  className: string
+  title: string
+  description: string
+  image: string
 }
 
-const CardFeedBack = (props: Props) => {
+const CardFeedBack: FC<CardFeedBackProps> = ({
+  className = '',
+  title = '',
+  description = '',
+  image = '',
+}) => {
   return (
-    <div className={`pl-4 flex flex-col justify-center items-center ${props.className}`}>
-      <div className="mb-4 h-[200px] w-[200px] rounded-full overflow-hidden">
-        <img className="object-cover h-[100%] w-[100%]" src={props.image} alt={`This is a image of ${props.title}`} />
+    <div className={`pl-4 flex flex-col justify-center items-center ${className}`}>
+      <div className='mb-4 h-[200px] w-[200px] rounded-full overflow-hidden'>
+        <img
+          className='object-cover h-[100%] w-[100%]'
+          src={image}
+          alt={`This is a image of ${title}`}
+        />
       </div>
-      <h2 className="mb-4 font-medium text-2xl uppercase">{props.title}</h2>
-      <p className="max-w-[300px] text-center">{props.description}</p>
+      <h2 className='mb-4 font-medium text-2xl uppercase'>{title}</h2>
+      <p className='max-w-[300px] text-center'>{description}</p>
     </div>
   )
 }

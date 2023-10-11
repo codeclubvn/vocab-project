@@ -7,7 +7,7 @@ export default function Category(){
 
     return (
         <>
-            <h2>CATEGORY</h2>
+            <h2 className="mt-3">CATEGORY</h2>
             {category.map(ele => (
                 <div className="my-10 flex items-center">
                     <InputSignUp

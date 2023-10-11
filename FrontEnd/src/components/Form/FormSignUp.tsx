@@ -50,21 +50,21 @@ function FormSignUp(props: Props) {
       <InputSignUp
         classNameLabel='text-sm'
         title='Email'
-        className='p-3 pl-4 text-base placeholder:text-base border-gray-30 border-solid border-[#586380] border-2 '
+        className='p-3 pl-4 text-base placeholder:text-base border-gray-30 border-solid border-[#586380] border-2 w-full'
         placeholder='user@gmail.com'
         type='text'
       />
-      <InputSignUp
+      <InputSignUp 
         classNameLabel='text-sm'
         title='Tên người dùng'
-        className='p-3 pl-4 text-base placeholder:text-base border-solid border-[#586380] border-2'
+        className='p-3 pl-4 text-base placeholder:text-base border-solid border-[#586380] border-2 w-full'
         placeholder='adrew123'
         type='text'
       />
       <InputSignUp
         classNameLabel='text-sm'
         title='Mật khẩu'
-        className='p-3 pl-4 text-base placeholder:text-baseborder-solid border-[#586380] border-2'
+        className='p-3 pl-4 text-base placeholder:text-baseborder-solid border-[#586380] border-2 w-full'
         placeholder='......'
         type='password'
       />

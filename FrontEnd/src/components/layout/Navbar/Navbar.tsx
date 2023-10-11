@@ -7,8 +7,6 @@ import { HambugerIcon } from "@/components/common/Icons/HambugerIcon";
 
 const Navbar = () => {
 
-
-
   return (
     <NavigationMenu.Root className="navbar">
       <div className="container h-[100%] flex justify-between items-center">

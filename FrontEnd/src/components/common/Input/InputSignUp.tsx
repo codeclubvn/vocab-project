@@ -2,11 +2,11 @@
 import { FC } from 'react'
 interface InputSignUpProps {
   type: string
-  isDown: boolean
+  isDown?: boolean
   className: string
-  classNameLabel: string
-  placeholder: string
-  title: string
+  classNameLabel?: string
+  placeholder?: string
+  title?: string
 }
 
 const InputSignUp: FC<InputSignUpProps> = ({
@@ -32,7 +32,7 @@ const InputSignUp: FC<InputSignUpProps> = ({
       <input
         type={type}
         id='default-input'
-        className={`${className} bg-gray-50 rounded-lg w-full dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white placeholder-black-500 placeholder-opacity-100 text-[#1a1d28] font-medium`}
+        className={`${className} bg-gray-50 rounded-lg  dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white placeholder-black-500 placeholder-opacity-100 text-[#1a1d28] font-medium`}
         placeholder={placeholder}
       />
       {isDown ? (

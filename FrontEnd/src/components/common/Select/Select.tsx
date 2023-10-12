@@ -3,7 +3,7 @@ import '@radix-ui/themes/styles.css'
 import { Select } from '@radix-ui/themes'
 
 
-type SelectPros = {
+interface SelectProps extends React.ComponentPropsWithoutRef<"select">{
   size?: any,
   className?: string,
   color?: any,
@@ -14,7 +14,7 @@ type SelectPros = {
   listValue: Array<number | string>
 }
 
-const SelectComponent = (props: SelectPros): JSX.Element => {
+const SelectComponent = (props: SelectProps) => {
   return (
     <Select.Root size={props.size} defaultValue={props.defaultValue}>
       <Select.Trigger

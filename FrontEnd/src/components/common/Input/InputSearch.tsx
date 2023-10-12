@@ -3,12 +3,12 @@
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
 import { TextField } from '@radix-ui/themes'
 
-type Props = {
+interface InputProps extends React.ComponentPropsWithoutRef<"input"> {
   placeholder?: string,
   style?: React.CSSProperties
 }
 
-const SearchInput = (props: Props) => {
+const SearchInput = (props: InputProps) => {
   return (
     <TextField.Root style={props.style} >
       <TextField.Slot>

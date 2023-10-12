@@ -1,12 +1,12 @@
 import Button from "./Button";
 
-type Props = {
-  icon: any , 
+interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
+  icon: any,
   description?: string,
   onClick?: () => void,
 }
 
-function ButtonSocialAuthen(props: Props) {
+function ButtonSocialAuthen(props: ButtonProps) {
 
   return (
     <Button

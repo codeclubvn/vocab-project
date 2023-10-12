@@ -5,12 +5,11 @@ import SelectComponent from '../common/Select/Select'
 import { generateNumberRange } from '@/helpers/generateNumberRange'
 import Link from 'next/link'
 
-type Props = {
+interface FormProps extends React.ComponentPropsWithoutRef<"form">{
   className?: string,
 }
 
-function FormSignUp(props: Props) {
-
+function FormSignUp(props :FormProps) {
 
   return (
     <form >

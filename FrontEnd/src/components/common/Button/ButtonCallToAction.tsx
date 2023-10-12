@@ -1,14 +1,14 @@
 "use client"
 import { useRouter } from "next/navigation"
 
-type Props = {
+interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   children?: React.ReactNode,
   className?: string,
   classNameTitle?: string,
   route?: string
 }
 
-const ButtonCallToAction = (props: Props) => {
+const ButtonCallToAction = (props: ButtonProps) => {
   const router = useRouter()
 
   const handleClick = () => {

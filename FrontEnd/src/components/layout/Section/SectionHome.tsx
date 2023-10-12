@@ -1,6 +1,6 @@
 import { ButtonCallToAction } from "@/components/common/Button"
 
-type Props = {
+interface SectionProps extends React.ComponentPropsWithoutRef<"section"> {
   title?: string,
   description?: string,
   image?: string,
@@ -10,25 +10,31 @@ type Props = {
   route?: string
 }
 
-const SectionHome = (props: Props) => {
+const SectionHome = ({
+  title = "",
+  description = "",
+  image = "",
+  buttonTitle = "",
+  route = "",
+  isRightSide = false,
+  imageClassName = 'w-full h-[250px] object-cover'
+}: SectionProps) => {
 
-
-
-  if (props.isRightSide) {
+  if (isRightSide) {
     return (
       <section className="my-[80px] ">
         <div className="container flex flex-wrap justify-center">
           <div className="w-full md:w-1/2">
             <div className="p-4">
-              <img src={props.image} alt="" className={`${props.imageClassName}`} />
+              <img src={image} alt="" className={`${imageClassName}`} />
             </div>
           </div>
           <div className="w-full md:w-1/2 ">
             <div className="p-4">
-              <h2 className="text-2xl font-bold mb-4" >{props.title}</h2>
-              <p className="mb-4">{props.description}</p>
-              <ButtonCallToAction route={props.route} className="bg-accent-0 !px-[40px]">
-                {props.buttonTitle}
+              <h2 className="text-2xl font-bold mb-4" >{title}</h2>
+              <p className="mb-4">{description}</p>
+              <ButtonCallToAction route={route} className="bg-accent-0 !px-[40px]">
+                {buttonTitle}
               </ButtonCallToAction>
             </div>
           </div>
@@ -42,27 +48,21 @@ const SectionHome = (props: Props) => {
       <div className="container flex flex-wrap justify-center">
         <div className="w-full md:w-1/2 ">
           <div className="p-4">
-            <h2 className="text-2xl font-bold mb-4" >{props.title}</h2>
-            <p className="mb-4">{props.description}</p>
-            <ButtonCallToAction route={props.route} className="bg-accent-0 !px-[40px]">
-              {props.buttonTitle}
+            <h2 className="text-2xl font-bold mb-4" >{title}</h2>
+            <p className="mb-4">{description}</p>
+            <ButtonCallToAction route={route} className="bg-accent-0 !px-[40px]">
+              {buttonTitle}
             </ButtonCallToAction>
           </div>
         </div>
         <div className="w-full md:w-1/2">
           <div className="p-4">
-            <img src={props.image} alt="" className={`${props.imageClassName}`} />
+            <img src={image} alt="" className={`${imageClassName}`} />
           </div>
         </div>
       </div>
     </section>
   )
-}
-
-
-SectionHome.defaultProps = {
-  isRightSide: false,
-  imageClassName: 'w-full h-[250px] object-cover'
 }
 
 export default SectionHome

@@ -1,6 +1,6 @@
 'use client'
-import { FC } from 'react'
-interface InputSignUpProps {
+
+interface InputProps extends React.ComponentPropsWithoutRef<"input"> {
   type: string
   isDown?: boolean
   className: string
@@ -9,14 +9,14 @@ interface InputSignUpProps {
   title?: string
 }
 
-const InputSignUp: FC<InputSignUpProps> = ({
+const InputSignUp = ({
   type = 'text',
   isDown = false,
   className = '',
   classNameLabel = '',
   placeholder = '',
   title = '',
-}) => {
+}: InputProps) => {
   return (
     <div>
       {isDown ? (

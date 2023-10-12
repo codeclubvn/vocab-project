@@ -12,8 +12,7 @@ const Footer = () => {
         <TwitterIcon className="h-[20px] w-[20px] mr-4" />
         <NotionIcon className="h-[20px] w-[20px] mr-4" />
       </div>
-    </footer>
-  )
+    </footer>)
 }
 
 export default Footer

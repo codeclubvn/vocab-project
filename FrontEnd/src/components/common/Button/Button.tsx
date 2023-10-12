@@ -1,9 +1,10 @@
-import { ButtonHTMLAttributes } from 'react'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+
+interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
+  className: string,
   isLoading?: boolean,
-  leftIcon? : React.ReactElement,
-  rightIcon? : React.ReactElement
+  leftIcon?: React.ReactElement,
+  rightIcon?: React.ReactElement
 }
 
 export default function Button({

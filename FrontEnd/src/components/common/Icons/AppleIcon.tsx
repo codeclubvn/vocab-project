@@ -1,10 +1,10 @@
 'use client'
 
-type IconProp = {
+interface IconProps extends React.ComponentPropsWithoutRef<"svg"> {
   className?: string
 }
 
-export const AppleIcon = (props: IconProp): JSX.Element => {
+export const AppleIcon = (props: IconProps): JSX.Element => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

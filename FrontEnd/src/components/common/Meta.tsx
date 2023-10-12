@@ -4,13 +4,13 @@ import { NextSeo } from 'next-seo'
 
 import { AppConfig } from '@/utils/constants/AppConfig'
 
-type IMetaProps = {
+interface MetaProps extends React.ComponentPropsWithoutRef<"meta"> {
   title: string
   description: string
   canonical?: string
 }
 
-const Meta = (props: IMetaProps) => {
+const Meta = (props: MetaProps) => {
   const router = useRouter()
 
   return (

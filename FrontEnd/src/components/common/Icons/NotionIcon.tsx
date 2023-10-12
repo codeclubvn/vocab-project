@@ -1,11 +1,10 @@
 'use client'
 
-type IconProp = {
+interface IconProps extends React.ComponentPropsWithoutRef<"svg"> {
   className?: string
 }
 
-
-export const NotionIcon = (props: IconProp): JSX.Element => {
+export const NotionIcon = (props: IconProps) => {
   return (
     <svg className={props.className}
       width="15"

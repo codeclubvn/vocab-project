@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 interface CardFeedBackProps {
   className: string
   title: string
@@ -7,12 +5,12 @@ interface CardFeedBackProps {
   image: string
 }
 
-const CardFeedBack: FC<CardFeedBackProps> = ({
+const CardFeedBack = ({
   className = '',
   title = '',
   description = '',
   image = '',
-}) => {
+}: CardFeedBackProps) => {
   return (
     <div className={`pl-4 flex flex-col justify-center items-center ${className}`}>
       <div className='mb-4 h-[200px] w-[200px] rounded-full overflow-hidden'>

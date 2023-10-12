@@ -1,6 +1,6 @@
 'use client'
 
-interface Props {
+interface InputProps extends React.ComponentPropsWithoutRef<"input"> {
   type?: string,
   isDown?: boolean,
   className?: string,
@@ -9,7 +9,7 @@ interface Props {
   title?: string,
 }
 
-const InputSignIn = (props: Props) => {
+const InputSignIn = (props: InputProps) => {
   return (
     <div>
       {props.isDown ? '' : <label

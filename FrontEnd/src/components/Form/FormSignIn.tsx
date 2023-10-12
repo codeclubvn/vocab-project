@@ -1,13 +1,11 @@
 import { Button } from '@radix-ui/themes'
 import { InputSignIn } from '../common/Input'
 import Link from 'next/link'
-
-type Props = {
+interface FormProps extends React.ComponentPropsWithoutRef<"form"> {
   className?: string
 }
 
-function FormSignIn(props: Props) {
-
+function FormSignIn(props: FormProps) {
 
   return (
     <form className={` ${props.className}`}>

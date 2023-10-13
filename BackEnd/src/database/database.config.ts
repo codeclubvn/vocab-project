@@ -3,5 +3,5 @@
 
 export enum MONGODB_CONFIG {
   COMPASS = '',
-  DATABASE_CONNECTION = 'DATABASE_CONNECTION',
+  DATABASE_CONNECTION = `mongodb+srv://vocab:dt01626746032@cluster0.2ktatdl.mongodb.net/?retryWrites=true&w=majority`,
 }

@@ -1,4 +1,5 @@
 import { HttpStatus, HttpException } from '@nestjs/common';
+import { CreateLogger } from '../logger/index.logger';
 
 /**
  *  ResponseCustomError helps handle custom error overmaster
@@ -15,6 +16,9 @@ export class ResponseCustomData<D> {
     this.data = data;
     this.message = message;
     this.statusCode = statusCode;
+    console.log('-------------------------------');
+    CreateLogger('Data trả về ==>', data);
+    console.log('-------------------------------');
     return this;
   }
 }
@@ -29,5 +33,6 @@ export function ResponseCustomError(
   error: { message: string },
   statusCode: HttpStatus = 400,
 ) {
+  CreateLogger('Đang lỗi==>', error);
   throw new HttpException(error.message, statusCode);
 }

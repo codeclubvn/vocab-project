@@ -9,7 +9,6 @@ import Image from 'next/image'
 
 export default function Page() {
   const handleSignInWithFirebase = (response: any) => {
-    console.log(response)
     userApi.addFireBase(response.user)
   }
 

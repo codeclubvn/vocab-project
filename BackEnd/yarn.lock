@@ -732,10 +732,10 @@
     webpack "5.88.2"
     webpack-node-externals "3.0.0"
 
-"@nestjs/common@^10.0.0":
-  version "10.2.4"
-  resolved "https://registry.npmjs.org/@nestjs/common/-/common-10.2.4.tgz"
-  integrity sha512-3Lg4PUaSDucf14V8rPCH212NqrK09AJbY0NKqFsb4j5OIE+TuOzVZR/yjaJ8JNxH2hjskJNCZie0D/9tA2lzlA==
+"@nestjs/common@^10.2.7":
+  version "10.2.7"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-10.2.7.tgz#339db2efa33d3822dd81d2993bd44b538a7451b6"
+  integrity sha512-cUtCRXiUstDmh4bSBhVbq4cI439Gngp4LgLGLBmd5dqFQodfXKnSD441ldYfFiLz4rbUsnoMJz/8ZjuIEI+B7A==
   dependencies:
     uid "2.0.2"
     iterare "1.2.1"
@@ -765,7 +765,7 @@
 
 "@nestjs/jwt@^10.1.1":
   version "10.1.1"
-  resolved "https://registry.npmjs.org/@nestjs/jwt/-/jwt-10.1.1.tgz"
+  resolved "https://registry.yarnpkg.com/@nestjs/jwt/-/jwt-10.1.1.tgz#6a564ef3b5a5e7d8d34d78f1ceb23c1523cdb9e7"
   integrity sha512-sISYylg8y1Mb7saxPx5Zh11i7v9JOh70CEC/rN6g43MrbFlJ57c1eYFrffxip1YAx3DmV4K67yXob3syKZMOew==
   dependencies:
     "@types/jsonwebtoken" "9.0.2"
@@ -803,16 +803,16 @@
     jsonc-parser "3.2.0"
     pluralize "8.0.0"
 
-"@nestjs/swagger@^7.1.10":
-  version "7.1.10"
-  resolved "https://registry.npmjs.org/@nestjs/swagger/-/swagger-7.1.10.tgz"
-  integrity sha512-qreCcxgHFyFX1mOfK36pxiziy4xoa/XcxC0h4Zr9yH54WuqMqO9aaNFhFyuQ1iyd/3YBVQB21Un4gQnh9iGm0w==
+"@nestjs/swagger@^7.1.13":
+  version "7.1.13"
+  resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-7.1.13.tgz#5fe1127b159780315f6e827d746b68db7f323e38"
+  integrity sha512-aHfW0rDZZKTuPVSkxutBCB16lBy5vrsHVoRF5RvPtH7U2cm4Vf+OnfhxKKuG2g2Xocn9sDL+JAyVlY2VN3ytTw==
   dependencies:
     "@nestjs/mapped-types" "2.0.2"
     js-yaml "4.1.0"
     lodash "4.17.21"
     path-to-regexp "3.2.0"
-    swagger-ui-dist "5.4.2"
+    swagger-ui-dist "5.9.0"
 
 "@nestjs/testing@^10.0.0":
   version "10.2.4"
@@ -1861,7 +1861,7 @@ class-transformer@^0.5.1:
 
 class-validator@^0.14.0:
   version "0.14.0"
-  resolved "https://registry.npmjs.org/class-validator/-/class-validator-0.14.0.tgz"
+  resolved "https://registry.yarnpkg.com/class-validator/-/class-validator-0.14.0.tgz#40ed0ecf3c83b2a8a6a320f4edb607be0f0df159"
   integrity sha512-ct3ltplN8I9fOwUd8GrP8UQixwff129BkEtuWDKL5W45cQuLd19xqmTLu5ge78YDm/fdje6FMt0hGOhl0lii3A==
   dependencies:
     "@types/validator" "^13.7.10"
@@ -4891,10 +4891,10 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-swagger-ui-dist@5.4.2:
-  version "5.4.2"
-  resolved "https://registry.npmjs.org/swagger-ui-dist/-/swagger-ui-dist-5.4.2.tgz"
-  integrity sha512-vT5QxP/NOr9m4gLZl+SpavWI3M9Fdh30+Sdw9rEtZbkqNmNNEPhjXas2xTD9rsJYYdLzAiMfwXvtooWH3xbLJA==
+swagger-ui-dist@5.9.0:
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-5.9.0.tgz#d52b6cf52fd0a8e6930866c402aaa793fe4e3f76"
+  integrity sha512-NUHSYoe5XRTk/Are8jPJ6phzBh3l9l33nEyXosM17QInoV95/jng8+PuSGtbD407QoPf93MH3Bkh773OgesJpA==
 
 symbol-observable@4.0.0:
   version "4.0.0"

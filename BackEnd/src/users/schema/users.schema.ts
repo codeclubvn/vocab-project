@@ -14,6 +14,8 @@ export interface IUsers extends Document {
   age: String | null;
   Created_at: Date | null;
   avt: String | null;
+  birthday: String | null;
+  uid: String | null;
   updated_at: Date | null;
   password: String | null;
   strek: String | null;
@@ -30,26 +32,28 @@ export interface IUsers extends Document {
 
 const UsersSchema: Schema = new Schema(
   {
-    full_name: { type: String },
+    uid: { type: String },
+    full_name: { type: String, required: true },
     age: { type: String },
-    avt: { type: String },
+    avt: {
+      type: String,
+      default:
+        'https://drive.google.com/uc?id=1Dp7JlD7y6v96Ve3O9hxPkUR0mmMhPBmW&export=download',
+    },
     password: { type: String },
-    strek: { type: String },
-    nick_name: { type: String },
+    strek: { type: Number, default: 0 },
+    birthday: { type: String },
     access_token: { type: String },
     gender: { type: String },
     address: { type: String },
     rank: { type: String },
     email: { type: String, unique: true },
-    score: { type: Number },
+    score: { type: Number, default: 0 },
     level: { type: String },
-    role: [
-      {
-        type: String,
-        default: [ROLE_PERMISSION.USER],
-        enum: ['user', ' admin', ' card'],
-      },
-    ],
+    role: {
+      type: Array,
+      default: ROLE_PERMISSION.USER,
+    },
   },
   {
     timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
@@ -60,6 +64,7 @@ const UsersSchema: Schema = new Schema(
 
 //có 2 cách sài model nhé
 export const UsersModel = model<IUsers>('Users', UsersSchema);
+
 export const UserProvide: string = 'User';
 export const usersProvider = [
   {

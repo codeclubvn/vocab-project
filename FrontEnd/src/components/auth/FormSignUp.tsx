@@ -14,7 +14,7 @@ function FormSignUp(props :FormProps) {
   return (
     <form >
       <div className='block'>
-        <label className='block text-sm font-medium text-gray-900 dark:text-white mb-2 text-[#586380]'
+        <label className='block text-sm font-medium dark:text-white mb-2 text-[#586380]'
           htmlFor='date-of-birth'
         >
           Ngày sinh

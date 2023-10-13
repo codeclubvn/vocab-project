@@ -8,24 +8,22 @@ interface InputProps extends React.ComponentPropsWithoutRef<"input"> {
   style?: React.CSSProperties
 }
 
-const SearchInput = (props: InputProps) => {
+const SearchInput = ({
+  placeholder = 'Search',
+  style = {
+    width: '30vw',
+    maxWidth: '400px',
+    height: '3rem'
+  }
+}: InputProps) => {
   return (
-    <TextField.Root style={props.style} >
+    <TextField.Root style={style} >
       <TextField.Slot>
         <MagnifyingGlassIcon />
       </TextField.Slot>
-      <TextField.Input placeholder={props.placeholder} style={{ height: '100%' }} />
+      <TextField.Input placeholder={placeholder} style={{ height: '100%' }} />
     </TextField.Root>
   )
-}
-
-SearchInput.defaultProps = {
-  placeholder: 'Search',
-  style: {
-    width: '30vw',
-    maxWith: '400px',
-    height: '3rem',
-  }
 }
 
 export default SearchInput

@@ -1,5 +1,3 @@
-
-
 interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   className: string,
   isLoading?: boolean,
@@ -21,8 +19,7 @@ export default function Button({
   return (
     <button className={`${newClassName}`} disabled={disabled} {...rest}>
       {isLoading && (
-        <svg
-          aria-hidden='true'
+        <svg aria-hidden='true'
           className='mr-2 h-4 w-4 animate-spin fill-white text-gray-200'
           viewBox='0 0 100 101'
           fill='none'

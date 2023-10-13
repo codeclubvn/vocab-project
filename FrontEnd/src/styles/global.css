@@ -75,6 +75,11 @@
     @apply w-full bg-[var(--bg-color-secondary)];
   }
 
+  .collection-header {
+    @apply w-full py-6 flex flex-col;
+
+  }
+
 
 }
 
@@ -84,6 +89,10 @@
   .container {
     @apply mx-auto px-4;
     @apply max-w-[1280px];
+  }
+
+  .gap-navbar {
+    @apply mt-[var(--navbar-height)] mb-[8rem] md:mb-[0rem];
   }
 
   .bg-primary {

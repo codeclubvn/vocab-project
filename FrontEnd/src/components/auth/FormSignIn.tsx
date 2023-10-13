@@ -2,16 +2,18 @@
 import { Button } from '@radix-ui/themes'
 import { InputSignIn } from '../common/Input'
 import Link from 'next/link'
-
 import React, { FC } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { cn } from 'react-swisskit'
 import './form.css'
-interface FormSignInProps {
-  className?: string
+
+interface FormProps {
+  className?: string,
+  onClick?: () => void,
 }
-const FormSignIn: FC<FormSignInProps> = ({ className = '' }) => {
+
+const FormSignIn: FC<FormProps> = ({ className = '' }) => {
   const formik = useFormik({
     initialValues: {
       email: '',

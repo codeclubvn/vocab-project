@@ -1,5 +1,5 @@
 import Footer from "./Footer";
 
-export{
+export {
   Footer
 }

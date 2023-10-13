@@ -1,9 +1,8 @@
 "use client"
 import ButtonSocialAuthen from '@/components/common/Button/ButtonSocialAuthen';
-import { GoogleIcon, FacebookIcon, NotionIcon } from '@/components/common/Icons';
 import { Link, Theme } from '@radix-ui/themes';
 import Authentication from "@/services/authen"
-import FormSignUp from '@/components/Form/FormSignUp';
+import FormSignUp from '@/components/auth/FormSignUp';
 
 export default function Page() {
 
@@ -34,9 +33,9 @@ export default function Page() {
               </Link>
             </div>
             <div className='flex flex-col w-full mb-8'>
-              <ButtonSocialAuthen description="Đăng ký với Google" onClick={() => Authentication.signGoogle(handleSignUpWithSocialAccount)} icon={<GoogleIcon className='inline-block w-6 h-6 mr-2 mb-1' />} />
-              <ButtonSocialAuthen description="Đăng ký với Facebook" onClick={() => Authentication.signFacebook(handleSignUpWithSocialAccount)} icon={<FacebookIcon className='inline-block w-6 h-6 mr-2 mb-1' />} />
-              <ButtonSocialAuthen description="Đăng ký với Notion" onClick={() => Authentication.signGithub(handleSignUpWithSocialAccount)} icon={<NotionIcon className='inline-block w-6 h-6 mr-2 mb-1' />} />
+              <ButtonSocialAuthen description="Đăng ký với Google" onClick={() => Authentication.signGoogle(handleSignUpWithSocialAccount)} icon={<img src="/assets/icons/google.svg" alt='Login with Social Media' width={6} height={6} className='inline-block w-6 h-6 mr-2 mb-1' />} />
+              <ButtonSocialAuthen description="Đăng ký với Facebook" onClick={() => Authentication.signFacebook(handleSignUpWithSocialAccount)} icon={<img src="/assets/icons/facebook.svg" alt='Login with Social Media' width={6} height={6} className='inline-block w-6 h-6 mr-2 mb-1' />} />
+              <ButtonSocialAuthen description="Đăng ký với Notion" onClick={() => Authentication.signGithub(handleSignUpWithSocialAccount)} icon={<img src="/assets/icons/notion.svg" alt='Login with Social Media' width={6} height={6} className='inline-block w-6 h-6 mr-2 mb-1' />} />
             </div>
             <div className='relative inline-flex items-center justify-center w-full'>
               <hr className='w-full h-px  bg-gray-200 border-0 dark:bg-gray-700' />

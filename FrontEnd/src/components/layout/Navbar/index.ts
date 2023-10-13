@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 
-
-export{
+export {
   Navbar
 }
+

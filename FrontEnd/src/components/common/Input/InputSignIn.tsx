@@ -1,46 +1,63 @@
 'use client'
 
-interface InputProps extends React.ComponentPropsWithoutRef<"input"> {
-  type?: string,
-  isDown?: boolean,
-  className?: string,
-  classNameLabel?: string,
-  placeholder?: string,
-  title?: string,
+import { FC } from 'react'
+
+interface InputProps extends React.ComponentPropsWithoutRef<'input'> {
+  type?: string
+  isDown?: boolean
+  className?: string
+  classNameLabel?: string
+  placeholder?: string
+  title?: string
+  value?: string
+  handleChange(e: React.ChangeEvent<any>)
+  error?: string
 }
 
-const InputSignIn = (props: InputProps) => {
+const InputSignIn: FC<InputProps> = ({
+  type = 'text',
+  isDown = false,
+  className = '',
+  classNameLabel = '',
+  placeholder = 'Vui lòng nhập trường này',
+  title = '',
+  value,
+  handleChange,
+  error,
+}) => {
   return (
     <div>
-      {props.isDown ? '' : <label
-        htmlFor='default-input'
-        className={`block my-2 font-medium text-gray-900 dark:text-white ${props.classNameLabel}`}
-      >
-        {props.title}
-      </label>}
+      {isDown ? (
+        ''
+      ) : (
+        <label
+          htmlFor={`default-input-${title}`}
+          className={`block my-2 font-medium text-gray-900 dark:text-white ${classNameLabel}`}
+        >
+          {title}
+        </label>
+      )}
       <input
-        type={props.type}
-        id='default-input'
-        className={`${props.className} bg-gray-50 rounded-lg w-full dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white placeholder-black-500 placeholder-opacity-100 text-[#1a1d28]`}
-        placeholder={props.placeholder}
+        type={type}
+        value={value}
+        onChange={handleChange}
+        id={`default-input-${title}`}
+        className={`${className} bg-gray-50 rounded-lg w-full dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white placeholder-black-500 placeholder-opacity-100 text-[#1a1d28]`}
+        placeholder={placeholder}
       />
-      {props.isDown ? <label
-        htmlFor='default-input'
-        className={`block my-2 font-medium text-gray-900 dark:text-white ${props.classNameLabel}`}
-      >
-        {props.title}
-      </label> : ''}
+      <p className='text-red-500 text-sm hidden'>{error || ''}</p>
+      {isDown ? (
+        <label
+          htmlFor={`default-input-${title}`}
+          className={`block my-2 font-medium text-gray-900 dark:text-white ${classNameLabel}`}
+        >
+          {title}
+        </label>
+      ) : (
+        ''
+      )}
     </div>
   )
-}
-
-InputSignIn.defaultProps = {
-  type: 'text',
-  isDown: false,
-  className: '',
-  classNameLabel: '',
-  placeholder: '',
-  title: '',
 }
 
 export default InputSignIn

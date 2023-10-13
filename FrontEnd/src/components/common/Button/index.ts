@@ -1,9 +1,13 @@
 import Button from "./Button";
 import ButtonCallToAction from "./ButtonCallToAction";
 import ButtonSocialAuthen from "./ButtonSocialAuthen";
+import ButtonCreateCollection from "./ButtonCreateCollection";
+import ButtonImportCollection from "./ButtonImportCollection";
 
 export {
-  Button, 
+  Button,
   ButtonCallToAction,
-  ButtonSocialAuthen
+  ButtonSocialAuthen,
+  ButtonCreateCollection,
+  ButtonImportCollection,
 };

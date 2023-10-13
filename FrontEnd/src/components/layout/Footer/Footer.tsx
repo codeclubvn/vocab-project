@@ -1,5 +1,4 @@
-import { FacebookIcon, TwitterIcon, NotionIcon } from "@/components/common/Icons"
-
+import Image from "next/image"
 
 const Footer = () => {
   return (
@@ -8,11 +7,12 @@ const Footer = () => {
         <h1>@Copyright 2023</h1>
       </div>
       <div className="p-4 flex items-center">
-        <FacebookIcon className="h-[20px] w-[20px] mr-4" />
-        <TwitterIcon className="h-[20px] w-[20px] mr-4" />
-        <NotionIcon className="h-[20px] w-[20px] mr-4" />
+        <Image src="/assets/icons/facebook.svg" width={20} height={20} alt="Notion" className="mr-4" />
+        <Image src="/assets/icons/twitter.svg" width={20} height={20} alt="Notion" className="mr-4" />
+        <Image src="/assets/icons/notion.svg" width={20} height={20} alt="Notion" className="mr-4" />
       </div>
-    </footer>)
+    </footer>
+  )
 }
 
 export default Footer

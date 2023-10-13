@@ -1,14 +1,19 @@
 import { Button } from '@radix-ui/themes'
 import { InputSignIn } from '../common/Input'
 import Link from 'next/link'
-interface FormProps extends React.ComponentPropsWithoutRef<"form"> {
-  className?: string
+
+interface FormProps {
+  className?: string ,
+  onClick?: () => void,
 }
 
-function FormSignIn(props: FormProps) {
+function FormSignIn({
+  className,
+  onClick,
+}: FormProps) {
 
   return (
-    <form className={` ${props.className}`}>
+    <form className={` ${className}`}>
       <InputSignIn
         isDown={true}
         classNameLabel='text-sm'

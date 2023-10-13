@@ -1,13 +1,14 @@
 import { Theme } from '@radix-ui/themes';
-import { Navbar } from "@/components/layout/Navbar"
 import { SectionHome, SectionCallToAction, SectionFeedBack } from "@/components/layout/Section"
-import { Footer } from "@/components/layout/Footer"
+import { Footer } from '@/components/layout/Footer';
+import { Navbar } from '@/components/layout/Navbar';
+
 
 export default function Page() {
   return <>
     <Theme>
       <Navbar />
-      <div className='mt-[var(--navbar-height)] mb-[8rem] md:mb-[0rem]' />
+      <div className='gap-navbar' />
       <SectionHome
         route='/signup'
         title='Magically transform your notes with AI'

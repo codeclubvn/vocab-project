@@ -9,38 +9,36 @@ interface InputProps extends React.ComponentPropsWithoutRef<"input"> {
   title?: string,
 }
 
-const InputSignIn = (props: InputProps) => {
+const InputSignIn = ({
+  type = 'text',
+  isDown = false,
+  className = '',
+  classNameLabel = '',
+  placeholder = '',
+  title = '',
+}: InputProps) => {
   return (
     <div>
-      {props.isDown ? '' : <label
+      {isDown ? '' : <label
         htmlFor='default-input'
-        className={`block my-2 font-medium text-gray-900 dark:text-white ${props.classNameLabel}`}
+        className={`block my-2 font-medium text-gray-900 dark:text-white ${classNameLabel}`}
       >
-        {props.title}
+        {title}
       </label>}
       <input
-        type={props.type}
+        type={type}
         id='default-input'
-        className={`${props.className} bg-gray-50 rounded-lg w-full dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white placeholder-black-500 placeholder-opacity-100 text-[#1a1d28]`}
-        placeholder={props.placeholder}
+        className={`${className} bg-gray-50 rounded-lg w-full dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white placeholder-black-500 placeholder-opacity-100 text-[#1a1d28]`}
+        placeholder={placeholder}
       />
-      {props.isDown ? <label
+      {isDown ? <label
         htmlFor='default-input'
-        className={`block my-2 font-medium text-gray-900 dark:text-white ${props.classNameLabel}`}
+        className={`block my-2 font-medium text-gray-900 dark:text-white ${classNameLabel}`}
       >
-        {props.title}
+        {title}
       </label> : ''}
     </div>
   )
-}
-
-InputSignIn.defaultProps = {
-  type: 'text',
-  isDown: false,
-  className: '',
-  classNameLabel: '',
-  placeholder: '',
-  title: '',
 }
 
 export default InputSignIn

@@ -3,7 +3,7 @@ import { ButtonCallToAction } from "@/components/common/Button";
 import { SearchInput } from "@/components/common/Input";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import Link from "next/link";
-import { HambugerIcon } from "@/components/common/Icons/HambugerIcon";
+import Image from "next/image";
 
 const Navbar = () => {
 
@@ -11,9 +11,9 @@ const Navbar = () => {
     <NavigationMenu.Root className="navbar">
       <div className="container h-[100%] flex justify-between items-center">
         <div className="flex items-center">
-          <img src="/assets/quizletTablet.svg" alt="Logo" className="hidden lg:block h-[1.5rem] w-full" />
-          <HambugerIcon className="lg:hidden h-[30px] w-[30px] cursor-pointer mr-4" />
-          <img src="/assets/quizletMobile.svg" alt="Logo" className="block lg:hidden" />
+          <Image src="/quizletTablet.svg" alt="Logo" className="hidden lg:block h-[1.5rem] w-full" width={20} height={20} />
+          <Image src="/assets/icons/hambuger.svg" alt="Navigation" className="lg:hidden h-[30px] w-[30px] cursor-pointer mr-4" width={20} height={20} />
+          <Image src="/quizletMobile.svg" alt="Logo" className="block lg:hidden" width={20} height={20} />
         </div>
         <div className="hidden md:flex items-center">
           <Link href={"/"} className="lg:mr-4 uppercase text-sm whitespace-nowrap">

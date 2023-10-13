@@ -9,7 +9,6 @@ import Authentication from '@/services/authen'
 
 export default function Page() {
   const handleSignInWithFirebase = (response: any) => {
-    console.log(response)
     userApi.addFireBase(response.user)
   }
 

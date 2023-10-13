@@ -22,7 +22,6 @@ const firebaseConfig = {
   measurementId: 'G-G05WT46T62',
 }
 
-
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp()
 export const dbFirebase = getFirestore()
 export const storageFirebase = getStorage(app)
@@ -37,7 +36,7 @@ class Authentication {
       .then((account) => {
         dataCallback(account)
       })
-      .catch(() => { })
+      .catch(() => {})
   }
   signGoogle(dataCallback: (re: any) => void) {
     const provider = new GoogleAuthProvider()
@@ -45,7 +44,7 @@ class Authentication {
       .then((account) => {
         dataCallback(account)
       })
-      .catch(() => { })
+      .catch(() => {})
   }
   signGithub(dataCallback: (re: any) => void) {
     const provider = new GithubAuthProvider()
@@ -56,6 +55,9 @@ class Authentication {
       .catch(() => {
         console.log('Không thể kết nối bên thứ ba!')
       })
+  }
+  renderDataUser(account: any) {
+    return account
   }
   handleLogout() {
     signOut(getAuth())

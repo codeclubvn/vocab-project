@@ -11,9 +11,9 @@ export default function Page() {
       <Theme>
         <Navbar />
         <div className='mt-[var(--navbar-height)] mb-[8rem] md:mb-[0rem]' />
-        <h1 className='ml-36 mt-[120px] text-3xl'>DANH SACH KHOA HOC</h1>
-        <div className='flex items-center flew-grow mt-10'>
-          <Category className='container basis-1/4' />
+        <h1 className='ml-4 md:ml-44 lg:ml-52 mt-[100px] text-3xl'>DANH SACH KHOA HOC</h1>
+        <div className='md:flex flew-grow mt-10'>
+          <Category className='basis-1/3' />
           <div className='basis-1/2'>
             <CardCourse title='Khoa 1' numberOf={15000} author='ABC'/>
             <CardCourse title='Khoa 1' numberOf={15000} author='ABC'/>

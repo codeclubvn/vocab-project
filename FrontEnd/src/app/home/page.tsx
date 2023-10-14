@@ -1,8 +1,8 @@
-import { Theme,Heading, Grid, Text } from '@radix-ui/themes';
+import { Theme,Heading, Grid, Text, Card, Flex, Avatar, Box } from '@radix-ui/themes';
 import { Navbar } from "@/components/layout/Navbar" 
 import { Footer } from "@/components/layout/Footer"
 import '@radix-ui/themes/styles.css'; 
-import { Button } from '@/components/common/Button';
+import { Button } from '@/components/common/Button'; 
 
 export default function Page() {
   return (
@@ -124,7 +124,101 @@ export default function Page() {
                         Streak
                       </div>
                       <div className='rank'>
-                        Rank
+                        <Heading className='capitalize'>Bảng xếp hạng</Heading>
+                        <div className='rank-list'>
+                          <div className='mt-[25px]'></div>
+                          <Card style={{ maxWidth: 240 }}>
+                            <Flex gap="4" align="center">
+                              <Avatar
+                                size="4"
+                                src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
+                                radius="full"
+                                fallback="T"
+                              />
+                              <Box>
+                                <Text as="div" size="3" weight="bold">
+                                  User name
+                                </Text>
+                                <Text as="div" size="3" color="gray">
+                                  Scores
+                                </Text>
+                              </Box>
+                            </Flex>
+                          </Card>    
+                          
+                          <Card style={{ maxWidth: 240, marginTop: '10px' }}>
+                            <Flex gap="4" align="center">
+                              <Avatar
+                                size="4"
+                                src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
+                                radius="full"
+                                fallback="T"
+                              />
+                              <Box>
+                                <Text as="div" size="3" weight="bold">
+                                  User name
+                                </Text>
+                                <Text as="div" size="3" color="gray">
+                                  Scores
+                                </Text>
+                              </Box>
+                            </Flex>
+                          </Card>     
+                          <Card style={{ maxWidth: 240, marginTop: '10px' }}>
+                            <Flex gap="4" align="center">
+                              <Avatar
+                                size="4"
+                                src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
+                                radius="full"
+                                fallback="T"
+                              />
+                              <Box>
+                                <Text as="div" size="3" weight="bold">
+                                  User name
+                                </Text>
+                                <Text as="div" size="3" color="gray">
+                                  Scores
+                                </Text>
+                              </Box>
+                            </Flex>
+                          </Card>   
+                          <Card style={{ maxWidth: 240, marginTop: '10px' }}>
+                            <Flex gap="4" align="center">
+                              <Avatar
+                                size="4"
+                                src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
+                                radius="full"
+                                fallback="T"
+                              />
+                              <Box>
+                                <Text as="div" size="3" weight="bold">
+                                  User name
+                                </Text>
+                                <Text as="div" size="3" color="gray">
+                                  Scores
+                                </Text>
+                              </Box>
+                            </Flex>
+                          </Card>   
+                          <Card style={{ maxWidth: 240, marginTop: '10px' }}>
+                            <Flex gap="4" align="center">
+                              <Avatar
+                                size="4"
+                                src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
+                                radius="full"
+                                fallback="T"
+                              />
+                              <Box>
+                                <Text as="div" size="3" weight="bold">
+                                  User name
+                                </Text>
+                                <Text as="div" size="3" color="gray">
+                                  Scores
+                                </Text>
+                              </Box>
+                            </Flex>
+                          </Card>   
+                        </div>
                       </div>
                   </div>
                 </div>

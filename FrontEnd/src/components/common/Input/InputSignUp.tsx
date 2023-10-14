@@ -16,6 +16,7 @@ const InputSignUp = ({
   classNameLabel = '',
   placeholder = '',
   title = '',
+  ...props
 }: InputProps) => {
   return (
     <div>
@@ -34,6 +35,7 @@ const InputSignUp = ({
         id='default-input'
         className={`${className} bg-gray-50 rounded-lg  dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white placeholder-black-500 placeholder-opacity-100 text-[#1a1d28] font-medium`}
         placeholder={placeholder}
+        {...props}
       />
       {isDown ? (
         <label

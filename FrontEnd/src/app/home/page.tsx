@@ -2,15 +2,16 @@ import { Theme,Heading, Grid, Text, Card, Flex, Avatar, Box } from '@radix-ui/th
 import { Navbar } from "@/components/layout/Navbar" 
 import { Footer } from "@/components/layout/Footer"
 import '@radix-ui/themes/styles.css'; 
-import { Button } from '@/components/common/Button'; 
+import { Button } from '@/components/common/Button';
+import { CardCourse } from '@/components/common/Card';
 
 export default function Page() {
   return (
     <>
         <Theme>
             <Navbar /> 
-                <div className='mt-[var(--navbar-height)] mb-[8rem] md:mb-[0rem]' /> 
-                <div className='grid grid-cols-4 gap-[100px] mx-[80px] mt-[147px] w-100'>
+                <div className='mt-[var(--navbar-height)] mb-[8rem] max-md:mb-[0rem]' /> 
+                <div className='grid grid-cols-4 gap-[100px] mx-[80px] mt-[147px] w-100 max-md:grid-cols-1 max-md:mx-[20px] max-md:gap-0'>
                   <div className='course col-span-3'>
                     <div className='your-course'>
                       <div className='course-header flex justify-between items-center '>
@@ -24,62 +25,10 @@ export default function Page() {
                         </div> 
                       </div>
 
-                      <div className='course-body mt-[27px]'> 
-                          <div className='course-item grid grid-cols-4 gap-[30px] mt-[20px]'>
-                            <img src='https://assets.quizlet.com/a/j/dist/app/i/homepage/whats_new/search.644f93633253876.png' alt='course-image'/>
-                            <div className='course-item-detail col-span-3'>
-                              <div className='course-item-header flex justify-between items-center'>
-                                <Heading>Course name</Heading>
-                                <Button className='course-item-option-btn mx-[5px] text-lg font-bold'>:</Button> 
-                              </div>
-
-                              <div className='processing mt-[10px] flex gap-[16px]'>
-                                <div className='percentage'>
-                                  0%
-                                </div>
-                                <div className='number-words'>
-                                  0/15 Từ đang học
-                                </div>
-                              </div>
-                            </div>   
-                          </div>
-                          <div className='course-item grid grid-cols-4 gap-[30px] mt-[20px]'>
-                            <img src='https://assets.quizlet.com/a/j/dist/app/i/homepage/whats_new/search.644f93633253876.png' alt='course-image'/>
-                            <div className='course-item-detail col-span-3'>
-                              <div className='course-item-header flex justify-between items-center'>
-                                <Heading>Course name</Heading>
-                                <Button className='course-item-option-btn mx-[5px] text-lg font-bold'>:</Button> 
-                              </div>
-
-                              <div className='processing mt-[10px] flex gap-[16px]'>
-                                <div className='percentage'>
-                                  0%
-                                </div>
-                                <div className='number-words'>
-                                  0/15 Từ đang học
-                                </div>
-                              </div>
-                            </div>   
-                          </div>
-                          <div className='course-item grid grid-cols-4 gap-[30px] mt-[20px]'>
-                            <img src='https://assets.quizlet.com/a/j/dist/app/i/homepage/whats_new/search.644f93633253876.png' alt='course-image'/>
-                            <div className='course-item-detail col-span-3'>
-                              <div className='course-item-header flex justify-between items-center'>
-                                <Heading>Course name</Heading>
-                                <Button className='course-item-option-btn mx-[5px] text-lg font-bold'>:</Button> 
-                              </div>
-
-                              <div className='processing mt-[10px] flex gap-[16px]'>
-                                <div className='percentage'>
-                                  0%
-                                </div>
-                                <div className='number-words'>
-                                  0/15 Từ đang học
-                                </div>
-                              </div>
-                            </div>   
-                          </div>
-                           
+                      <div className='course-body mt-[27px]'>    
+                        <CardCourse title={'Course name'} className={'mt-[20px]'} wordLearnt={150} totalWords={1500}></CardCourse>
+                        <CardCourse title={'Course name'} className={'mt-[20px]'} wordLearnt={150} totalWords={1500}></CardCourse>
+                        <CardCourse title={'Course name'} className={'mt-[20px]'} wordLearnt={150} totalWords={1500}></CardCourse> 
                       </div>
                     </div>  
 
@@ -88,136 +37,131 @@ export default function Page() {
                     
                     <div className='suggest-course'>
                         <Heading>Đề xuất</Heading>
-                        <div className='grid grid-cols-3 gap-[20px]'>
-                          <div className='course-item grid grid-cols-2 gap-[10px] mt-[20px]'>
-                              <img src='https://assets.quizlet.com/a/j/dist/app/i/homepage/whats_new/search.644f93633253876.png' alt='course-image'/>
-                              <div className='course-item-detail '>
-                                <div className='course-item-header flex justify-between items-center'>
-                                  <Heading size='4'>Course name</Heading>
-                                </div> 
-                                <Text className='line-clamp-2' as='p' size='2'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quos nihil praesentium autem doloribus veritatis facilis neque vitae labore quo et, explicabo quibusdam fugit, assumenda maxime accusamus quod? Optio, vitae.</Text>
-                              </div>   
-                            </div> 
-                          <div className='course-item grid grid-cols-2 gap-[10px] mt-[20px]'>
-                              <img src='https://assets.quizlet.com/a/j/dist/app/i/homepage/whats_new/search.644f93633253876.png' alt='course-image'/>
-                              <div className='course-item-detail '>
-                                <div className='course-item-header flex justify-between items-center'>
-                                  <Heading size='4'>Course name</Heading>
-                                </div> 
-                                <Text className='line-clamp-2' as='p' size='2'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quos nihil praesentium autem doloribus veritatis facilis neque vitae labore quo et, explicabo quibusdam fugit, assumenda maxime accusamus quod? Optio, vitae.</Text>
-                              </div>   
-                            </div> 
-                          <div className='course-item grid grid-cols-2 gap-[10px] mt-[20px]'>
-                              <img src='https://assets.quizlet.com/a/j/dist/app/i/homepage/whats_new/search.644f93633253876.png' alt='course-image'/>
-                              <div className='course-item-detail '>
-                                <div className='course-item-header flex justify-between items-center'>
-                                  <Heading size='4'>Course name</Heading>
-                                </div> 
-                                <Text className='line-clamp-2' as='p' size='2'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quos nihil praesentium autem doloribus veritatis facilis neque vitae labore quo et, explicabo quibusdam fugit, assumenda maxime accusamus quod? Optio, vitae.</Text>
-                              </div>   
-                            </div> 
+                        <div className='mt-[29px] grid grid-cols-3 gap-[20px] max-md:grid-cols-2'>   
+                          <CardCourse title="Course name" description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aspernatur voluptates consequuntur obcaecati, consectetur eveniet, recusandae in, optio suscipit reiciendis cum? Et, tempore accusamus nulla illo debitis neque delectus obcaecati.'></CardCourse>
+                          <CardCourse title="Course name" description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aspernatur voluptates consequuntur obcaecati, consectetur eveniet, recusandae in, optio suscipit reiciendis cum? Et, tempore accusamus nulla illo debitis neque delectus obcaecati.'></CardCourse>
+                          <CardCourse title="Course name" description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aspernatur voluptates consequuntur obcaecati, consectetur eveniet, recusandae in, optio suscipit reiciendis cum? Et, tempore accusamus nulla illo debitis neque delectus obcaecati.'></CardCourse>
                         </div>
                     </div>
                   </div>
-                  <div className='ranking'>
-                      <div className='streak'>
-                        Streak
+                  <div className='ranking max-md:grid max-md:grid-cols-2 max-md:w-full max-md:mt-[30px] max-sm:grid-cols-1'>
+                      <div className='flex justify-center streak max-sm:mb-[30px]'>
+                      <Heading  size='5' className='capitalize'>Streak</Heading> 
                       </div>
-                      <div className='rank'>
-                        <Heading className='capitalize'>Bảng xếp hạng</Heading>
-                        <div className='rank-list'>
-                          <div className='mt-[25px]'></div>
-                          <Card style={{ maxWidth: 240 }}>
-                            <Flex gap="4" align="center">
-                              <Avatar
-                                size="4"
-                                src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
-                                radius="full"
-                                fallback="T"
-                              />
-                              <Box>
-                                <Text as="div" size="3" weight="bold">
-                                  User name
-                                </Text>
-                                <Text as="div" size="3" color="gray">
-                                  Scores
-                                </Text>
-                              </Box>
-                            </Flex>
-                          </Card>    
-                          
-                          <Card style={{ maxWidth: 240, marginTop: '10px' }}>
-                            <Flex gap="4" align="center">
-                              <Avatar
-                                size="4"
-                                src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
-                                radius="full"
-                                fallback="T"
-                              />
-                              <Box>
-                                <Text as="div" size="3" weight="bold">
-                                  User name
-                                </Text>
-                                <Text as="div" size="3" color="gray">
-                                  Scores
-                                </Text>
-                              </Box>
-                            </Flex>
-                          </Card>     
-                          <Card style={{ maxWidth: 240, marginTop: '10px' }}>
-                            <Flex gap="4" align="center">
-                              <Avatar
-                                size="4"
-                                src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
-                                radius="full"
-                                fallback="T"
-                              />
-                              <Box>
-                                <Text as="div" size="3" weight="bold">
-                                  User name
-                                </Text>
-                                <Text as="div" size="3" color="gray">
-                                  Scores
-                                </Text>
-                              </Box>
-                            </Flex>
-                          </Card>   
-                          <Card style={{ maxWidth: 240, marginTop: '10px' }}>
-                            <Flex gap="4" align="center">
-                              <Avatar
-                                size="4"
-                                src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
-                                radius="full"
-                                fallback="T"
-                              />
-                              <Box>
-                                <Text as="div" size="3" weight="bold">
-                                  User name
-                                </Text>
-                                <Text as="div" size="3" color="gray">
-                                  Scores
-                                </Text>
-                              </Box>
-                            </Flex>
-                          </Card>   
-                          <Card style={{ maxWidth: 240, marginTop: '10px' }}>
-                            <Flex gap="4" align="center">
-                              <Avatar
-                                size="4"
-                                src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
-                                radius="full"
-                                fallback="T"
-                              />
-                              <Box>
-                                <Text as="div" size="3" weight="bold">
-                                  User name
-                                </Text>
-                                <Text as="div" size="3" color="gray">
-                                  Scores
-                                </Text>
-                              </Box>
-                            </Flex>
-                          </Card>   
+                      <div className='flex justify-center rank'>
+                        <div className='wrapper max-md: text-center'>
+                          <Heading  size='5' className='capitalize'>Bảng xếp hạng</Heading>
+                          <div className='rank-list'>
+                            <div className='mt-[25px]'></div>
+                            <Card>
+                              <Flex gap="4" align="center" justify='between'>
+                                <Flex align='center' gap='2'>
+                                  <Avatar
+                                    size="4"
+                                    src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
+                                    radius="full"
+                                    fallback="T"
+                                  /> 
+                                  <Text as="div" size="3" weight="bold">
+                                      User name
+                                  </Text> 
+                                </Flex>
+                                <Box> 
+                                  <Text as="div" size="3" color="gray">
+                                    Scores
+                                  </Text>
+                                </Box>
+                              </Flex>
+                            </Card>    
+
+                            
+                            <Card style={{  marginTop: '10px' }}>
+                              <Flex gap="4" align="center" justify='between'>
+                                <Flex align='center' gap='2'>
+                                  <Avatar
+                                    size="4"
+                                    src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
+                                    radius="full"
+                                    fallback="T"
+                                  /> 
+                                  <Text as="div" size="3" weight="bold">
+                                      User name
+                                  </Text> 
+                                </Flex>
+                                <Box> 
+                                  <Text as="div" size="3" color="gray">
+                                    Scores
+                                  </Text>
+                                </Box>
+                              </Flex>
+                            </Card>     
+
+                            
+                            <Card style={{  marginTop: '10px' }}>
+                              <Flex gap="4" align="center" justify='between'>
+                                <Flex align='center' gap='2'>
+                                  <Avatar
+                                    size="4"
+                                    src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
+                                    radius="full"
+                                    fallback="T"
+                                  /> 
+                                  <Text as="div" size="3" weight="bold">
+                                      User name
+                                  </Text> 
+                                </Flex>
+                                <Box> 
+                                  <Text as="div" size="3" color="gray">
+                                    Scores
+                                  </Text>
+                                </Box>
+                              </Flex>
+                            </Card>     
+
+                                                        
+                            <Card style={{  marginTop: '10px' }}>
+                              <Flex gap="4" align="center" justify='between'>
+                                <Flex align='center' gap='2'>
+                                  <Avatar
+                                    size="4"
+                                    src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
+                                    radius="full"
+                                    fallback="T"
+                                  /> 
+                                  <Text as="div" size="3" weight="bold">
+                                      User name
+                                  </Text> 
+                                </Flex>
+                                <Box> 
+                                  <Text as="div" size="3" color="gray">
+                                    Scores
+                                  </Text>
+                                </Box>
+                              </Flex>
+                            </Card>     
+
+                                                        
+                            <Card style={{  marginTop: '10px' }}>
+                              <Flex gap="4" align="center" justify='between'>
+                                <Flex align='center' gap='2'>
+                                  <Avatar
+                                    size="4"
+                                    src="https://cdn-icons-png.flaticon.com/512/219/219969.png"
+                                    radius="full"
+                                    fallback="T"
+                                  /> 
+                                  <Text as="div" size="3" weight="bold">
+                                      User name
+                                  </Text> 
+                                </Flex>
+                                <Box> 
+                                  <Text as="div" size="3" color="gray">
+                                    Scores
+                                  </Text>
+                                </Box>
+                              </Flex>
+                            </Card>    
+                          </div> 
                         </div>
                       </div>
                   </div>

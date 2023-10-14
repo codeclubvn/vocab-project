@@ -8,11 +8,8 @@ interface Props extends React.ComponentPropsWithoutRef<"div"> {
   id: any,
 }
 
-function CollectionCard({
-  id,
-}: Props) {
-
-  const { attributes, listeners, setNodeRef, transform, transition } = useSortable(id);
+function CollectionCard(props: Props) {
+  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: props.id });
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -21,10 +18,13 @@ function CollectionCard({
 
 
   return (
+    // <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+    //   HELLO {props.id}
+    // </div>
     <div ref={setNodeRef} style={style}>
       <div className="flex flex-col rounded-md bg-[#f2f2f2]">
         <div className="flex justify-between py-4 mx-6">
-          <span>{id}</span>
+          <span>{props.id}</span>
           <div className="flex">
             <button className="mr-4" {...attributes} {...listeners}>Drag handle⣿</button>
             <div>0</div>

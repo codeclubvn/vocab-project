@@ -30,7 +30,6 @@ export default function Category(props: CategoryProps) {
     }
   };
 
-  
 
   const category = Catalogues.map((name, idx) => {
     return (
@@ -43,23 +42,23 @@ export default function Category(props: CategoryProps) {
           onChange={handleClick}
           checked={isCheck.includes(idx.toString())}
         />
-        <span className='ml-2 md:ml-4 mt-1'>{name}</span>
+        <span className='ml-2 md:ml-0'>{name}</span>
       </div>
     )
   })
 
   return (
-    <div className={`ml-4 md:ml-52 ${props.className}`}>
-      <h2 className='h-min -mt-2 text-2xl'>CATEGORY</h2>
-      <div className="inline-flex flex-wrap gap-4 md:block">
-        <div className='md:my-5 flex items-center'>
+    <div className={`${props.className}`}>
+      <h2 className='h-min text-2xl'>CATEGORY</h2>
+      <div className="inline-flex flex-wrap md:gap-4 md:block">
+        <div className='md:my-4 flex items-center'>
           <InputSignUp
-            className='md:mr-2 w-5 h-5 inline-block text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 dark:bg-gray-600 dark:border-gray-500'
+            className='md:mr-2 w-5 h-5 inline-block text-blue-600 bg-gray-100 border-gray-300 cursor-pointer'
             type='checkbox'
             onChange={handleSelectAll}
             checked={isCheckAll}
           />
-          <span className='ml-2 md:ml-4 mt-1'>Tất cả</span>
+          <span className='ml-2 md:ml-0'>Tất cả</span>
         </div>
         {category}
       </div>

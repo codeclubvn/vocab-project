@@ -1,4 +1,4 @@
-import { Theme,Heading, Grid, Text, Card, Flex, Avatar, Box } from '@radix-ui/themes';
+import { Theme,Heading,  Text, Card, Flex, Avatar, Box } from '@radix-ui/themes';
 import { Navbar } from "@/components/layout/Navbar" 
 import { Footer } from "@/components/layout/Footer"
 import '@radix-ui/themes/styles.css'; 

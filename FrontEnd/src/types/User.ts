@@ -6,7 +6,7 @@ export interface User {
 }
 export interface IUserFireBase {
   displayName: string
-  email: String
-  photoURL: String
-  uid: String
+  email: string
+  photoURL: string
+  uid: string
 }

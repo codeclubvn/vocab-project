@@ -1,7 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { todoApi } from '.'
 
-
 export const keys = {
   all: ['todos'],
   details: () => [...keys.all, 'detail'],
@@ -9,7 +8,6 @@ export const keys = {
 }
 
 export const useTodoQuery = () => {
-  
   const queryKey = keys.all
   const queryClient = useQueryClient()
   const { data, isLoading, error } = useQuery(queryKey, todoApiApi.getAll)

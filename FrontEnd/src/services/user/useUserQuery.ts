@@ -1,4 +1,4 @@
-import { useMutation , useQueryClient } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { userApi } from '@/services/user'
 
 export const keys = {
@@ -14,7 +14,6 @@ export const useUserQuery = () => {
   const addMutation = useMutation(userApi.add, {
     onSuccess: () => queryClient.invalidateQueries(queryKey),
   })
-
 
   return {
     data,

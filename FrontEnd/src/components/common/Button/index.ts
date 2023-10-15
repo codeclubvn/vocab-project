@@ -1,8 +1,8 @@
-import Button from "./Button";
-import ButtonCallToAction from "./ButtonCallToAction";
-import ButtonSocialAuthen from "./ButtonSocialAuthen";
-import ButtonCreateCollection from "./ButtonCreateCollection";
-import ButtonImportCollection from "./ButtonImportCollection";
+import Button from './Button'
+import ButtonCallToAction from './ButtonCallToAction'
+import ButtonSocialAuthen from './ButtonSocialAuthen'
+import ButtonCreateCollection from './ButtonCreateCollection'
+import ButtonImportCollection from './ButtonImportCollection'
 
 export {
   Button,
@@ -10,4 +10,4 @@ export {
   ButtonSocialAuthen,
   ButtonCreateCollection,
   ButtonImportCollection,
-};
+}

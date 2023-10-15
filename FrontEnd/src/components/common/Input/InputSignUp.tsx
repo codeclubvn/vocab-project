@@ -1,6 +1,6 @@
 'use client'
 
-interface InputProps extends React.ComponentPropsWithoutRef<"input"> {
+interface InputProps extends React.ComponentPropsWithoutRef<'input'> {
   type: string
   isDown?: boolean
   className: string

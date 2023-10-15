@@ -1,11 +1,10 @@
-import { Theme } from '@radix-ui/themes';
-import { SectionHome, SectionCallToAction, SectionFeedBack } from "@/components/layout/Section"
-import { Footer } from '@/components/layout/Footer';
-import { Navbar } from '@/components/layout/Navbar';
-
+import { Theme } from '@radix-ui/themes'
+import { SectionHome, SectionCallToAction, SectionFeedBack } from '@/components/layout/Section'
+import { Footer } from '@/components/layout/Footer'
+import { Navbar } from '@/components/layout/Navbar'
 
 export default function Page() {
-  return <>
+  return (
     <Theme>
       <Navbar />
       <div className='gap-navbar' />
@@ -19,7 +18,7 @@ export default function Page() {
       />
       <SectionHome
         route='/signup'
-        isRightSide={true}
+        isRightSide
         title='Tính Năng 1'
         description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo a non numquam id dolorum accusantium unde voluptates ipsa eligendi! Quod, voluptates odit recusandae ipsam quos ratione temporibus officia commodi modi?'
         buttonTitle='Đăng ký ngay'
@@ -34,7 +33,7 @@ export default function Page() {
       />
       <SectionHome
         route='/extensions'
-        isRightSide={true}
+        isRightSide
         title='Tính Năng 3'
         description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo a non numquam id dolorum accusantium unde voluptates ipsa eligendi! Quod, voluptates odit recusandae ipsam quos ratione temporibus officia commodi modi?'
         buttonTitle='Cài đặt extension'
@@ -44,5 +43,5 @@ export default function Page() {
       <SectionCallToAction />
       <Footer />
     </Theme>
-  </>
+  )
 }

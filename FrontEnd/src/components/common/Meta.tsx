@@ -4,7 +4,7 @@ import { NextSeo } from 'next-seo'
 
 import { AppConfig } from '@/utils/constants/AppConfig'
 
-interface MetaProps extends React.ComponentPropsWithoutRef<"meta"> {
+interface MetaProps extends React.ComponentPropsWithoutRef<'meta'> {
   title: string
   description: string
   canonical?: string

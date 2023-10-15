@@ -1,7 +1,7 @@
-interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
-  className: string,
-  isLoading?: boolean,
-  leftIcon?: React.ReactElement,
+interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
+  className: string
+  isLoading?: boolean
+  leftIcon?: React.ReactElement
   rightIcon?: React.ReactElement
 }
 
@@ -14,12 +14,19 @@ export default function Button({
   children,
   ...rest
 }: ButtonProps) {
-  const newClassName = disabled ? className + ' cursor-not-allowed text-white bg-gray-300 border-none hover:bg-gray-300' : className
+  const newClassName = disabled
+    ? `${className} cursor-not-allowed text-white bg-gray-300 border-none hover:bg-gray-300`
+    : className
 
   return (
-    <button className={`${newClassName}`} disabled={disabled} {...rest}>
+    <button
+      className={`${newClassName}`}
+      disabled={disabled}
+      {...rest}
+    >
       {isLoading && (
-        <svg aria-hidden='true'
+        <svg
+          aria-hidden='true'
           className='mr-2 h-4 w-4 animate-spin fill-white text-gray-200'
           viewBox='0 0 100 101'
           fill='none'

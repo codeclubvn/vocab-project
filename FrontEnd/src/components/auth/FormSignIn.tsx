@@ -1,16 +1,17 @@
 'use client'
+
 import { Button } from '@radix-ui/themes'
-import { InputSignIn } from '../common/Input'
 import Link from 'next/link'
 import React, { FC } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { cn } from 'react-swisskit'
+import { InputSignIn } from '../common/Input'
 import './form.css'
 
 interface FormProps {
-  className?: string,
-  onClick?: () => void,
+  className?: string
+  onClick?: () => void
 }
 
 const FormSignIn: FC<FormProps> = ({ className = '' }) => {
@@ -34,7 +35,7 @@ const FormSignIn: FC<FormProps> = ({ className = '' }) => {
       className={className}
     >
       <InputSignIn
-        isDown={true}
+        isDown
         classNameLabel='text-sm'
         value={formik.values.email}
         handleChange={formik.handleChange}
@@ -47,7 +48,7 @@ const FormSignIn: FC<FormProps> = ({ className = '' }) => {
       />
 
       <InputSignIn
-        isDown={true}
+        isDown
         value={formik.values.password}
         handleChange={formik.handleChange}
         required
@@ -67,8 +68,8 @@ const FormSignIn: FC<FormProps> = ({ className = '' }) => {
       <div className='flex flex-col w-full my-8'>
         <Button
           variant='solid'
-          size={'2'}
-          radius={`full`}
+          size='2'
+          radius='full'
           type='submit'
           style={{
             padding: '2rem',

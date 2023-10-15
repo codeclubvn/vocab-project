@@ -1,12 +1,13 @@
 'use client'
+
 import {
   signInWithPopup,
   signOut,
   GoogleAuthProvider,
   GithubAuthProvider,
   FacebookAuthProvider,
+  getAuth,
 } from 'firebase/auth'
-import { getAuth } from 'firebase/auth'
 import { initializeApp, getApp, getApps } from 'firebase/app'
 import { getStorage } from 'firebase/storage'
 import { getFirestore } from 'firebase/firestore'

@@ -1,5 +1,5 @@
-import { IUserFireBase } from './../../types/User'
 import type { User } from '@/types'
+import { IUserFireBase } from '../../types/User'
 import axiosClient from '../fetcher/client'
 
 export const userApi = {

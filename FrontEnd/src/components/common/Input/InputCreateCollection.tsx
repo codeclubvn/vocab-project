@@ -1,13 +1,13 @@
 'use client'
 
-interface InputProps extends React.ComponentPropsWithoutRef<"input"> {
-  type?: string,
-  isDown?: boolean,
-  className?: string,
-  classNameInput?: string,
-  classNameLabel?: string,
-  placeholder?: string,
-  title?: string,
+interface InputProps extends React.ComponentPropsWithoutRef<'input'> {
+  type?: string
+  isDown?: boolean
+  className?: string
+  classNameInput?: string
+  classNameLabel?: string
+  placeholder?: string
+  title?: string
 }
 
 const InputCreateCollection = ({
@@ -19,7 +19,6 @@ const InputCreateCollection = ({
   placeholder = '',
   title = '',
 }: InputProps) => {
-
   return (
     <div className={`${className}`}>
       <input

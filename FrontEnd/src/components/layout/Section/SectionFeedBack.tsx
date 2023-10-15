@@ -1,22 +1,26 @@
-"use client"
-import { CardFeedBack } from '@/components/common/Card';
-import { Swiper, SwiperSlide } from 'swiper/react';
+'use client'
+
+import { CardFeedBack } from '@/components/common/Card'
+import { Swiper, SwiperSlide } from 'swiper/react'
 // import required modules
-import { Navigation, Autoplay } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules'
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
+import 'swiper/css'
+import 'swiper/css/navigation'
 
 function SectionFeedBack() {
   return (
     <section className='my-4 p-4 relative w-full border-t-[1px] border-solid border-[#646464]'>
-      <h1 className='uppercase font-medium text-center my-[3.5rem] text-[1.5rem]'>Đánh giá từ người dùng</h1>
+      <h1 className='uppercase font-medium text-center my-[3.5rem] text-[1.5rem]'>
+        Đánh giá từ người dùng
+      </h1>
       <Swiper
-        navigation={true} modules={[Navigation, Autoplay]}
+        navigation
+        modules={[Navigation, Autoplay]}
         slidesPerView={1}
         slidesPerGroup={1}
-        loop={true}
+        loop
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,

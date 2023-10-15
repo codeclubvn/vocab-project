@@ -1,4 +1,5 @@
 'use client'
+
 import { useState } from 'react'
 import { InputSignUp } from '../Input'
 
@@ -7,11 +8,16 @@ interface CategoryProps extends React.ComponentProps<'div'> {
 }
 
 export default function Category(props: CategoryProps) {
-  const Catalogues = ['TA Đi làm', 'TA Giao tiếp', 'Tham gia thi lấy chứng chỉ', 'TA du lịch', 'Khác']
+  const Catalogues = [
+    'TA Đi làm',
+    'TA Giao tiếp',
+    'Tham gia thi lấy chứng chỉ',
+    'TA du lịch',
+    'Khác',
+  ]
 
   const [isCheckAll, setIsCheckAll] = useState(false)
   const [isCheck, setIsCheck] = useState<(string | undefined)[]>([])
-
 
   const handleSelectAll = () => {
     setIsCheckAll(!isCheckAll)
@@ -23,13 +29,12 @@ export default function Category(props: CategoryProps) {
   }
 
   const handleClick = (e) => {
-    const { id, checked } = e.target;
-    setIsCheck([...isCheck, id]);
+    const { id, checked } = e.target
+    setIsCheck([...isCheck, id])
     if (!checked) {
-      setIsCheck(isCheck.filter(item => item !== id));
+      setIsCheck(isCheck.filter((item) => item !== id))
     }
-  };
-
+  }
 
   const category = Catalogues.map((name, idx) => {
     return (
@@ -50,7 +55,7 @@ export default function Category(props: CategoryProps) {
   return (
     <div className={`${props.className}`}>
       <h2 className='h-min text-2xl'>CATEGORY</h2>
-      <div className="inline-flex flex-wrap md:gap-4 md:block">
+      <div className='inline-flex flex-wrap md:gap-4 md:block'>
         <div className='md:my-4 flex items-center'>
           <InputSignUp
             className='md:mr-2 w-5 h-5 inline-block text-blue-600 bg-gray-100 border-gray-300 cursor-pointer'

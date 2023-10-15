@@ -1,17 +1,14 @@
-"use client"
-import CollectionHeader from "@/components/collection/create/CollectionHeader"
-import CollectionDnd from "@/components/collection/create/CollectionDnd"
+'use client'
+
+import CollectionHeader from '@/components/collection/create/CollectionHeader'
+import CollectionDnd from '@/components/collection/create/CollectionDnd'
 
 export default function Page() {
-
   return (
-    <div className="container">
-      <div className="gap-navbar"></div>
+    <div className='container'>
+      <div className='gap-navbar' />
       <CollectionHeader />
       <CollectionDnd />
     </div>
   )
-
-
 }
-

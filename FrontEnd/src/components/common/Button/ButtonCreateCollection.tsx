@@ -1,15 +1,10 @@
-interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
-  className?: string,
-  description?: string,
-  onClick?: () => void,
+interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
+  className?: string
+  description?: string
+  onClick?: () => void
 }
 
-function ButtonCreateCollection({
-  className,
-  description,
-  onClick,
-}: ButtonProps) {
-
+function ButtonCreateCollection({ className, description, onClick }: ButtonProps) {
   return (
     <button
       onClick={onClick}

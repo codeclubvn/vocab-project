@@ -1,7 +1,4 @@
-import CardFeedBack from "./CardFeedBack";
-import CardCourse from "./CardCourse";
+import CardFeedBack from './CardFeedBack'
+import CardCourse from './CardCourse'
 
-export {
-  CardFeedBack,
-  CardCourse
-};
+export { CardFeedBack, CardCourse }

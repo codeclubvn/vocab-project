@@ -1,4 +1,5 @@
 'use client'
+
 import { Theme } from '@radix-ui/themes'
 import { userApi } from '@/services/user'
 import ButtonSocialAuthen from '@/components/common/Button/ButtonSocialAuthen'
@@ -45,17 +46,41 @@ export default function Page() {
               <ButtonSocialAuthen
                 description='Đăng nhập với Google'
                 onClick={() => Authentication.signGoogle(handleSignInWithFirebase)}
-                icon={<Image src="/assets/icons/google.svg" alt='Login with google' width={6} height={6} className='inline-block w-6 h-6 mr-2 mb-1' />}
+                icon={
+                  <Image
+                    src='/assets/icons/google.svg'
+                    alt='Login with google'
+                    width={6}
+                    height={6}
+                    className='inline-block w-6 h-6 mr-2 mb-1'
+                  />
+                }
               />
               <ButtonSocialAuthen
                 description='Đăng nhập với Facebook'
                 onClick={() => Authentication.signFacebook(handleSignInWithFirebase)}
-                icon={<Image src="/assets/icons/facebook.svg" alt='Login with google' width={6} height={6} className='inline-block w-6 h-6 mr-2 mb-1' />}
+                icon={
+                  <Image
+                    src='/assets/icons/facebook.svg'
+                    alt='Login with google'
+                    width={6}
+                    height={6}
+                    className='inline-block w-6 h-6 mr-2 mb-1'
+                  />
+                }
               />
               <ButtonSocialAuthen
                 description='Đăng nhập với Notion'
                 onClick={() => Authentication.signGithub(handleSignInWithFirebase)}
-                icon={<Image src="/assets/icons/notion.svg" alt='Login with google' width={6} height={6} className='inline-block w-6 h-6 mr-2 mb-1' />}
+                icon={
+                  <Image
+                    src='/assets/icons/notion.svg'
+                    alt='Login with google'
+                    width={6}
+                    height={6}
+                    className='inline-block w-6 h-6 mr-2 mb-1'
+                  />
+                }
               />
             </div>
             <div className='relative inline-flex items-center justify-center w-full'>

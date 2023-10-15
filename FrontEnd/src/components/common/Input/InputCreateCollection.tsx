@@ -2,7 +2,6 @@
 
 interface InputProps extends React.ComponentPropsWithoutRef<'input'> {
   type?: string
-  isDown?: boolean
   className?: string
   classNameInput?: string
   classNameLabel?: string

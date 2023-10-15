@@ -11,7 +11,6 @@ import './form.css'
 
 interface FormProps {
   className?: string
-  onClick?: () => void
 }
 
 const FormSignIn: FC<FormProps> = ({ className = '' }) => {
@@ -80,7 +79,7 @@ const FormSignIn: FC<FormProps> = ({ className = '' }) => {
         </Button>
       </div>
       <div className='text-center text-base lg:text-[1.2rem] py-2.5 font-bold text-[#929292]'>
-        Don't have an account?
+        Dont have an account?
         <span>
           <Link
             className='pl-2 text-accent-0'

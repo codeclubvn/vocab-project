@@ -11,7 +11,7 @@ interface SelectProps extends React.ComponentPropsWithoutRef<'select'> {
   title?: string
   side?: any
   defaultValue?: any
-  listValue: Array<number | string>
+  listValue: Array<string>
 }
 
 const SelectComponent = (props: SelectProps) => {
@@ -33,7 +33,7 @@ const SelectComponent = (props: SelectProps) => {
       >
         <Select.Group>
           <Select.Label style={{ fontWeight: '600' }}>{props.title}</Select.Label>
-          {props.listValue.map((value: number | string, index) => {
+          {props.listValue.map((value: string, index) => {
             return (
               <Select.Item
                 key={`id-${index}`}

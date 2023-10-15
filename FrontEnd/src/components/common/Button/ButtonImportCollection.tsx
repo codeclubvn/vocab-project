@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   className?: string
   description?: string
@@ -10,7 +12,7 @@ function ButtonImportCollection({ className, description, onClick }: ButtonProps
       onClick={onClick}
       className={`${className} font-semibold p-1 px-4 rounded-lg border-[#586380] border-2 flex  items-center `}
     >
-      <img
+      <Image
         src='/assets/icons/plus.svg'
         width={25}
         height={25}

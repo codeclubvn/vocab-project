@@ -1,14 +1,15 @@
 'use client'
 
 import { Theme } from '@radix-ui/themes'
+import Link from 'next/link'
+import Image from 'next/image'
 import { userApi } from '@/services/user'
 import ButtonSocialAuthen from '@/components/common/Button/ButtonSocialAuthen'
-import Link from 'next/link'
 import FormSignIn from '@/components/auth/FormSignIn'
 import Authentication from '@/services/authen'
-import Image from 'next/image'
 
 export default function Page() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSignInWithFirebase = (response: any) => {
     userApi.addFireBase(response.user)
   }
@@ -20,7 +21,7 @@ export default function Page() {
           <h1 className='absolute w-2/3 text-[2.6em] max-w-[300px] mt-10 ml-10 font-bold z-10'>
             Smash sets in your sweats.
           </h1>
-          <img
+          <Image
             className='absolute object-cover top-0 bottom-0'
             src='https://assets.quizlet.com/_next/static/media/QZ_Auth_LightV2.d6b0ba3d.png'
             alt='avt'

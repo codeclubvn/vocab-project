@@ -1,6 +1,7 @@
 'use client'
 
 interface InputProps extends React.ComponentPropsWithoutRef<'input'> {
+  key: string | number
   type: string
   isDown?: boolean
   className: string
@@ -10,6 +11,7 @@ interface InputProps extends React.ComponentPropsWithoutRef<'input'> {
 }
 
 const InputSignUp = ({
+  key,
   type = 'text',
   isDown = false,
   className = '',

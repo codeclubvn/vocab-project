@@ -1,10 +1,10 @@
 'use client'
 
-import { ButtonCallToAction } from '@/components/common/Button'
-import { SearchInput } from '@/components/common/Input'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
 import Link from 'next/link'
 import Image from 'next/image'
+import { SearchInput } from '@/components/common/Input'
+import { ButtonCallToAction } from '@/components/common/Button'
 
 const Navbar = () => {
   return (

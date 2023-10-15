@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useId, useState } from 'react'
-import CollectionCard from '@/components/collection/create/CollectionCard'
 import {
   DndContext,
   closestCenter,
@@ -16,12 +15,10 @@ import {
   sortableKeyboardCoordinates,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable'
-import type { Active, UniqueIdentifier } from '@dnd-kit/core'
+import CollectionCard from '@/components/collection/create/CollectionCard'
 import CollectionAddCard from '@/components/collection/create/CollectionAddCard'
 
-type Props = {}
-
-function CollectionDnd({}: Props) {
+function CollectionDnd() {
   const id = useId()
   const [items, setItems] = useState(['1', '2', '3'])
   const sensors = useSensors(
@@ -34,10 +31,6 @@ function CollectionDnd({}: Props) {
       id={id}
       sensors={sensors}
       collisionDetection={closestCenter}
-      onDragStart={({ active }) => {
-        console.log('start')
-        console.log(active)
-      }}
       onDragEnd={handleDragEnd}
     >
       <SortableContext
@@ -51,7 +44,7 @@ function CollectionDnd({}: Props) {
           />
         ))}
       </SortableContext>
-      <CollectionAddCard id='4' />
+      <CollectionAddCard />
     </DndContext>
   )
 

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ButtonCallToAction } from '@/components/common/Button'
 
 interface SectionProps extends React.ComponentPropsWithoutRef<'section'> {
@@ -25,7 +26,7 @@ const SectionHome = ({
         <div className='container flex flex-wrap justify-center'>
           <div className='w-full md:w-1/2'>
             <div className='p-4'>
-              <img
+              <Image
                 src={image}
                 alt=''
                 className={`${imageClassName}`}
@@ -66,7 +67,7 @@ const SectionHome = ({
         </div>
         <div className='w-full md:w-1/2'>
           <div className='p-4'>
-            <img
+            <Image
               src={image}
               alt=''
               className={`${imageClassName}`}

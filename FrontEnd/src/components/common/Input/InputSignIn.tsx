@@ -1,5 +1,6 @@
 'use client'
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FC } from 'react'
 
 interface InputProps extends React.ComponentPropsWithoutRef<'input'> {

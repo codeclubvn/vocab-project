@@ -38,7 +38,10 @@ export default function Category(props: CategoryProps) {
 
   const category = Catalogues.map((name, idx) => {
     return (
-      <div className='my-5 flex items-center'>
+      <div
+        className='my-5 flex items-center'
+        key={idx}
+      >
         <InputSignUp
           key={idx}
           className='md:mr-2 w-5 h-5 inline-block text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 dark:bg-gray-600 dark:border-gray-500'
@@ -58,6 +61,7 @@ export default function Category(props: CategoryProps) {
       <div className='inline-flex flex-wrap md:gap-4 md:block'>
         <div className='md:my-4 flex items-center'>
           <InputSignUp
+            key={-1}
             className='md:mr-2 w-5 h-5 inline-block text-blue-600 bg-gray-100 border-gray-300 cursor-pointer'
             type='checkbox'
             onChange={handleSelectAll}

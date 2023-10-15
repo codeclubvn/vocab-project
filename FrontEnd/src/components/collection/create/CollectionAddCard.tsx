@@ -1,6 +1,4 @@
-interface Props extends React.ComponentPropsWithoutRef<'div'> {}
-
-function CollectionAddCard({}: Props) {
+function CollectionAddCard() {
   return (
     <div className='group cursor-pointer flex py-10 items-center rounded-md bg-[#f2f2f2]'>
       <div className='flex items-center justify-center w-full'>

@@ -1,1 +1,3 @@
-export * from './Select'
+import SelectComponent from './Select'
+
+export { SelectComponent }

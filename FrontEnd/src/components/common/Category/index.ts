@@ -1,1 +1,3 @@
-export * from './Category'
+import Category from './Category'
+
+export { Category }

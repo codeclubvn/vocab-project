@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface CardFeedBackProps {
   className: string
   title: string
@@ -14,7 +16,7 @@ const CardFeedBack = ({
   return (
     <div className={`pl-4 flex flex-col justify-center items-center ${className}`}>
       <div className='mb-4 h-[200px] w-[200px] rounded-full overflow-hidden'>
-        <img
+        <Image
           className='object-cover h-[100%] w-[100%]'
           src={image}
           alt={`This is a image of ${title}`}

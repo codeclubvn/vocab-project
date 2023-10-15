@@ -1,24 +1,15 @@
 import { Button } from '@radix-ui/themes'
 import React from 'react'
-import { generateNumberRange } from '@/helpers/generateNumberRange'
 import Link from 'next/link'
+import { generateNumberRange } from '@/helpers/generateNumberRange'
 import { InputSignUp } from '../common/Input'
 import SelectComponent from '../common/Select/Select'
 
-interface FormProps extends React.ComponentPropsWithoutRef<'form'> {
-  className?: string
-}
-
-function FormSignUp(props: FormProps) {
+function FormSignUp() {
   return (
     <form>
       <div className='block'>
-        <label
-          className='block text-sm font-medium dark:text-white mb-2 text-[#586380]'
-          htmlFor='date-of-birth'
-        >
-          Ngày sinh
-        </label>
+        <h1 className='block text-sm font-medium dark:text-white mb-2 text-[#586380]'>Ngày sinh</h1>
         <div className='flex gap-5 flex-wrap md:flex-nowrap'>
           <SelectComponent
             defaultValue='1'
@@ -47,6 +38,7 @@ function FormSignUp(props: FormProps) {
         </div>
       </div>
       <InputSignUp
+        key={1}
         classNameLabel='text-sm'
         title='Email'
         className='p-3 pl-4 text-base placeholder:text-base border-gray-30 border-solid border-[#586380] border-2 w-full'
@@ -54,6 +46,7 @@ function FormSignUp(props: FormProps) {
         type='text'
       />
       <InputSignUp
+        key={1}
         classNameLabel='text-sm'
         title='Tên người dùng'
         className='p-3 pl-4 text-base placeholder:text-base border-solid border-[#586380] border-2 w-full'
@@ -61,6 +54,7 @@ function FormSignUp(props: FormProps) {
         type='text'
       />
       <InputSignUp
+        key={1}
         classNameLabel='text-sm'
         title='Mật khẩu'
         className='p-3 pl-4 text-base placeholder:text-baseborder-solid border-[#586380] border-2 w-full'
@@ -69,6 +63,7 @@ function FormSignUp(props: FormProps) {
       />
       <div className='my-10 flex items-center'>
         <InputSignUp
+          key={1}
           className='mr-4 w-5 h-5 text-center text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 dark:bg-gray-600 dark:border-gray-500'
           type='checkbox'
         />

@@ -1,9 +1,9 @@
 'use client'
 
-import { CardFeedBack } from '@/components/common/Card'
 import { Swiper, SwiperSlide } from 'swiper/react'
 // import required modules
 import { Navigation, Autoplay } from 'swiper/modules'
+import { CardFeedBack } from '@/components/common/Card'
 
 // Import Swiper styles
 import 'swiper/css'

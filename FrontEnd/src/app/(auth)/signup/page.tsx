@@ -1,7 +1,8 @@
 'use client'
 
-import ButtonSocialAuthen from '@/components/common/Button/ButtonSocialAuthen'
 import { Link, Theme } from '@radix-ui/themes'
+import Image from 'next/image'
+import ButtonSocialAuthen from '@/components/common/Button/ButtonSocialAuthen'
 import Authentication from '@/services/authen'
 import FormSignUp from '@/components/auth/FormSignUp'
 
@@ -15,7 +16,7 @@ export default function Page() {
           <h1 className='absolute w-2/3 text-[2.6em] max-w-[300px] mt-10 ml-10 font-bold z-10'>
             Smash sets in your sweats.
           </h1>
-          <img
+          <Image
             className='absolute object-cover top-0 bottom-0'
             src='https://assets.quizlet.com/_next/static/media/QZ_Auth_LightV2.d6b0ba3d.png'
             alt='avt'
@@ -42,7 +43,7 @@ export default function Page() {
                 description='Đăng ký với Google'
                 onClick={() => Authentication.signGoogle(handleSignUpWithSocialAccount)}
                 icon={
-                  <img
+                  <Image
                     src='/assets/icons/google.svg'
                     alt='Login with Social Media'
                     width={6}
@@ -55,7 +56,7 @@ export default function Page() {
                 description='Đăng ký với Facebook'
                 onClick={() => Authentication.signFacebook(handleSignUpWithSocialAccount)}
                 icon={
-                  <img
+                  <Image
                     src='/assets/icons/facebook.svg'
                     alt='Login with Social Media'
                     width={6}
@@ -68,7 +69,7 @@ export default function Page() {
                 description='Đăng ký với Notion'
                 onClick={() => Authentication.signGithub(handleSignUpWithSocialAccount)}
                 icon={
-                  <img
+                  <Image
                     src='/assets/icons/notion.svg'
                     alt='Login with Social Media'
                     width={6}

@@ -17,8 +17,9 @@ export default function Page() {
             Smash sets in your sweats.
           </h1>
           <Image
+            fill
             className='absolute object-cover top-0 bottom-0'
-            src='https://assets.quizlet.com/_next/static/media/QZ_Auth_LightV2.d6b0ba3d.png'
+            src='/assets/images/example.jpg'
             alt='avt'
           />
           <h2 className='absolute w-2/3 text-5xl text-white font-bold bottom-10 left-10'>

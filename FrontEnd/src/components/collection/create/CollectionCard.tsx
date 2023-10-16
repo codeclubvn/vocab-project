@@ -18,9 +18,6 @@ function CollectionCard(props: Props) {
   }
 
   return (
-    // <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-    //   HELLO {props.id}
-    // </div>
     <div
       ref={setNodeRef}
       style={style}
@@ -30,7 +27,7 @@ function CollectionCard(props: Props) {
           <span>{props.id}</span>
           <div className='flex'>
             <button
-              className='mr-4'
+              className='mr-4 cursor-grab'
               {...attributes}
               {...listeners}
             >

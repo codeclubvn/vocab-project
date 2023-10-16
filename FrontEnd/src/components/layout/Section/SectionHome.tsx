@@ -25,8 +25,9 @@ const SectionHome = ({
       <section className='my-[80px] '>
         <div className='container flex flex-wrap justify-center'>
           <div className='w-full md:w-1/2'>
-            <div className='p-4'>
+            <div className='p-4 overflow-hidden relative object-cover h-[300px]'>
               <Image
+                fill
                 src={image}
                 alt=''
                 className={`${imageClassName}`}
@@ -66,8 +67,9 @@ const SectionHome = ({
           </div>
         </div>
         <div className='w-full md:w-1/2'>
-          <div className='p-4'>
+          <div className='p-4 overflow-hidden relative object-cover h-[300px]'>
             <Image
+              fill
               src={image}
               alt=''
               className={`${imageClassName}`}

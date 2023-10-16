@@ -44,35 +44,40 @@ function SectionFeedBack() {
           <CardFeedBack
             title='Người Dùng 1'
             description='Absolutely excellent. Easy to use, much more visually pleasant than Cram and no rudimentary features are behind a paywall. It’s simply excellent.'
-            image='https://firegroup.io/wp-content/uploads/2023/07/34625248our-mission.jpg'
+            image='/assets/images/example.jpg'
+            className=''
           />
         </SwiperSlide>
         <SwiperSlide className='flex items-start justify-center'>
           <CardFeedBack
             title='Người Dùng 2'
             description='Absolutely excellent. Easy to use, much more visually pleasant than Cram and no rudimentary features are behind a paywall. It’s simply excellent.'
-            image='https://firegroup.io/wp-content/uploads/2023/07/34625248our-mission.jpg'
+            image='/assets/images/example.jpg'
+            className=''
           />
         </SwiperSlide>
         <SwiperSlide className='flex items-start justify-center'>
           <CardFeedBack
             title='Người Dùng 3'
             description='Absolutely excellent. Easy to use, much more visually pleasant than Cram and no rudimentary features are behind a paywall. It’s simply excellent.'
-            image='https://firegroup.io/wp-content/uploads/2023/07/34625248our-mission.jpg'
+            image='/assets/images/example.jpg'
+            className=''
           />
         </SwiperSlide>
         <SwiperSlide className='flex items-start justify-center'>
           <CardFeedBack
             title='Người Dùng 4'
             description='Absolutely excellent. Easy to use, much more visually pleasant than Cram and no rudimentary features are behind a paywall. It’s simply excellent.'
-            image='https://firegroup.io/wp-content/uploads/2023/07/34625248our-mission.jpg'
+            image='/assets/images/example.jpg'
+            className=''
           />
         </SwiperSlide>
         <SwiperSlide className='flex items-start justify-center'>
           <CardFeedBack
             title='Người Dùng 5'
             description='Absolutely excellent. Easy to use, much more visually pleasant than Cram and no rudimentary features are behind a paywall. It’s simply excellent.'
-            image='https://firegroup.io/wp-content/uploads/2023/07/34625248our-mission.jpg'
+            image='/assets/images/example.jpg'
+            className=''
           />
         </SwiperSlide>
       </Swiper>

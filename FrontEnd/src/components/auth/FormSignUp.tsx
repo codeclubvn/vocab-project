@@ -46,7 +46,7 @@ function FormSignUp() {
         type='text'
       />
       <InputSignUp
-        key={1}
+        key={2}
         classNameLabel='text-sm'
         title='Tên người dùng'
         className='p-3 pl-4 text-base placeholder:text-base border-solid border-[#586380] border-2 w-full'
@@ -54,7 +54,7 @@ function FormSignUp() {
         type='text'
       />
       <InputSignUp
-        key={1}
+        key={3}
         classNameLabel='text-sm'
         title='Mật khẩu'
         className='p-3 pl-4 text-base placeholder:text-baseborder-solid border-[#586380] border-2 w-full'

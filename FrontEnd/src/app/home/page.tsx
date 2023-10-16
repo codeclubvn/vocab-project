@@ -4,43 +4,48 @@ import { Footer } from "@/components/layout/Footer"
 import '@radix-ui/themes/styles.css'; 
 import { Button } from '@/components/common/Button';
 import { CardCourse } from '@/components/common/Card';
+import Divider from '@/components/common/Divider/Devider';  
+import { BsChevronRight, BsChevronLeft } from 'react-icons/bs'
 
 export default function Page() {
   return (
     <>
         <Theme>
             <Navbar /> 
-                <div className='mt-[var(--navbar-height)] mb-[8rem] max-md:mb-[0rem]' /> 
+                <div className='gap-navbar' /> 
                 <div className='grid grid-cols-4 gap-[100px] mx-[80px] mt-[147px] w-100 max-md:grid-cols-1 max-md:mx-[20px] max-md:gap-0'>
-                  <div className='course col-span-3'>
-                    <div className='your-course'>
-                      <div className='course-header flex justify-between items-center '>
+                  <div className='col-span-3'>
+                    <div className=''>
+                      <div className='flex justify-between items-center'>
                         <Heading>Khoá học của bạn</Heading> 
-                        <div className='navigate-course-swapper'>
-                          <Button className='navigation-course-prev' leftIcon={<>{"<"}</>}> 
+                        <div className='flex items-center gap-[10px]'>
+                          <Button className=''> <BsChevronLeft></BsChevronLeft>
+                          
                           </Button>
                           <Text> 1/2 </Text>
-                          <Button className='navigation-course-next' leftIcon={<>{">"}</>}> 
+                          <Button className=''> <BsChevronRight></BsChevronRight>
                           </Button> 
                         </div> 
                       </div>
 
-                      <div className='course-body mt-[27px]'>    
+                      <div className='mt-[27px]'>    
                         <CardCourse title={'Course name'} className={'mt-[20px]'} wordLearnt={150} totalWords={1500}></CardCourse>
                         <CardCourse title={'Course name'} className={'mt-[20px]'} wordLearnt={150} totalWords={1500}></CardCourse>
                         <CardCourse title={'Course name'} className={'mt-[20px]'} wordLearnt={150} totalWords={1500}></CardCourse> 
                       </div>
-                    </div>  
+                    </div>   
+                    <Divider className='h-[3px] w-full bg-black mt-[33px] mb-[46px]'></Divider> 
 
-                    <div className='divider h-[3px] w-full bg-black mt-[33px] mb-[46px]'> 
-                    </div>
                     
                     <div className='suggest-course'>
-                        <Heading>Đề xuất</Heading>
+                        <div className='flex justify-between items-center'>
+                          <Heading>Đề xuất</Heading>
+                          <Button className='font-bold text-[16px]'>Xem thêm</Button>
+                        </div>
                         <div className='mt-[29px] grid grid-cols-3 gap-[20px] max-md:grid-cols-2'>   
-                          <CardCourse title="Course name" description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aspernatur voluptates consequuntur obcaecati, consectetur eveniet, recusandae in, optio suscipit reiciendis cum? Et, tempore accusamus nulla illo debitis neque delectus obcaecati.'></CardCourse>
-                          <CardCourse title="Course name" description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aspernatur voluptates consequuntur obcaecati, consectetur eveniet, recusandae in, optio suscipit reiciendis cum? Et, tempore accusamus nulla illo debitis neque delectus obcaecati.'></CardCourse>
-                          <CardCourse title="Course name" description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aspernatur voluptates consequuntur obcaecati, consectetur eveniet, recusandae in, optio suscipit reiciendis cum? Et, tempore accusamus nulla illo debitis neque delectus obcaecati.'></CardCourse>
+                          <CardCourse className='grid grid-cols-2' title="Course name" description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aspernatur voluptates consequuntur obcaecati, consectetur eveniet, recusandae in, optio suscipit reiciendis cum? Et, tempore accusamus nulla illo debitis neque delectus obcaecati.'></CardCourse>
+                          <CardCourse className='grid grid-cols-2' title="Course name" description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aspernatur voluptates consequuntur obcaecati, consectetur eveniet, recusandae in, optio suscipit reiciendis cum? Et, tempore accusamus nulla illo debitis neque delectus obcaecati.'></CardCourse>
+                          <CardCourse className='grid grid-cols-2' title="Course name" description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aspernatur voluptates consequuntur obcaecati, consectetur eveniet, recusandae in, optio suscipit reiciendis cum? Et, tempore accusamus nulla illo debitis neque delectus obcaecati.'></CardCourse>
                         </div>
                     </div>
                   </div>
@@ -166,8 +171,7 @@ export default function Page() {
                       </div>
                   </div>
                 </div>
-            <div className='divider h-[1px] w-full bg-black mt-[71px]'> 
-            </div>
+            <Divider className='divider h-[1px] w-full bg-black mt-[71px]'></Divider> 
             <Footer />
       </Theme>
     </>

@@ -11,7 +11,7 @@ interface InputProps extends React.ComponentPropsWithoutRef<'input'> {
   placeholder?: string
   title?: string
   value?: string
-  handleChange(e: React.ChangeEvent<any>)
+  handleChange?(e: React.ChangeEvent<any>)
   error?: string
 }
 

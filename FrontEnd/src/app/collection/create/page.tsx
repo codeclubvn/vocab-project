@@ -6,7 +6,6 @@ import CollectionDnd from '@/components/collection/create/CollectionDnd'
 export default function Page() {
   return (
     <div className='container'>
-      <div className='gap-navbar' />
       <CollectionHeader />
       <CollectionDnd />
     </div>

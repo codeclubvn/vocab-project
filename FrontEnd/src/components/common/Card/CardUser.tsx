@@ -2,9 +2,9 @@ import { Avatar, Box, Card, Flex, Text } from '@radix-ui/themes'
 
 interface CardUserProps extends React.ComponentProps<'div'> {
   className?: string
-  // userName?: string
-  // avatarUrl?: string
-  // score?: number
+  userName?: string
+  avatarUrl?: string
+  score?: number
 }
 
 export default function CardUser(props: CardUserProps) {
@@ -22,7 +22,7 @@ export default function CardUser(props: CardUserProps) {
           >
             <Avatar
               size='4'
-              src='https://cdn-icons-png.flaticon.com/512/219/219969.png'
+              src={`${props.avatarUrl}`}
               radius='full'
               fallback='T'
             />
@@ -31,7 +31,7 @@ export default function CardUser(props: CardUserProps) {
               size='3'
               weight='bold'
             >
-              User name
+              {props.userName}
             </Text>
           </Flex>
           <Box>
@@ -40,7 +40,7 @@ export default function CardUser(props: CardUserProps) {
               size='3'
               color='gray'
             >
-              Scores
+              {props.score}
             </Text>
           </Box>
         </Flex>

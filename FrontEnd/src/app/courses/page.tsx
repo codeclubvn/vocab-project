@@ -1,5 +1,5 @@
 import { Theme } from '@radix-ui/themes'
-import { CardCourse } from '@/components/common/Card'
+import { Card } from '@/components/common/Card'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import Category from '@/components/common/Category/Category'
@@ -16,25 +16,29 @@ export default function Page() {
             <Category />
           </div>
           <div className='flex-1  gap-4 flex flex-col'>
-            <CardCourse
+            <Card
               title='Khoa 1'
               numberOf={15000}
               author='ABC'
+              headerClass='bg-[#f2f2f2] mb-2 p-2'
             />
-            <CardCourse
+            <Card
               title='Khoa 1'
               numberOf={15000}
               author='ABC'
+              headerClass='bg-[#f2f2f2] mb-2 p-2'
             />
-            <CardCourse
+            <Card
               title='Khoa 1'
               numberOf={15000}
               author='ABC'
+              headerClass='bg-[#f2f2f2] mb-2 p-2'
             />
-            <CardCourse
+            <Card
               title='Khoa 1'
               numberOf={15000}
               author='ABC'
+              headerClass='bg-[#f2f2f2] mb-2 p-2'
             />
           </div>
         </div>

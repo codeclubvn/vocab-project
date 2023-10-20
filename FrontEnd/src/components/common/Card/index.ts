@@ -1,5 +1,5 @@
 import CardFeedBack from './CardFeedBack'
-import CardCourse from './CardCourse'
-import LinkCard from './LinkCard'
+import Card from './Card'
+import CardUser from './CardUser'
 
-export { CardFeedBack, CardCourse, LinkCard }
+export { CardFeedBack, Card, CardUser }

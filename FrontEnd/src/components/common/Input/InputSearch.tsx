@@ -14,16 +14,21 @@ const SearchInput = ({
     width: '30vw',
     maxWidth: '400px',
     height: '3rem',
+    paddingLeft: '1rem',
   },
 }: InputProps) => {
   return (
     <TextField.Root style={style}>
       <TextField.Slot>
-        <MagnifyingGlassIcon />
+        <MagnifyingGlassIcon
+          height='20'
+          width='20'
+        />
       </TextField.Slot>
       <TextField.Input
+        size='3'
         placeholder={placeholder}
-        style={{ height: '100%' }}
+        style={{ height: '100%', marginLeft: '1rem' }}
       />
     </TextField.Root>
   )

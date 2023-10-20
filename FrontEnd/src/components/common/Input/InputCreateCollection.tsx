@@ -23,7 +23,7 @@ const InputCreateCollection = ({
       <input
         id={id}
         type={type}
-        className={`${classNameInput} transition rounded-none bg-transparent p-4 pl-0 pb-2 text-lg placeholder:text-lg  border-0 border-b-3 border-b-black duration-500 focus:outline-none focus:border-b-[#23a8f2] focus:border-b-[0.3rem] bg-gray-50 w-full placeholder-black-500 placeholder-opacity-100 text-[#1a1d28]`}
+        className={`${classNameInput} transition rounded-none bg-transparent p-4 pl-0 pb-2 text-lg placeholder:text-lg  border-0 border-b-3 border-b-black duration-500 focus:outline-none focus:border-b-[#23a8f2] bg-gray-50 w-full placeholder-black-500 placeholder-opacity-100 text-[#1a1d28]`}
         placeholder={placeholder}
       />
       <label

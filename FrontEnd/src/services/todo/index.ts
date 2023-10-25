@@ -1,4 +1,4 @@
-import type { Todo } from '@/types'
+import type { Todo } from '@/types/Todo'
 import axiosClient from '../fetcher/client'
 
 export const todoApi = {

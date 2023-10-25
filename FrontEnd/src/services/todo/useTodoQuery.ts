@@ -10,7 +10,7 @@ export const keys = {
 export const useTodoQuery = () => {
   const queryKey = keys.all
   const queryClient = useQueryClient()
-  const { data, isLoading, error } = useQuery(queryKey, todoApiApi.getAll)
+  const { data, isLoading, error } = useQuery(queryKey, todoApi.getAll)
 
   const addMutation = useMutation(todoApi.add, {
     onSuccess: () => queryClient.invalidateQueries(queryKey),

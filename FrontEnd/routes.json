@@ -1,0 +1,5 @@
+{
+  "/api/*": "/$1",
+  "/collections/:id/vocabs": "/vocabs?collection_id=:id",
+  "/collections/:id/vocabs/:vocab_id": "/vocabs/:vocab_id?collection_id=:id"
+}

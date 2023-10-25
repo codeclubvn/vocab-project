@@ -1,0 +1,94 @@
+{
+  "collections": [
+    {
+      "id": "1",
+      "user_id": "user1",
+      "name": "Collection 1",
+      "star": 0,
+      "total": 0,
+      "is_public": true,
+      "created_at": "2023-01-01",
+      "updated_at": null
+    },
+    {
+      "id": "2",
+      "user_id": "user2",
+      "name": "Collection 2",
+      "star": 0,
+      "total": 0,
+      "is_public": true,
+      "created_at": "2023-02-01",
+      "updated_at": null
+    }
+  ],
+  "users": [
+    {
+      "id": "user1",
+      "uid": "uid1",
+      "nickName": "JohnDoe",
+      "fullName": "John Doe",
+      "email": "johndoe@example.com",
+      "password": "hashedpassword",
+      "age": "25",
+      "gender": "Male",
+      "photoURL": "avatar.jpg",
+      "streak": 0,
+      "rank": 0,
+      "score": 0,
+      "level": 0,
+      "role": "user",
+      "createdAt": "2023-10-25T08:00:00Z",
+      "updatedAt": "2023-10-25T08:30:00Z"
+    },
+    {
+      "id": "user2",
+      "uid": "uid2",
+      "nickName": "JaneSmith",
+      "fullName": "Jane Smith",
+      "email": "janesmith@example.com",
+      "password": "hashedpassword",
+      "age": "28",
+      "gender": "Female",
+      "photoURL": "avatar.jpg",
+      "streak": 0,
+      "rank": 0,
+      "score": 0,
+      "level": 0,
+      "role": "user",
+      "createdAt": "2023-11-01T10:15:00Z",
+      "updatedAt": "2023-11-01T10:45:00Z"
+    }
+  ],
+  "vocabs": [
+    {
+      "id": "1",
+      "collection_id": "1",
+      "front_text": "Front Text 1",
+      "back_text": "Back Text 1",
+      "image": "image1.jpg",
+      "sound": "sound1.mp3",
+      "example": "Example 1",
+      "is_star": false,
+      "tag": ["tag1", "tag2"],
+      "is_remind": false,
+      "memory_level": "new",
+      "updated_at": null,
+      "created_at": "2023-10-25T08:00:00Z"
+    },
+    {
+      "id": "2",
+      "collection_id": "1",
+      "front_text": "Front Text 2",
+      "back_text": "Back Text 2",
+      "image": "image2.jpg",
+      "sound": "sound2.mp3",
+      "example": "Example 2",
+      "is_star": true,
+      "tag": ["tag3", "tag4"],
+      "is_remind": true,
+      "memory_level": "familiar",
+      "updated_at": null,
+      "created_at": "2023-10-25T08:30:00Z"
+    }
+  ]
+}

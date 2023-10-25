@@ -1,4 +1,4 @@
-import type { User } from '@/types'
+import type { User } from '@/types/User'
 import { IUserFireBase } from '../../types/User'
 import axiosClient from '../fetcher/client'
 

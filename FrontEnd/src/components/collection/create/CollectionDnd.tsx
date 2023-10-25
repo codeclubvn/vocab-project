@@ -20,11 +20,44 @@ import CollectionAddCard from '@/components/collection/create/CollectionAddCard'
 
 function CollectionDnd() {
   const id = useId()
-  const [items, setItems] = useState(['1', '2', '3'])
+  const [items, setItems] = useState([
+    { id: 1, value: 'Định nghĩa 1' },
+    { id: 2, value: 'Định nghĩa 2' },
+    { id: 3, value: 'Định nghĩa 3' },
+  ])
+
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates }),
   )
+  const [isAnimate, setIsAnimate] = useState<null | number>(null)
+
+  const handleDragEnd = (event) => {
+    const { active, over } = event
+
+    if (active.id !== over.id) {
+      setItems((items) => {
+        const oldIndex = items.indexOf(active.id)
+        const newIndex = items.indexOf(over.id)
+
+        return arrayMove(items, oldIndex, newIndex)
+      })
+    }
+  }
+
+  const addItems = (id: number) => {
+    const newId = id + 1
+    const newItem = { id: newId, value: `New ${Math.random()}` }
+    const updatedItems = [...items]
+
+    const index = items.findIndex((item) => item.id === id)
+    updatedItems.splice(index + 1, 0, newItem)
+    for (let i = index + 2; i < updatedItems.length; i++) {
+      updatedItems[i].id = updatedItems[i].id + 1
+    }
+    setItems(updatedItems)
+    setIsAnimate(newId)
+  }
 
   return (
     <DndContext
@@ -37,29 +70,22 @@ function CollectionDnd() {
         items={items}
         strategy={verticalListSortingStrategy}
       >
-        {items.map((id) => (
+        {items.map((item) => (
           <CollectionCard
-            key={id}
-            id={id}
+            value={item.value}
+            key={item.id}
+            id={item.id}
+            onClick={addItems}
+            isAnimateId={isAnimate}
           />
         ))}
       </SortableContext>
-      <CollectionAddCard />
+      <CollectionAddCard
+        onClick={addItems}
+        id={items[items.length - 1].id}
+      />
     </DndContext>
   )
-
-  function handleDragEnd(event) {
-    const { active, over } = event
-
-    if (active.id !== over.id) {
-      setItems((items) => {
-        const oldIndex = items.indexOf(active.id)
-        const newIndex = items.indexOf(over.id)
-
-        return arrayMove(items, oldIndex, newIndex)
-      })
-    }
-  }
 }
 
 export default CollectionDnd

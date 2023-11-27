@@ -1,10 +1,10 @@
-import Footer from '@/components/ui/Footer'
+import Footer from '@/components/UI/Footer'
 // import { ThemePanel } from '@radix-ui/themes'
-import Navbar from '@/components/ui/Navbar'
-import SectionFeedBack from '@/components/landing/SectionFeedBack'
-import SectionCallToAction from '@/components/landing/SectionCallToAction'
-import SectionHome from '@/components/landing/SectionHome'
-import Carousel from '@/components/landing/Carousel'
+import Navbar from '@/components/UI/Navbar'
+import LandingSectionFeedBack from '@/components/Landing/LandingSectionFeedBack'
+import LandingSectionCallToAction from '@/components/Landing/LandingSectionCallToAction'
+import LandingSectionHome from '@/components/Landing/LandingSectionHome'
+import LandingCarousel from '@/components/Landing/LandingCarousel'
 import { LandingData } from '@/types/Static'
 
 export default function Page() {
@@ -41,10 +41,10 @@ export default function Page() {
   return (
     <>
       <Navbar />
-      <Carousel listCarousel={landingData} />
+      <LandingCarousel listLandingCarousel={landingData} />
       {landingData.map((item, index) => {
         return (
-          <SectionHome
+          <LandingSectionHome
             key={index}
             title={item.title}
             description={item.description}
@@ -55,8 +55,8 @@ export default function Page() {
           />
         )
       })}
-      <SectionFeedBack />
-      <SectionCallToAction />
+      <LandingSectionFeedBack />
+      <LandingSectionCallToAction />
       <Footer />
       {/* <ThemePanel /> */}
     </>

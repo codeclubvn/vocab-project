@@ -1,18 +1,14 @@
-import { Theme } from '@radix-ui/themes'
-import Category from '@/components/main/courses/Category'
-import Footer from '@/components/ui/Footer'
-import Navbar from '@/components/ui/Navbar'
+import MainCourseCategory from '@/components/Main/Course/MainCourseCategory'
 
 export default function Page() {
   return (
-    <Theme>
-      <Navbar />
+    <>
       <div className='gap-navbar' />
       <div className='container mb-10'>
         <h1 className=' mt-[100px] text-3xl'>DANH SACH KHOA HOC</h1>
         <div className='flex flex-col md:flex-row w-full justify-between mt-10'>
           <div className='w-[300px] md:mr-10'>
-            <Category />
+            <MainCourseCategory />
           </div>
           {/* <div className='flex-1  gap-4 flex flex-col'>
             <Card
@@ -42,7 +38,6 @@ export default function Page() {
           </div> */}
         </div>
       </div>
-      <Footer />
-    </Theme>
+    </>
   )
 }

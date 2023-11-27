@@ -3,8 +3,8 @@ import '@radix-ui/themes/styles.css'
 import '@/styles/global.css'
 import '@/styles/theme-config.css'
 import type { Metadata } from 'next'
-import { ThemeProvider } from '@/components/ThemeProvider'
 import { Inter } from 'next/font/google'
+import { ThemeProvider } from '@/components/ThemeProvider'
 import ReactQueryProvider from '@/components/ReactQueryProvider'
 
 const inter = Inter({

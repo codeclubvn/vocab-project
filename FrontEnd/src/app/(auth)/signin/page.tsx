@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import FormSignIn from '@/components/auth/FormSignIn'
-import FormSocial from '@/components/auth/FormSocial'
+import AuthFormSignIn from '@/components/Auth/AuthFormSignIn'
+import AuthFormSocial from '@/components/Auth/AuthFormSocial'
 
 export default function Page() {
   return (
@@ -34,7 +34,7 @@ export default function Page() {
             </h4>
           </div>
           <div className='flex flex-col w-full mb-8'>
-            <FormSocial />
+            <AuthFormSocial />
           </div>
           <div className='relative inline-flex items-center justify-center w-full'>
             <hr className='w-full h-px  bg-gray-200 border-0 ' />
@@ -43,7 +43,7 @@ export default function Page() {
             </span>
           </div>
           <div className='py-10'>
-            <FormSignIn />
+            <AuthFormSignIn />
           </div>
         </div>
       </div>

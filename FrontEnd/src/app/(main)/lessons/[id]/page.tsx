@@ -1,7 +1,7 @@
 'use client'
 
-import ListLearnMode from '@/components/main/lessons/ListLearnMode'
-import FlipCard from '@/components/main/lessons/FlipCard'
+import MainLessonListLearnMode from '@/components/Main/lessons/MainLessonListLearnMode'
+import MainLessonDetailFlipCard from '@/components/Main/Lessons/Detail/MainLessonDetailFlipCard'
 
 interface Props {
   params: {
@@ -13,10 +13,9 @@ export default function Page({ params }: Props) {
   return (
     <div className='container flex justify-center items-center flex-col py-10'>
       <div className='nav-card mb-[24px]'>
-        <ListLearnMode lessonId={params.id} />
+        <MainLessonListLearnMode lessonId={params.id} />
       </div>
-      <FlipCard
-        className='w-[814px] h-[428px]  rounded-lg shadow-xl '
+      <MainLessonDetailFlipCard
         flipDirection='vertical'
         frontContent='viruses'
         afterContent='

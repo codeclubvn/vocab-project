@@ -2,9 +2,10 @@
 
 import { Box, Heading } from '@radix-ui/themes'
 import React from 'react'
-import Loading from '../../../components/ui/Loading'
-import LessonPreviewCard from '../../../components/main/lessons/LessonPreviewCard'
-import { ILessonPreview } from '../../../types/Type'
+import useLessonQuery from '@/services/lessonApi/useLessonQuery'
+import { ILessonPreview } from '@/types/Type'
+import MainLessonPreviewCard from '@/components/Main/Lessons/MainLessonPreviewCard'
+import Loading from '@/components/UI/Loading'
 
 export default function Page() {
   const { data, isLoading, error } = useLessonQuery()
@@ -21,7 +22,7 @@ export default function Page() {
         {listLesson &&
           listLesson.map((lesson) => {
             return (
-              <LessonPreviewCard
+              <MainLessonPreviewCard
                 key={lesson._id}
                 slug={lesson._id}
                 title={lesson.name}
@@ -35,7 +36,4 @@ export default function Page() {
       </Box>
     </Box>
   )
-}
-function useLessonQuery(): { data: any; isLoading: any; error: any } {
-  throw new Error('Function not implemented.')
 }

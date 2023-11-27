@@ -47,14 +47,14 @@
     }
   },
   "include": [
-    "next-env.d.ts",
+    "../BackUp/next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.d.ts",
     "**/*.js",
     "**/*.jsx"
-  ],
+, "../BackUp/commitlint.config.js"  ],
   "exclude": [
     "node_modules",
     ".eslintrc.js"

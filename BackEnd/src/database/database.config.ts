@@ -2,6 +2,6 @@
 // SEVER là link connect thì mongodb luôn nhé
 
 export enum MONGODB_CONFIG {
-  COMPASS = '',
-  DATABASE_CONNECTION = `mongodb+srv://vocab:dt01626746032@cluster0.2ktatdl.mongodb.net/?retryWrites=true&w=majority`,
+  COMPASS = 'mongodb://localhost:27017',
+  DATABASE_CONNECTION = 'mongodb://localhost:27017',
 }

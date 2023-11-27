@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap'); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* * {
+  outline: 1px solid red;
+} */
 
 /* top type of concept to setup css 
 1. color - include color, background-color, border-color, fill, stroke
@@ -19,13 +23,19 @@
   --font-opensans: 'Open Sans', sans-serif;
   --navbar-height: 4.5rem;
 
-
-  --fg-color: theme(colors.foreground.primary);
+  --fg-color: theme(colors.foreground.DEFAULT);
+  --fg-color-primary: theme(colors.foreground.primary);
   --fg-color-secondary: theme(colors.foreground.secondary);
-  --bg-color: theme(colors.background.primary);
+  --fg-color-accent: theme(colors.foreground.accent);
+
+  --bg-color: theme(colors.background.DEFAULT);
+  --bg-color-primary: theme(colors.background.primary);
   --bg-color-secondary: theme(colors.background.secondary);
-  --select-color-0: theme(colors.accent.primary);
-  --select-color-1: theme(colors.accent.secondary);
+  --bg-color-accent: theme(colors.background.accent);
+
+  --select-color-0: theme(colors.accent.DEFAULT);
+  --select-color-1: theme(colors.accent.primary);
+  --select-color-2: theme(colors.accent.secondary);
 }
 
 @layer base {
@@ -52,12 +62,11 @@
   h4,
   h5,
   h6 {
-    @apply font-semibold;
+  
   }
 
   button,
   aside {
-    @apply font-sans;
   }
 
   /* 
@@ -95,16 +104,24 @@
     @apply mt-[var(--navbar-height)] mb-[8rem] md:mb-[0rem];
   }
 
-  .bg-primary {
+  .bg-color {
     @apply bg-[var(--bg-color)];
+  }
+
+  .bg-primary {
+    @apply bg-[var(--bg-color-primary)];
   }
 
   .bg-secondary {
     @apply bg-[var(--bg-color-secondary)];
   }
 
-  .text-primary {
+  .text-fg {
     @apply text-[var(--fg-color)];
+  }
+
+  .text-primary {
+    @apply text-[var(--fg-color-primary)];
   }
 
   .text-secondary {
@@ -125,6 +142,14 @@
 
   .bg-accent-1 {
     @apply bg-[var(--select-color-1)];
+  }
+
+  .border-accent-0{
+    @apply border-[var(--select-color-0)];
+  }
+
+  .border-accent-1{
+    @apply border-[var(--select-color-1)];
   }
 
   .center-image {

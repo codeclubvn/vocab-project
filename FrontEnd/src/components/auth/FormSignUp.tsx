@@ -1,15 +1,30 @@
-import { Button } from '@radix-ui/themes'
 import React from 'react'
 import Link from 'next/link'
-import { generateNumberRange } from '@/helpers/generateNumberRange'
-import { InputSignUp } from '../common/Input'
-import SelectComponent from '../common/Select/Select'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
+import { generateNumberRange } from '@/utils/generateNumberRange'
+import SelectComponent from '../ui/Select'
+import Button from '../ui/Button'
 
 function FormSignUp() {
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: Yup.object().shape({
+      email: Yup.string().email('Trường này phải là Email').required(),
+      password: Yup.string().required('Mật khẩu không được đê trống'),
+    }),
+    onSubmit(value) {
+      console.log(value)
+    },
+  })
+
   return (
     <form>
       <div className='block'>
-        <h1 className='block text-sm font-medium dark:text-white mb-2 text-[#586380]'>Ngày sinh</h1>
+        <p className='block mb-2 font-medium text-gray-900'>NGÀY SINH</p>
         <div className='flex gap-5 flex-wrap md:flex-nowrap'>
           <SelectComponent
             defaultValue='1'
@@ -37,32 +52,42 @@ function FormSignUp() {
           />
         </div>
       </div>
-      <InputSignUp
-        key={1}
-        classNameLabel='text-sm'
-        title='Email'
-        className='p-3 pl-4 text-base placeholder:text-base border-gray-30 border-solid border-[#586380] border-2 w-full'
-        placeholder='user@gmail.com'
-        type='text'
-      />
-      <InputSignUp
-        key={2}
-        classNameLabel='text-sm'
-        title='Tên người dùng'
-        className='p-3 pl-4 text-base placeholder:text-base border-solid border-[#586380] border-2 w-full'
-        placeholder='adrew123'
-        type='text'
-      />
-      <InputSignUp
-        key={3}
-        classNameLabel='text-sm'
-        title='Mật khẩu'
-        className='p-3 pl-4 text-base placeholder:text-baseborder-solid border-[#586380] border-2 w-full'
-        placeholder='......'
-        type='password'
-      />
+      <label
+        htmlFor='email'
+        className={`block my-2 font-medium text-gray-900  `}
+      >
+        EMAIL
+        <input
+          id='email'
+          type='email'
+          required
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          className='w-full px-6 py-4 border-2 border-gray  text-black  hover:bg-transparent hover:border-gray focus:outline-none focus:ring-2 focus:ring-gray focus:border-transparent font-medium rounded-sm text-sm'
+          placeholder='Vui lòng nhập trường này'
+        />
+      </label>
+
+      <p className='text-red-500 text-sm hidden'>{formik.errors.email || ''}</p>
+      <label
+        htmlFor='password'
+        className={`block my-2 font-medium text-gray-900  `}
+      >
+        PASSWORD
+        <input
+          id='password'
+          type='password'
+          required
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          className='w-full px-6 py-4 border-2 border-gray text-black hover:bg-transparent hover:border-gray focus:outline-none focus:ring-2 focus:ring-gray focus:border-transparent font-medium rounded-sm text-sm'
+          placeholder='Vui lòng nhập trường này'
+        />
+        <p className='text-red-500 text-sm hidden'>{formik.errors.password || ''}</p>
+      </label>
+
       <div className='my-10 flex items-center'>
-        <InputSignUp
+        <input
           key={1}
           className='mr-4 w-5 h-5 text-center text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 dark:bg-gray-600 dark:border-gray-500'
           type='checkbox'
@@ -72,16 +97,8 @@ function FormSignUp() {
         </span>
       </div>
       <div className='flex flex-col w-full my-8'>
-        <Button
-          variant='solid'
-          size='2'
-          radius='full'
-          style={{
-            padding: '2rem',
-            backgroundColor: 'var(--select-color-0)',
-          }}
-        >
-          <h2 className='text-lg lg:text-xl font-normal'>Đăng kí</h2>
+        <Button variant='solidAccent'>
+          <h2 className='text-lg lg:text-xl font-normal'>Đăng ký</h2>
         </Button>
       </div>
       <div className='text-center text-base lg:text-[1.2rem] py-2.5 font-bold text-[#929292]'>

@@ -12,14 +12,6 @@
 //   // using interface instead of type generally gives nicer editor feedback
 // }
 
-export interface VocabForm {
-  front_text: string
-  back_text: string
-  image?: string
-  sound?: string
-  example?: string
-}
-
 export type MemoryLevel = 'new' | 'familiar' | 'memorized'
 
 export interface IVocab {

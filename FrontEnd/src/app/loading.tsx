@@ -1,5 +1,7 @@
-function Loading() {
-  return <div>Loading</div>
+import Loading from '@/components/ui/Loading'
+
+function LoadingPage() {
+  return <Loading />
 }
 
-export default Loading
+export default LoadingPage

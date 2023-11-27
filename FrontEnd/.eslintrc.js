@@ -33,29 +33,32 @@ module.exports = {
       presets: [require.resolve('next/babel')],
     },
   },
-  rules: {
-
-  },
+  rules: {},
   overrides: [
     {
       files: ['**/*.ts?(x)', '**/*.js?(x)'],
       rules: {
-        "class-methods-use-this": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "import/extensions": "off",
+        'class-methods-use-this': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-implied-eval': 'off',
+        'import/extensions': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-sort-props': 'off',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
         'import/no-cycle': 'off',
-      }
+        'no-underscore-dangle': 'off',
+        'no-nested-ternary': 'off',
+        'no-console' :'off',
+        '@typescript-eslint/no-throw-literal': 'off',
+      },
     },
     {
       // Add this override
       files: ['*.js'],
       parserOptions: {
         project: null,
-      }
+      },
     },
   ],
 }

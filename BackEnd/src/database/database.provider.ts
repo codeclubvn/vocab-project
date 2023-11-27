@@ -4,7 +4,7 @@ import { MONGODB_CONFIG } from './database.config';
 
 export const databaseProviders = [
   {
-    provide: MONGODB_CONFIG.DATABASE_CONNECTION,
+    provide: MONGODB_CONFIG.DATABASE_CONNECTION || MONGODB_CONFIG.COMPASS,
     useFactory: (): Promise<typeof mongoose> =>
       mongoose.connect(
         MONGODB_CONFIG.DATABASE_CONNECTION || MONGODB_CONFIG.COMPASS,

@@ -1,13 +1,10 @@
 'use client'
 
-import { Button } from '@radix-ui/themes'
 import Link from 'next/link'
 import React, { FC } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { cn } from 'react-swisskit'
-import { InputSignIn } from '../common/Input'
-import './form.css'
+import Button from '../ui/Button'
 
 interface FormProps {
   className?: string
@@ -33,48 +30,46 @@ const FormSignIn: FC<FormProps> = ({ className = '' }) => {
       onSubmit={formik.handleSubmit}
       className={className}
     >
-      <InputSignIn
-        isDown
-        classNameLabel='text-sm'
-        value={formik.values.email}
-        handleChange={formik.handleChange}
-        title='EMAIL'
-        className={cn('bg-transparent form__input')}
-        placeholder='mail@abc.com'
-        type='text'
-        required
-        error={formik.errors.email}
-      />
-
-      <InputSignIn
-        isDown
-        value={formik.values.password}
-        handleChange={formik.handleChange}
-        required
-        classNameLabel='text-sm'
-        title='MẬT KHẨU'
-        className={cn('bg-transparent form__input')}
-        placeholder='*******'
-        type='password'
-        error={formik.errors.password}
-      />
-      <Link
+      <label
+        htmlFor='email'
+        className={`block my-2 font-medium text-gray-900 dark:text-white `}
+      >
+        EMAIL
+        <input
+          id='email'
+          type='email'
+          required
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          className='w-full px-6 py-4 border-2 border-gray  text-black  hover:bg-transparent hover:border-gray focus:outline-none focus:ring-2 focus:ring-gray focus:border-transparent font-medium rounded-sm text-sm'
+          placeholder='Vui lòng nhập trường này'
+        />
+      </label>
+      <p className='text-red-500 text-sm hidden'>{formik.errors.email || ''}</p>
+      <label
+        htmlFor='password'
+        className={`block my-2 font-medium text-gray-900 dark:text-white `}
+      >
+        PASSWORD
+        <input
+          id='password'
+          type='password'
+          required
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          className='w-full px-6 py-4 border-2 border-gray text-black hover:bg-transparent hover:border-gray focus:outline-none focus:ring-2 focus:ring-gray focus:border-transparent font-medium rounded-sm text-sm'
+          placeholder='Vui lòng nhập trường này'
+        />
+        <p className='text-red-500 text-sm hidden'>{formik.errors.password || ''}</p>
+      </label>
+      {/* <Link
         className='float-right -mt-8 hover:border-b-0 text-accent-0 font-bold'
         href='/forgot-password'
       >
         Bạn quên rồi à ?
-      </Link>
+      </Link> */}
       <div className='flex flex-col w-full my-8'>
-        <Button
-          variant='solid'
-          size='2'
-          radius='full'
-          type='submit'
-          style={{
-            padding: '2rem',
-            backgroundColor: 'var(--select-color-0)',
-          }}
-        >
+        <Button variant='solidAccent'>
           <h2 className='text-lg lg:text-xl font-normal'>Đăng nhập</h2>
         </Button>
       </div>
@@ -84,6 +79,7 @@ const FormSignIn: FC<FormProps> = ({ className = '' }) => {
           <Link
             className='pl-2 text-accent-0'
             href='/signup'
+            prefetch={false}
           >
             Tạo tài khoản
           </Link>

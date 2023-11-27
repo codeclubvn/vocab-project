@@ -3,8 +3,8 @@ import { todoApi } from '.'
 
 export const keys = {
   all: ['todos'],
-  details: () => [...keys.all, 'detail'],
-  detail: (id: number) => [...keys.details(), id],
+  // details: () => [...keys.all, 'detail'],
+  // detail: (id: number) => [...keys.details(), id],
 }
 
 export const useTodoQuery = () => {

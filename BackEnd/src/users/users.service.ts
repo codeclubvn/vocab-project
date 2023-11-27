@@ -6,11 +6,13 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { Model } from 'mongoose';
-import { IUsers, UserProvide } from './schema/users.schema';
-import { UserFireBaseDto } from './dto/users.dto';
+import { IUsers, UserProvide } from './entities/users.schema';
+import { UserLoginGoogleDto } from './dto/user-login-google.dto';
 import PassWordGenerator, { AuthService } from 'src/commons/auth/authen.until';
 import { JwtService } from '@nestjs/jwt';
 import { ResponseCustomData, ResponseCustomError } from 'src/commons/response';
+import { UserLoginDto } from './dto/user-login.dto';
+import { UserRegisterDto } from './dto/user-register.dto';
 
 @Injectable()
 export class UsersService {
@@ -20,7 +22,18 @@ export class UsersService {
     private jwtService: JwtService,
   ) {}
 
-  async UserWithFirebase(user: UserFireBaseDto) {
+   async getProfile() {
+    const id = '1';
+    const user =  await this.UsersModel.findById(id)
+    
+    const profile = {
+
+    };
+
+    return profile;
+  }
+
+  async loginWithGoogle(user: UserLoginGoogleDto) {
     try {
       // tài khoản đăng hoặc là đăng ký bằng firebase
       const { uid } = user;
@@ -45,46 +58,61 @@ export class UsersService {
       throw new ResponseCustomError(error, 400);
     }
   }
-  // async createUser(userCreate: CreateUserDto) {
-  //   try {
-  //     // Create a new user
-  //     const AuthServiceUser = new AuthService(this.jwtService);
-  //       const [password_hash, access_token, existingUser ] = await Promise.all([
-  //       PassWordGenerator.hash(userCreate.password),
-  //       AuthServiceUser.createToken({
-  //         username: userCreate.email,
-  //       }),
-  //       this.UsersModel.findOne({ email: userCreate.email }),
-  //     ]);
 
-  //     if (existingUser) {
-  //       throw new Error('Email đã tồn tại!');
-  //     }
+  async register(userCreate: UserRegisterDto ) {
+    try {
+      // Create a new user
+      const AuthServiceUser = new AuthService(this.jwtService);
+        const [password_hash, access_token, existingUser ] = await Promise.all([
+        PassWordGenerator.hash(userCreate.password),
+        AuthServiceUser.createToken({
+          username: userCreate.email,
+        }),
+        this.UsersModel.findOne({ email: userCreate.email }),
+      ]);
 
-  //     const dataCreateUser = {
-  //       email: userCreate.email,
-  //       password: password_hash,
-  //       access_token,
-  //       nick_name: userCreate.nick_name
-  //     };
+      if (existingUser) {
+        throw new Error('Email đã tồn tại!');
+      }
 
-  //     const data = await this.UsersModel.create(dataCreateUser);
+      const dataCreateUser = {
+        email: userCreate.email,
+        password: password_hash,
+        access_token,
+        nick_name: userCreate.nick_name
+      };
 
-  //     if (!data) {
-  //       throw new Error('Tạo thất bại');
-  //     } else {
-  //       delete data.password;
-  //     }
-  //     return new ResponseCustomData(
-  //       data,
-  //       'Tạo tài khoản thành c.' +
-  //         'ông!',
-  //       HttpStatus.CREATED,
-  //     );
-  //   } catch (err) {
-  //     return ResponseCustomError(err);
-  //   }
-  // }
+      const data = await this.UsersModel.create(dataCreateUser);
+
+      if (!data) {
+        throw new Error('Tạo thất bại');
+      } else {
+        delete data.password;
+      }
+      return new ResponseCustomData(
+        data,
+        'Tạo tài khoản thành công',
+        HttpStatus.CREATED,
+      );
+    } catch (err) {
+      return ResponseCustomError(err);
+    }
+  }
+
+  async validateUserAndGenerateToken (loginDto: UserLoginDto): Promise<string> {
+    try {
+      const user = await this.UsersModel.findOne({
+        email: loginDto.email,
+      }).exec();
+      if (user && await PassWordGenerator.verify(loginDto.password, user.password.toString())) {
+        const payload = { id: user.id, email: user.email };
+        return this.jwtService.signAsync(payload);
+      }
+      throw new Error('Thông tin đăng nhập không hợp lệ !');
+    } catch (e) {
+      throw new ResponseCustomError(e, 401);
+    }
+  }
 
   // async getUser(userId: string) {
   //   try {
@@ -106,19 +134,5 @@ export class UsersService {
   // async deleteUser(id: string) {
   //   return await this.UsersModel.findByIdAndDelete(id);
   // }
-  // async validateUserAndGenerateToken (loginDto: LoginUserDto): Promise<string> {
-  //   try {
-  //     const user = await this.UsersModel.findOne({
-  //       nick_name: loginDto.nick_name,
-  //       email: loginDto.email,
-  //     }).exec();
-  //     if (user && await PassWordGenerator.verify(loginDto.password, user.password.toString())) {
-  //       const payload = { id: user.id, email: user.email };
-  //       return this.jwtService.signAsync(payload);
-  //     }
-  //     throw new Error('Thông tin đăng nhập không hợp lệ !');
-  //   } catch (e) {
-  //     throw new ResponseCustomError(e, 401);
-  //   }
-  // }
+
 }

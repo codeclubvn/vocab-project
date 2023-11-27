@@ -8,8 +8,8 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors();
 
-  CustomSwagger(app);
-
+  // CustomSwagger(app);
+  app.setGlobalPrefix('api/v1');
   await app.listen(3001);
 }
 bootstrap();

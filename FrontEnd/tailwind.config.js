@@ -1,11 +1,11 @@
-// @ts-nocheck
 /** @type {import('tailwindcss').Config} */
 
 // https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/config.full.js
 const defaultTheme = require('tailwindcss/defaultTheme')
-
+const radixThemePlugin = require('radix-ui-themes-with-tailwind')
 
 module.exports = {
+  darkMode: ['class'],
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -13,48 +13,27 @@ module.exports = {
       colors: {
         ...defaultTheme.colors,
         foreground: {
-          DEFAULT: "#1a1a1a",
-          primary: "#1a1a1a", // black
-          secondary: "#666666", // gray
+          DEFAULT: '#202020', // black
+          primary: '#ffffff', //white
+          secondary: '#666666', // gray
+          accent: '#65ba75', //  green
         },
         background: {
-          DEFAULT: "#ffffff",
-          primary: "#ffffff", // white
-          secondary: "#f2f2f2", // gray background
+          DEFAULT: '#ffffff', //white 
+          primary: '#202020', //black
+          secondary: '#666666', // gray
+          accent: '#65ba75', //  green
         },
         accent: {
-          DEFAULT: "#1a1a1a",
-          primary: "#1a1a1a", // black
-          secondary: "#ffffff", // white
-          // alternate: "hsl(130, 55%, 67%)",
+          DEFAULT: '#65ba75', // green
+          primary: '#2bbe88', //green dark
+          secondary: '#666666', // gray
         },
-        // gray: {
-        //   100: '#f7fafc',
-        //   200: '#edf2f7',
-        //   300: '#e2e8f0',
-        //   400: '#cbd5e0',
-        //   500: '#a0aec0',
-        //   600: '#718096',
-        //   700: '#4a5568',
-        //   800: '#2d3748',
-        //   900: '#1a202c',
-        // },
-        // blue: {
-        //   100: '#ebf8ff',
-        //   200: '#bee3f8',
-        //   300: '#90cdf4',
-        //   400: '#63b3ed',
-        //   500: '#4299e1',
-        //   600: '#3182ce',
-        //   700: '#2b6cb0',
-        //   800: '#2c5282',
-        //   900: '#2a4365',
-        // },
       },
       // --- typography ---
       fontFamily: {
         ...defaultTheme.fontFamily,
-        opensans: ["var(--font-opensans)"],
+        opensans: ['var(--font-opensans)'],
       },
       fontSize: {
         xs: '0.75rem',
@@ -104,14 +83,21 @@ module.exports = {
       // --- border ---
       borderWidth: {
         DEFAULT: '1px',
-        '0': '0',
-        '2': '2px',
-        '3': '3px',
-        '4': '4px',
-        '6': '6px',
-        '8': '8px',
+        0: '0',
+        2: '2px',
+        3: '3px',
+        4: '4px',
+        6: '6px',
+        8: '8px',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    radixThemePlugin({
+      useTailwindColorNames: true, // optional
+      useTailwindRadiusNames: true, // optional
+      mapMissingTailwindColors: true, // optional
+    }),
+    // https://ned.im/radix-ui-themes-with-tailwind/
+  ],
 }

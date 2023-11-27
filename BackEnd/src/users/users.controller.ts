@@ -14,21 +14,72 @@ import {
   Res,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { UserFireBaseDto } from './dto/users.dto';
+import { UserLoginGoogleDto } from './dto/user-login-google.dto';
+import { UserLoginFacebookDto } from './dto/user-login-facebook';
+import { UserRegisterDto } from './dto/user-register.dto';
+import { UserLoginDto } from './dto/user-login.dto';
 import { AuthGuard } from 'src/commons/guard/auth/auth.guard';
 import { Roles } from 'src/commons/guard/roles/roles.decorator';
-import { ROLE_PERMISSION } from './schema/users.schema';
+import { ROLE_PERMISSION } from './entities/users.schema';
 import { ResponseCustomData } from '../commons/response';
 import { Request, Response } from 'express';
 
-@Controller('users')
+@Controller('auth')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  // @Get()
-  // getAllUser() {
-  //   return [];
+  @Get('me')
+  async getProfile() {
+    return await this.usersService.getProfile();
+  }
+
+  @Post('register')
+  async register(@Body() account: UserRegisterDto) {
+    console.log('create account', account);
+    return await this.usersService.register(account);
+  }
+
+  @Post('login')
+  async loginUser(@Body() loginDto: UserLoginDto) {
+    const token = await this.usersService.validateUserAndGenerateToken(loginDto);
+    const createToken = { token: token };
+    return new ResponseCustomData(createToken, 'Đăng nhập thành công', HttpStatus.OK);
+  }
+
+  // @Post('test')
+  // async test(@Req() req: Request, @Res() res: Response): Promise<string> {
+  //   console.log("begin----");
+  //   try {
+  //     console.log('Request Body:', req.body);
+  //     console.log('Request Headers:', req.headers);
+  //     return "done"
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  //   return `this is a header data ${req}`;
   // }
+
+  // @Post()
+  // async login(@Body() account: UserLoginDto ) {
+  //   // Create or login account with firebase
+  //   console.log('create account', account);
+  //   return await this.usersService.UserWithGoogle(account);
+  // }
+
+  @Post('googleauth')
+  async loginWithGoogle(@Body() account: UserLoginGoogleDto) {
+    // Create or login account with firebase
+    console.log('create account', account);
+    return await this.usersService.loginWithGoogle(account);
+  }
+
+  // @Post('auth/facebookauth')
+  // async loginwithFacebook(@Body() account: UserLoginFacebookDto) {
+  //   // Create or login account with firebase
+  //   console.log('create account', account);
+  //   return await this.usersService.UserWithGoogle(account);
+  // }
+
 
   // @Get(':id')
   // getInfoUser(@Param('id') id: string) {
@@ -68,30 +119,6 @@ export class UsersController {
   //   console.log(limit, skip);
   // }
 
-  // @Post('login')
-  // async loginUser(@Body() loginDto: LoginUserDto) {
-  //   const token = await this.usersService.validateUserAndGenerateToken(loginDto);
-  //   const createToken = { token: token };
-  //   return new ResponseCustomData(createToken, 'Đăng nhập thành công', HttpStatus.OK);
-  // }
 
-  // @Post('test')
-  // async test(@Req() req: Request, @Res() res: Response): Promise<string> {
-  //   console.log("begin----");
-  //   try {
-  //     console.log('Request Body:', req.body);
-  //     console.log('Request Headers:', req.headers);
-  //     return "done"
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  //   return `this is a header data ${req}`;
-  // }
 
-  @Post()
-  async create(@Body() account: UserFireBaseDto) {
-    // Create or login account with firebase
-    console.log('create account', account);
-    return await this.usersService.UserWithFirebase(account);
-  }
 }

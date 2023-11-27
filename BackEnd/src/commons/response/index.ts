@@ -13,9 +13,9 @@ export class ResponseCustomData<D> {
   message: string;
   statusCode: number;
   constructor(data: D | D[], message: string, statusCode: HttpStatus = 200) {
-    this.data = data;
-    this.message = message;
     this.statusCode = statusCode;
+    this.message = message;
+    this.data = data;
     console.log('-------------------------------');
     CreateLogger('Data trả về ==>', data);
     console.log('-------------------------------');
@@ -33,6 +33,8 @@ export function ResponseCustomError(
   error: { message: string },
   statusCode: HttpStatus = 400,
 ) {
+  console.log('-------------------------------');
   CreateLogger('Đang lỗi==>', error);
+  console.log('-------------------------------');
   throw new HttpException(error.message, statusCode);
 }

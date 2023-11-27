@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
-import { usersProvider } from './schema/users.schema';
+import { usersProvider } from './entities/users.schema';
 import { DatabaseModule } from 'src/database/database.provider';
 import { RolesGuard } from 'src/commons/guard/roles/roles.guard';
 
@@ -12,6 +12,10 @@ import { RolesGuard } from 'src/commons/guard/roles/roles.guard';
     UsersService,
     ...usersProvider,
     { useClass: RolesGuard, provide: 'APP_GUARD' },
+  ], 
+  exports: [
+    UsersService,
+    ...usersProvider
   ],
 })
 export class UsersModule {}

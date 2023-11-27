@@ -3,8 +3,8 @@ import { userApi } from '@/services/user'
 
 export const keys = {
   all: ['users'],
-  details: () => [...keys.all, 'detail'],
-  detail: (id: number) => [...keys.details(), id],
+  // details: () => [...keys.all, 'detail'],
+  // detail: (id: number) => [...keys.details(), id],
 }
 
 export const useUserQuery = () => {
